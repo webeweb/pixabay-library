@@ -11,16 +11,16 @@
 
 namespace WBW\Library\Pixabay\Tests\Model;
 
-use WBW\Library\Pixabay\Model\VideoFile;
+use WBW\Library\Pixabay\Model\VideoSize;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
- * Video file test.
+ * Video size test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Tests\Model
  */
-class VideoFileTest extends AbstractTestCase {
+class VideoSizeTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,7 +29,7 @@ class VideoFileTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new VideoFile();
+        $obj = new VideoSize();
 
         $this->assertNull($obj->getHeight());
         $this->assertNull($obj->getQuality());
@@ -45,7 +45,7 @@ class VideoFileTest extends AbstractTestCase {
      */
     public function testSetHeight() {
 
-        $obj = new VideoFile();
+        $obj = new VideoSize();
 
         $obj->setHeight(1);
         $this->assertEquals(1, $obj->getHeight());
@@ -58,7 +58,7 @@ class VideoFileTest extends AbstractTestCase {
      */
     public function testSetQuality() {
 
-        $obj = new VideoFile();
+        $obj = new VideoSize();
 
         $obj->setQuality("quality");
         $this->assertEquals("quality", $obj->getQuality());
@@ -71,7 +71,7 @@ class VideoFileTest extends AbstractTestCase {
      */
     public function testSetSize() {
 
-        $obj = new VideoFile();
+        $obj = new VideoSize();
 
         $obj->setSize(1);
         $this->assertEquals(1, $obj->getSize());
@@ -84,7 +84,7 @@ class VideoFileTest extends AbstractTestCase {
      */
     public function testSetUrl() {
 
-        $obj = new VideoFile();
+        $obj = new VideoSize();
 
         $obj->setUrl("url");
         $this->assertEquals("url", $obj->getUrl());
@@ -97,7 +97,7 @@ class VideoFileTest extends AbstractTestCase {
      */
     public function testSetWidth() {
 
-        $obj = new VideoFile();
+        $obj = new VideoSize();
 
         $obj->setWidth(1);
         $this->assertEquals(1, $obj->getWidth());

@@ -11,7 +11,13 @@
 
 namespace WBW\Library\Pixabay\Model;
 
-class VideoFile {
+/**
+ * Video size.
+ *
+ * @author webeweb <https://github.com/webeweb/>
+ * @package WBW\Library\Pixabay\Model
+ */
+class VideoSize {
 
     /**
      * Height.
@@ -104,7 +110,7 @@ class VideoFile {
      * Set the height.
      *
      * @param int $height The height.
-     * @return VideoFile Returns this video file.
+     * @return VideoSize Returns this video size.
      */
     public function setHeight($height) {
         $this->height = $height;
@@ -115,7 +121,7 @@ class VideoFile {
      * Get the quality.
      *
      * @param string $quality Returns the quality.
-     * @return VideoFile Returns this video file.
+     * @return VideoSize Returns this video size.
      */
     public function setQuality($quality) {
         $this->quality = $quality;
@@ -126,7 +132,7 @@ class VideoFile {
      * Set the size.
      *
      * @param int $size The size.
-     * @return VideoFile Returns this video file.
+     * @return VideoSize Returns this video size.
      */
     public function setSize($size) {
         $this->size = $size;
@@ -137,7 +143,7 @@ class VideoFile {
      * Set the URL.
      *
      * @param string $url The URL.
-     * @return VideoFile Returns this video file.
+     * @return VideoSize Returns this video size.
      */
     public function setUrl($url) {
         $this->url = $url;
@@ -148,7 +154,7 @@ class VideoFile {
      * Set the width.
      *
      * @param int $width The width.
-     * @return VideoFile Returns this video file.
+     * @return VideoSize Returns this video size.
      */
     public function setWidth($width) {
         $this->width = $width;
