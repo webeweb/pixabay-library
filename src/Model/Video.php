@@ -34,6 +34,31 @@ class Video extends AbstractMedia {
     private $pictureId;
 
     /**
+     * Video sizes.
+     *
+     * @var VideoSize[]
+     */
+    private $videoSizes;
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        $this->setVideoSizes([]);
+    }
+
+    /**
+     * Add a video size.
+     *
+     * @param VideoSize $videoSize The video size.
+     * @return Video Retuns this video.
+     */
+    public function addVideoSize(VideoSize $videoSize) {
+        $this->videoSizes[] = $videoSize;
+        return $this;
+    }
+
+    /**
      * Get the duration.
      *
      * @return int Returns the duration.
@@ -49,6 +74,15 @@ class Video extends AbstractMedia {
      */
     public function getPictureId() {
         return $this->pictureId;
+    }
+
+    /**
+     * Get the video sizes.
+     *
+     * @return VideoSize[] Returns the video sizes.
+     */
+    public function getVideoSizes() {
+        return $this->videoSizes;
     }
 
     /**
@@ -70,6 +104,17 @@ class Video extends AbstractMedia {
      */
     public function setPictureId($pictureId) {
         $this->pictureId = $pictureId;
+        return $this;
+    }
+
+    /**
+     * Set the video sizes.
+     *
+     * @param VideoSize[] $videoSizes The video siizes.
+     * @return Video Returns this video.
+     */
+    protected function setVideoSizes(array $videoSizes) {
+        $this->videoSizes = $videoSizes;
         return $this;
     }
 }
