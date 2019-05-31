@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pixabay\Tests\Fixtures\Model;
 
+use WBW\Library\Pixabay\Model\AbstractMedia;
 use WBW\Library\Pixabay\Model\AbstractResponse;
 
 /**
@@ -21,4 +22,17 @@ use WBW\Library\Pixabay\Model\AbstractResponse;
  */
 class TestResponse extends AbstractResponse {
 
+    /**
+     * {@inheritDoc}
+     */
+    public function addMedia(AbstractMedia $media) {
+        return parent::addMedia($media);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMedias() {
+        return parent::getMedias();
+    }
 }

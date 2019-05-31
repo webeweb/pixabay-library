@@ -21,6 +21,13 @@ namespace WBW\Library\Pixabay\Model;
 abstract class AbstractResponse {
 
     /**
+     * Medias.
+     *
+     * @var AbstractMedia[]
+     */
+    private $medias;
+
+    /**
      * Total.
      *
      * @var int
@@ -38,7 +45,27 @@ abstract class AbstractResponse {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        $this->setMedias([]);
+    }
+
+    /**
+     * Add a media.
+     *
+     * @param AbstractMedia $media The media.
+     * @return AbstractResponse Returns this response.
+     */
+    protected function addMedia(AbstractMedia $media) {
+        $this->medias[] = $media;
+        return $this;
+    }
+
+    /**
+     * Get the medias.
+     *
+     * @return AbstractMedia[] Returns the medias.
+     */
+    protected function getMedias() {
+        return $this->medias;
     }
 
     /**
@@ -57,6 +84,17 @@ abstract class AbstractResponse {
      */
     public function getTotalHits() {
         return $this->totalHits;
+    }
+
+    /**
+     * Set the medias.
+     *
+     * @param AbstractMedia[] $medias The medias.
+     * @return AbstractResponse Returns this response.
+     */
+    protected function setMedias(array $medias) {
+        $this->medias = $medias;
+        return $this;
     }
 
     /**
