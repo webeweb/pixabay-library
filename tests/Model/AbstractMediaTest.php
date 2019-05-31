@@ -53,8 +53,8 @@ class AbstractMediaTest extends AbstractTestCase {
 
         $obj = new TestMedia();
 
-        $obj->setDownloads(1);
-        $this->assertEquals(1, $obj->getDownloads());
+        $obj->setComments(1);
+        $this->assertEquals(1, $obj->getComments());
     }
 
     /**
@@ -81,6 +81,19 @@ class AbstractMediaTest extends AbstractTestCase {
 
         $obj->setFavorites(1);
         $this->assertEquals(1, $obj->getFavorites());
+    }
+
+    /**
+     * Tests the setId() method.
+     *
+     * @return void
+     */
+    public function testSetId() {
+
+        $obj = new TestMedia();
+
+        $obj->setId(1);
+        $this->assertEquals(1, $obj->getId());
     }
 
     /**
