@@ -12,7 +12,7 @@
 namespace WBW\Library\Pixabay\Tests\Model;
 
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
-use WBW\Library\Pixabay\Tests\Fixtures\Model\TestMedia;
+use WBW\Library\Pixabay\Tests\Fixtures\Model\TestHit;
 use WBW\Library\Pixabay\Tests\Fixtures\Model\TestResponse;
 
 /**
@@ -24,20 +24,20 @@ use WBW\Library\Pixabay\Tests\Fixtures\Model\TestResponse;
 class AbstractResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the addMedia() method.
+     * Tests the addHit() method.
      *
      * @return void
      */
-    public function testAddMedia() {
+    public function testAddHit() {
 
-        // Set a Media mock.
-        $media = new TestMedia();
+        // Set a Hit mock.
+        $hit = new TestHit();
 
         $obj = new TestResponse();
 
-        $obj->addMedia($media);
-        $this->assertCount(1, $obj->getMedias());
-        $this->assertSame($media, $obj->getMedias()[0]);
+        $obj->addHit($hit);
+        $this->assertCount(1, $obj->getHits());
+        $this->assertSame($hit, $obj->getHits()[0]);
     }
 
     /**
@@ -49,7 +49,7 @@ class AbstractResponseTest extends AbstractTestCase {
 
         $obj = new TestResponse();
 
-        $this->assertCount(0, $obj->getMedias());
+        $this->assertCount(0, $obj->getHits());
         $this->assertNull($obj->getTotal());
         $this->assertNull($obj->getTotalHits());
     }

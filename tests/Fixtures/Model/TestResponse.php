@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pixabay\Tests\Fixtures\Model;
 
-use WBW\Library\Pixabay\Model\AbstractMedia;
+use WBW\Library\Pixabay\Model\AbstractHit;
 use WBW\Library\Pixabay\Model\AbstractResponse;
 
 /**
@@ -25,14 +25,14 @@ class TestResponse extends AbstractResponse {
     /**
      * {@inheritDoc}
      */
-    public function addMedia(AbstractMedia $media) {
-        return parent::addMedia($media);
+    public function addHit(AbstractHit $hit) {
+        return parent::addHit($hit);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMedias() {
-        return parent::getMedias();
+    public function getHits() {
+        return parent::getHits();
     }
 }
