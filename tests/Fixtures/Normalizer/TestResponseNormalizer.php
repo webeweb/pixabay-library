@@ -27,4 +27,18 @@ class TestResponseNormalizer extends ResponseNormalizer {
     public static function denormalizeImageHit(array $response) {
         return parent::denormalizeImageHit($response);
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public static function denormalizeVideo(array $response) {
+        return parent::denormalizeVideo($response);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public static function denormalizeVideoHit(array $response) {
+        return parent::denormalizeVideoHit($response);
+    }
 }

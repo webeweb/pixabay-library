@@ -12,6 +12,8 @@
 namespace WBW\Library\Pixabay\Tests\Normalizer;
 
 use WBW\Library\Pixabay\Model\ImageHit;
+use WBW\Library\Pixabay\Model\Video;
+use WBW\Library\Pixabay\Model\VideoHit;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Normalizer\TestResponseNormalizer;
 use WBW\Library\Pixabay\Tests\Fixtures\TestFixtures;
@@ -60,5 +62,58 @@ class ResponseNormalizerTest extends AbstractTestCase {
         $this->assertEquals("Josch13", $res->getUser());
         $this->assertEquals(48777, $res->getUserId());
         $this->assertEquals("https://cdn.pixabay.com/user/2013/11/05/02-10-23-764_250x250.jpg", $res->getUserImageURL());
+    }
+
+    /**
+     * Tests denormalizeVideo() method.
+     *
+     * @return void
+     */
+    public function testDenormalizeVideo() {
+
+        $arg = json_decode(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE, true)["hits"][0]["videos"]["large"];
+
+        $res = TestResponseNormalizer::denormalizeVideo($arg);
+        $this->assertInstanceOf(Video::class, $res);
+
+        $this->assertEquals(1080, $res->getHeight());
+        $this->assertNull($res->getQuality());
+        $this->assertEquals(6615235, $res->getSize());
+        $this->assertEquals("https://player.vimeo.com/external/135736646.hd.mp4?s=ed02d71c92dd0df7d1110045e6eb65a6&profile_id=119", $res->getUrl());
+        $this->assertEquals(1920, $res->getWidth());
+    }
+
+    /**
+     * Tests the denormalizeVideoHit() method.
+     *
+     * @return void
+     */
+    public function testDenormalizeVideoHit() {
+
+        $arg = json_decode(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE, true)["hits"][0];
+
+        $res = TestResponseNormalizer::denormalizeVideoHit($arg);
+        $this->assertInstanceOf(VideoHit::class, $res);
+
+        $this->assertEquals(2, $res->getComments());
+        $this->assertEquals(66, $res->getDownloads());
+        $this->assertEquals(12, $res->getDuration());
+        $this->assertEquals(7, $res->getFavorites());
+        $this->assertEquals(125, $res->getId());
+        $this->assertEquals(3, $res->getLikes());
+        $this->assertEquals("https://pixabay.com/videos/id-125/", $res->getPageURL());
+        $this->assertEquals("529927645", $res->getPictureId());
+        $this->assertEquals("flowers, yellow, blossom", $res->getTags());
+        $this->assertEquals("film", $res->getType());
+        $this->assertCount(4, $res->getVideos());
+        $this->assertEquals(169, $res->getViews());
+        $this->assertEquals("CoverrFreeFootage", $res->getUser());
+        $this->assertEquals(1281706, $res->getUserId());
+        $this->assertEquals("https://cdn.pixabay.com/user/2015/10/16/09-28-45-303_250x250.png", $res->getUserImageURL());
+
+        $this->assertEquals("large", $res->getVideos()[0]->getQuality());
+        $this->assertEquals("medium", $res->getVideos()[1]->getQuality());
+        $this->assertEquals("small", $res->getVideos()[2]->getQuality());
+        $this->assertEquals("tiny", $res->getVideos()[3]->getQuality());
     }
 }

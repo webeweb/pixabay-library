@@ -14,6 +14,8 @@ namespace WBW\Library\Pixabay\Normalizer;
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Pixabay\Model\AbstractHit;
 use WBW\Library\Pixabay\Model\ImageHit;
+use WBW\Library\Pixabay\Model\Video;
+use WBW\Library\Pixabay\Model\VideoHit;
 
 /**
  * Response normalizer.
@@ -70,6 +72,46 @@ class ResponseNormalizer {
         $model->setWebFormatHeight(intval(ArrayHelper::get($response, "webformatHeight", -1)));
         $model->setWebFormatURL(ArrayHelper::get($response, "webformatURL"));
         $model->setWebFormatWidth(intval(ArrayHelper::get($response, "webformatWidth", -1)));
+
+        return $model;
+    }
+
+    /**
+     * Denormalize a video.
+     *
+     * @param array $response The response.
+     * @return Video Returns a video.
+     */
+    protected static function denormalizeVideo(array $response) {
+
+        $model = new Video();
+
+        $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
+        $model->setSize(intval(ArrayHelper::get($response, "size", -1)));
+        $model->setUrl(ArrayHelper::get($response, "url"));
+        $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
+
+        return $model;
+    }
+
+    /**
+     * Denormalize a video hit.
+     *
+     * @param array $response The response.
+     * @return VideoHit Returns a video hit.
+     */
+    protected static function denormalizeVideoHit(array $response) {
+
+        $model = new VideoHit();
+
+        static::denormalizeHit($model, $response);
+
+        $model->setDuration(intval(ArrayHelper::get($response, "duration", -1)));
+        $model->setPictureId(intval(ArrayHelper::get($response, "picture_id", -1)));
+
+        foreach (ArrayHelper::get($response, "videos", []) as $q => $v) {
+            $model->addVideo(static::denormalizeVideo($v)->setQuality($q));
+        }
 
         return $model;
     }
