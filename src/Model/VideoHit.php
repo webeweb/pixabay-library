@@ -12,12 +12,12 @@
 namespace WBW\Library\Pixabay\Model;
 
 /**
- * Video.
+ * Video hit.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Model
  */
-class Video extends AbstractMedia {
+class VideoHit extends AbstractHit {
 
     /**
      * Duration.
@@ -51,7 +51,7 @@ class Video extends AbstractMedia {
      * Add a video size.
      *
      * @param VideoSize $videoSize The video size.
-     * @return Video Retuns this video.
+     * @return VideoHit Retuns this video.
      */
     public function addVideoSize(VideoSize $videoSize) {
         $this->videoSizes[] = $videoSize;
@@ -89,7 +89,7 @@ class Video extends AbstractMedia {
      * Set the duration.
      *
      * @param int $duration The duration.
-     * @return Video Returns this video.
+     * @return VideoHit Returns this video hit.
      */
     public function setDuration($duration) {
         $this->duration = $duration;
@@ -100,7 +100,7 @@ class Video extends AbstractMedia {
      * Set the picture id.
      *
      * @param string $pictureId The picture id.
-     * @return Video Returns this video.
+     * @return VideoHit Returns this video hit.
      */
     public function setPictureId($pictureId) {
         $this->pictureId = $pictureId;
@@ -111,7 +111,7 @@ class Video extends AbstractMedia {
      * Set the video sizes.
      *
      * @param VideoSize[] $videoSizes The video siizes.
-     * @return Video Returns this video.
+     * @return VideoHit Returns this video hit.
      */
     protected function setVideoSizes(array $videoSizes) {
         $this->videoSizes = $videoSizes;
