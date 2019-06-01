@@ -12,12 +12,12 @@
 namespace WBW\Library\Pixabay\Model;
 
 /**
- * Image.
+ * Image hit.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Model
  */
-class Image extends AbstractMedia {
+class ImageHit extends AbstractHit {
 
     /**
      * Full HD URL.
@@ -222,7 +222,7 @@ class Image extends AbstractMedia {
      * Set the full HD URL.
      *
      * @param string $fullHDURL The full HD URL.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setFullHDURL($fullHDURL) {
         $this->fullHDURL = $fullHDURL;
@@ -233,7 +233,7 @@ class Image extends AbstractMedia {
      * Set the image height.
      *
      * @param int $imageHeight The image height.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setImageHeight($imageHeight) {
         $this->imageHeight = $imageHeight;
@@ -244,7 +244,7 @@ class Image extends AbstractMedia {
      * Set the image size.
      *
      * @param int $imageSize The image size.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setImageSize($imageSize) {
         $this->imageSize = $imageSize;
@@ -255,7 +255,7 @@ class Image extends AbstractMedia {
      * Set the image URL.
      *
      * @param string $imageURL The image URL.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setImageURL($imageURL) {
         $this->imageURL = $imageURL;
@@ -266,7 +266,7 @@ class Image extends AbstractMedia {
      * Set the image width.
      *
      * @param int $imageWidth The image width.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setImageWidth($imageWidth) {
         $this->imageWidth = $imageWidth;
@@ -277,7 +277,7 @@ class Image extends AbstractMedia {
      * Set the large image URL.
      *
      * @param string $largeImageURL The large image URL.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setLargeImageURL($largeImageURL) {
         $this->largeImageURL = $largeImageURL;
@@ -288,7 +288,7 @@ class Image extends AbstractMedia {
      * Set the preview height.
      *
      * @param int $previewHeight The preview height.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setPreviewHeight($previewHeight) {
         $this->previewHeight = $previewHeight;
@@ -299,7 +299,7 @@ class Image extends AbstractMedia {
      * Set the preview URL.
      *
      * @param string $previewURL The preview URL.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setPreviewURL($previewURL) {
         $this->previewURL = $previewURL;
@@ -310,7 +310,7 @@ class Image extends AbstractMedia {
      * Set the preview width.
      *
      * @param int $previewWidth The preview width.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setPreviewWidth($previewWidth) {
         $this->previewWidth = $previewWidth;
@@ -321,7 +321,7 @@ class Image extends AbstractMedia {
      * Set the web format height.
      *
      * @param int $webFormatHeight The web format height.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setWebFormatHeight($webFormatHeight) {
         $this->webFormatHeight = $webFormatHeight;
@@ -332,7 +332,7 @@ class Image extends AbstractMedia {
      * Set the web format URL.
      *
      * @param string $webFormatURL The web format URL.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setWebFormatURL($webFormatURL) {
         $this->webFormatURL = $webFormatURL;
@@ -343,7 +343,7 @@ class Image extends AbstractMedia {
      * Set the web format width.
      *
      * @param int $webFormatWidth The web format width.
-     * @return Image Returns this image.
+     * @return ImageHit Returns this image hit.
      */
     public function setWebFormatWidth($webFormatWidth) {
         $this->webFormatWidth = $webFormatWidth;

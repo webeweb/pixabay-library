@@ -11,16 +11,16 @@
 
 namespace WBW\Library\Pixabay\Tests\Model;
 
-use WBW\Library\Pixabay\Model\Image;
+use WBW\Library\Pixabay\Model\ImageHit;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
- * Image test.
+ * Image hit test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Tests\Model
  */
-class ImageTest extends AbstractTestCase {
+class ImageHitTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,7 +29,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $this->assertNull($obj->getFullHDURL());
         $this->assertNull($obj->getImageHeight());
@@ -52,7 +52,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetFullHDURL() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setFullHDURL("fullHDURL");
         $this->assertEquals("fullHDURL", $obj->getFullHDURL());
@@ -65,7 +65,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetImageHeight() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setImageHeight(1);
         $this->assertEquals(1, $obj->getImageHeight());
@@ -78,7 +78,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetImageSize() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setImageSize(1);
         $this->assertEquals(1, $obj->getImageSize());
@@ -91,7 +91,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetImageURL() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setImageURL("imageURL");
         $this->assertEquals("imageURL", $obj->getImageURL());
@@ -104,7 +104,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetImageWidth() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setImageWidth(1);
         $this->assertEquals(1, $obj->getImageWidth());
@@ -117,7 +117,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetLargeImageURL() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setLargeImageURL("largeImageURL");
         $this->assertEquals("largeImageURL", $obj->getLargeImageURL());
@@ -130,7 +130,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetPreviewHeight() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setPreviewHeight(1);
         $this->assertEquals(1, $obj->getPreviewHeight());
@@ -143,7 +143,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetPreviewURL() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setPreviewURL("previewURL");
         $this->assertEquals("previewURL", $obj->getPreviewURL());
@@ -156,7 +156,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetPreviewWidth() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setPreviewWidth(1);
         $this->assertEquals(1, $obj->getPreviewWidth());
@@ -169,7 +169,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetWebFormatHeight() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setWebFormatHeight(1);
         $this->assertEquals(1, $obj->getWebFormatHeight());
@@ -182,7 +182,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetWebFormatURL() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setWebFormatURL("webFormatURL");
         $this->assertEquals("webFormatURL", $obj->getWebFormatURL());
@@ -195,7 +195,7 @@ class ImageTest extends AbstractTestCase {
      */
     public function testSetWebFormatWidth() {
 
-        $obj = new Image();
+        $obj = new ImageHit();
 
         $obj->setWebFormatWidth(1);
         $this->assertEquals(1, $obj->getWebFormatWidth());
