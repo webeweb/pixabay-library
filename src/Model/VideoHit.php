@@ -34,27 +34,27 @@ class VideoHit extends AbstractHit {
     private $pictureId;
 
     /**
-     * Video sizes.
+     * Videos.
      *
-     * @var VideoSize[]
+     * @var Video[]
      */
-    private $videoSizes;
+    private $videos;
 
     /**
      * Constructor.
      */
     public function __construct() {
-        $this->setVideoSizes([]);
+        $this->setVideos([]);
     }
 
     /**
-     * Add a video size.
+     * Add a video.
      *
-     * @param VideoSize $videoSize The video size.
+     * @param Video $video The video.
      * @return VideoHit Retuns this video.
      */
-    public function addVideoSize(VideoSize $videoSize) {
-        $this->videoSizes[] = $videoSize;
+    public function addVideo(Video $video) {
+        $this->videos[] = $video;
         return $this;
     }
 
@@ -77,12 +77,12 @@ class VideoHit extends AbstractHit {
     }
 
     /**
-     * Get the video sizes.
+     * Get the videos.
      *
-     * @return VideoSize[] Returns the video sizes.
+     * @return Video[] Returns the videos.
      */
-    public function getVideoSizes() {
-        return $this->videoSizes;
+    public function getVideos() {
+        return $this->videos;
     }
 
     /**
@@ -108,13 +108,13 @@ class VideoHit extends AbstractHit {
     }
 
     /**
-     * Set the video sizes.
+     * Set the videos.
      *
-     * @param VideoSize[] $videoSizes The video siizes.
+     * @param Video[] $videos The video siizes.
      * @return VideoHit Returns this video hit.
      */
-    protected function setVideoSizes(array $videoSizes) {
-        $this->videoSizes = $videoSizes;
+    protected function setVideos(array $videos) {
+        $this->videos = $videos;
         return $this;
     }
 }

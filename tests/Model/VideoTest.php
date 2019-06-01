@@ -11,16 +11,16 @@
 
 namespace WBW\Library\Pixabay\Tests\Model;
 
-use WBW\Library\Pixabay\Model\VideoSize;
+use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
- * Video size test.
+ * Video test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Tests\Model
  */
-class VideoSizeTest extends AbstractTestCase {
+class VideoTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,7 +29,7 @@ class VideoSizeTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new VideoSize();
+        $obj = new Video();
 
         $this->assertNull($obj->getHeight());
         $this->assertNull($obj->getQuality());
@@ -45,7 +45,7 @@ class VideoSizeTest extends AbstractTestCase {
      */
     public function testSetHeight() {
 
-        $obj = new VideoSize();
+        $obj = new Video();
 
         $obj->setHeight(1);
         $this->assertEquals(1, $obj->getHeight());
@@ -58,7 +58,7 @@ class VideoSizeTest extends AbstractTestCase {
      */
     public function testSetQuality() {
 
-        $obj = new VideoSize();
+        $obj = new Video();
 
         $obj->setQuality("quality");
         $this->assertEquals("quality", $obj->getQuality());
@@ -71,7 +71,7 @@ class VideoSizeTest extends AbstractTestCase {
      */
     public function testSetSize() {
 
-        $obj = new VideoSize();
+        $obj = new Video();
 
         $obj->setSize(1);
         $this->assertEquals(1, $obj->getSize());
@@ -84,7 +84,7 @@ class VideoSizeTest extends AbstractTestCase {
      */
     public function testSetUrl() {
 
-        $obj = new VideoSize();
+        $obj = new Video();
 
         $obj->setUrl("url");
         $this->assertEquals("url", $obj->getUrl());
@@ -97,7 +97,7 @@ class VideoSizeTest extends AbstractTestCase {
      */
     public function testSetWidth() {
 
-        $obj = new VideoSize();
+        $obj = new Video();
 
         $obj->setWidth(1);
         $this->assertEquals(1, $obj->getWidth());

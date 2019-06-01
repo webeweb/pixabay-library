@@ -12,7 +12,7 @@
 namespace WBW\Library\Pixabay\Tests\Model;
 
 use WBW\Library\Pixabay\Model\VideoHit;
-use WBW\Library\Pixabay\Model\VideoSize;
+use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
@@ -24,20 +24,20 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class VideoHitTest extends AbstractTestCase {
 
     /**
-     * Tests the addVideoSize() method.
+     * Tests the addVideo() method.
      *
      * @return void
      */
-    public function testAddVideoSize() {
+    public function testAddVideo() {
 
-        // Set a Video size mock.
-        $videoSize = new VideoSize();
+        // Set a Video mock.
+        $video = new Video();
 
         $obj = new VideoHit();
 
-        $obj->addVideoSize($videoSize);
-        $this->assertCount(1, $obj->getVideoSizes());
-        $this->assertSame($videoSize, $obj->getVideoSizes()[0]);
+        $obj->addVideo($video);
+        $this->assertCount(1, $obj->getVideos());
+        $this->assertSame($video, $obj->getVideos()[0]);
     }
 
     /**
@@ -51,7 +51,7 @@ class VideoHitTest extends AbstractTestCase {
 
         $this->assertNull($obj->getDuration());
         $this->assertNull($obj->getPictureId());
-        $this->assertCount(0, $obj->getVideoSizes());
+        $this->assertCount(0, $obj->getVideos());
     }
 
     /**
