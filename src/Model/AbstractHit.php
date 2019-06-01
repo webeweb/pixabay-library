@@ -12,13 +12,13 @@
 namespace WBW\Library\Pixabay\Model;
 
 /**
- * Abstract media.
+ * Abstract hit.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Model
  * @abstract
  */
-abstract class AbstractMedia {
+abstract class AbstractHit {
 
     /**
      * Comments.
@@ -223,7 +223,7 @@ abstract class AbstractMedia {
      * Set the comments.
      *
      * @param int $comments The comments.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setComments($comments) {
         $this->comments = $comments;
@@ -234,7 +234,7 @@ abstract class AbstractMedia {
      * Set the downloads.
      *
      * @param int $downloads The downloads.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setDownloads($downloads) {
         $this->downloads = $downloads;
@@ -245,7 +245,7 @@ abstract class AbstractMedia {
      * Set the favorites.
      *
      * @param int $favorites The favorites.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setFavorites($favorites) {
         $this->favorites = $favorites;
@@ -256,7 +256,7 @@ abstract class AbstractMedia {
      * Set the id.
      *
      * @param int $id The id.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setId($id) {
         $this->id = $id;
@@ -267,7 +267,7 @@ abstract class AbstractMedia {
      * Set the likes.
      *
      * @param int $likes The likes.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setLikes($likes) {
         $this->likes = $likes;
@@ -278,7 +278,7 @@ abstract class AbstractMedia {
      * Set the page URL.
      *
      * @param string $pageURL The page URL.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setPageURL($pageURL) {
         $this->pageURL = $pageURL;
@@ -289,7 +289,7 @@ abstract class AbstractMedia {
      * Set the tags.
      *
      * @param string $tags The tags.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setTags($tags) {
         $this->tags = $tags;
@@ -300,7 +300,7 @@ abstract class AbstractMedia {
      * Set the type.
      *
      * @param string $type The type.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setType($type) {
         $this->type = $type;
@@ -311,7 +311,7 @@ abstract class AbstractMedia {
      * Set the user.
      *
      * @param string $user The user.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setUser($user) {
         $this->user = $user;
@@ -322,7 +322,7 @@ abstract class AbstractMedia {
      * Set the user id.
      *
      * @param int $userId The user id.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setUserId($userId) {
         $this->userId = $userId;
@@ -333,7 +333,7 @@ abstract class AbstractMedia {
      * Set the user image URL.
      *
      * @param string $userImageURL The user image URL.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setUserImageURL($userImageURL) {
         $this->userImageURL = $userImageURL;
@@ -344,7 +344,7 @@ abstract class AbstractMedia {
      * Set the views.
      *
      * @param int $views Set the views.
-     * @return AbstractMedia Returns this media.
+     * @return AbstractHit Returns this hit.
      */
     public function setViews($views) {
         $this->views = $views;

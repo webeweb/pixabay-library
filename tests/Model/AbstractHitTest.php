@@ -12,15 +12,15 @@
 namespace WBW\Library\Pixabay\Tests\Model;
 
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
-use WBW\Library\Pixabay\Tests\Fixtures\Model\TestMedia;
+use WBW\Library\Pixabay\Tests\Fixtures\Model\TestHit;
 
 /**
- * Abstract media test.
+ * Abstract hit test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Tests\Model
  */
-class AbstractMediaTest extends AbstractTestCase {
+class AbstractHitTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,7 +29,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $this->assertNull($obj->getComments());
         $this->assertNull($obj->getDownloads());
@@ -51,7 +51,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetComments() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setComments(1);
         $this->assertEquals(1, $obj->getComments());
@@ -64,7 +64,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetDownloads() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setDownloads(1);
         $this->assertEquals(1, $obj->getDownloads());
@@ -77,7 +77,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetFavorites() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setFavorites(1);
         $this->assertEquals(1, $obj->getFavorites());
@@ -90,7 +90,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetId() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setId(1);
         $this->assertEquals(1, $obj->getId());
@@ -103,7 +103,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetLikes() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setLikes(1);
         $this->assertEquals(1, $obj->getLikes());
@@ -116,7 +116,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetPageURL() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setPageURL("pageURL");
         $this->assertEquals("pageURL", $obj->getPageURL());
@@ -129,7 +129,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetTags() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setTags("tags");
         $this->assertEquals("tags", $obj->getTags());
@@ -142,7 +142,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetType() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setType("type");
         $this->assertEquals("type", $obj->getType());
@@ -155,7 +155,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetUser() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setUser("user");
         $this->assertEquals("user", $obj->getUser());
@@ -168,7 +168,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetUserId() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setUserId(1);
         $this->assertEquals(1, $obj->getUserId());
@@ -181,7 +181,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetUserImageURL() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setUserImageURL("userImageURL");
         $this->assertEquals("userImageURL", $obj->getUserImageURL());
@@ -194,7 +194,7 @@ class AbstractMediaTest extends AbstractTestCase {
      */
     public function testSetViews() {
 
-        $obj = new TestMedia();
+        $obj = new TestHit();
 
         $obj->setViews(1);
         $this->assertEquals(1, $obj->getViews());

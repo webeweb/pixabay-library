@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pixabay\Tests\Fixtures\Model;
 
-use WBW\Library\Pixabay\Model\AbstractMedia;
+use WBW\Library\Pixabay\Model\AbstractHit;
 
 /**
  * Test media.
@@ -19,6 +19,6 @@ use WBW\Library\Pixabay\Model\AbstractMedia;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Tests\Fixtures\Model
  */
-class TestMedia extends AbstractMedia {
+class TestHit extends AbstractHit {
 
 }
