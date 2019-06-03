@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pixabay\Tests\Model\Request;
 
+use Exception;
+use UnexpectedValueException;
 use WBW\Library\Pixabay\API\SearchImagesRequestInterface;
 use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -38,6 +40,66 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the enumCategory() method..
+     *
+     * @return void
+     */
+    public function testEnumCategory() {
+
+        $res = [
+            SearchImagesRequestInterface::CATEGORY_ANIMALS,
+            SearchImagesRequestInterface::CATEGORY_BACKGROUNDS,
+            SearchImagesRequestInterface::CATEGORY_BUILDINGS,
+            SearchImagesRequestInterface::CATEGORY_BUSINESS,
+            SearchImagesRequestInterface::CATEGORY_COMPUTER,
+            SearchImagesRequestInterface::CATEGORY_EDUCATION,
+            SearchImagesRequestInterface::CATEGORY_FASHION,
+            SearchImagesRequestInterface::CATEGORY_FEELINGS,
+            SearchImagesRequestInterface::CATEGORY_FOOD,
+            SearchImagesRequestInterface::CATEGORY_HEALTH,
+            SearchImagesRequestInterface::CATEGORY_INDUSTRY,
+            SearchImagesRequestInterface::CATEGORY_MUSIC,
+            SearchImagesRequestInterface::CATEGORY_NATURE,
+            SearchImagesRequestInterface::CATEGORY_PEOPLE,
+            SearchImagesRequestInterface::CATEGORY_PLACES,
+            SearchImagesRequestInterface::CATEGORY_RELIGION,
+            SearchImagesRequestInterface::CATEGORY_SCIENCE,
+            SearchImagesRequestInterface::CATEGORY_SPORTS,
+            SearchImagesRequestInterface::CATEGORY_TRANSPORTATION,
+            SearchImagesRequestInterface::CATEGORY_TRAVEL,
+        ];
+
+        $this->assertEquals($res, SearchImagesRequest::enumCategory());
+    }
+
+    /**
+     * Tests the enumColor() method.
+     *
+     * @return void
+     */
+    public function testEnumColor() {
+
+        $res = [
+            SearchImagesRequestInterface::COLOR_BLACK,
+            SearchImagesRequestInterface::COLOR_BLUE,
+            SearchImagesRequestInterface::COLOR_BROWN,
+            SearchImagesRequestInterface::COLOR_GRAY,
+            SearchImagesRequestInterface::COLOR_GRAYSCALE,
+            SearchImagesRequestInterface::COLOR_GREEN,
+            SearchImagesRequestInterface::COLOR_LILAC,
+            SearchImagesRequestInterface::COLOR_ORANGE,
+            SearchImagesRequestInterface::COLOR_PINK,
+            SearchImagesRequestInterface::COLOR_RED,
+            SearchImagesRequestInterface::COLOR_TRANSPARENT,
+            SearchImagesRequestInterface::COLOR_TURQUOISE,
+            SearchImagesRequestInterface::COLOR_YELLOW,
+            SearchImagesRequestInterface::COLOR_WHITE,
+        ];
+
+        $this->assertEquals($res, SearchImagesRequest::enumColor());
+    }
+
+    /**
      * Tests the enumImageType() method.
      *
      * @return void
@@ -52,6 +114,22 @@ class SearchImagesRequestTest extends AbstractTestCase {
         ];
 
         $this->assertEquals($res, SearchImagesRequest::enumImageType());
+    }
+
+    /**
+     * Tests the enumOrientation() method.
+     *
+     * @return void.
+     */
+    public function testEnumOrientation() {
+
+        $res = [
+            SearchImagesRequestInterface::ORIENTATION_ALL,
+            SearchImagesRequestInterface::ORIENTATION_HORIZONTAL,
+            SearchImagesRequestInterface::ORIENTATION_VERTICAL,
+        ];
+
+        $this->assertEquals($res, SearchImagesRequest::enumOrientation());
     }
 
     /**
@@ -76,8 +154,27 @@ class SearchImagesRequestTest extends AbstractTestCase {
 
         $obj = new SearchImagesRequest();
 
-        $obj->setImageType("imageType");
-        $this->assertEquals("imageType", $obj->getImageType());
+        $obj->setImageType(SearchImagesRequest::IMAGE_TYPE_PHOTO);
+        $this->assertEquals(SearchImagesRequest::IMAGE_TYPE_PHOTO, $obj->getImageType());
+    }
+
+    /**
+     * Tests the setImageType() method.
+     *
+     * @return void
+     */
+    public function testSetImageTypeWithUnexpectedValueException() {
+
+        $obj = new SearchImagesRequest();
+
+        try {
+
+            $obj->setImageType("imageType");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The image type \"imageType\" is invalid", $ex->getMessage());
+        }
     }
 
     /**
@@ -89,7 +186,26 @@ class SearchImagesRequestTest extends AbstractTestCase {
 
         $obj = new SearchImagesRequest();
 
-        $obj->setOrientation("orientation");
-        $this->assertEquals("orientation", $obj->getOrientation());
+        $obj->setOrientation(SearchImagesRequest::ORIENTATION_ALL);
+        $this->assertEquals(SearchImagesRequest::ORIENTATION_ALL, $obj->getOrientation());
+    }
+
+    /**
+     * Tests the setOrientation() method.
+     *
+     * @return void
+     */
+    public function testSetOrientationWithUnexpectedValueException() {
+
+        $obj = new SearchImagesRequest();
+
+        try {
+
+            $obj->setOrientation("orientation");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The orientation \"orientation\" is invalid", $ex->getMessage());
+        }
     }
 }
