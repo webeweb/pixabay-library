@@ -32,7 +32,7 @@ class AbstractRequestTest extends AbstractTestCase {
         $obj = new TestRequest();
 
         $this->assertNull($obj->getCategory());
-        $this->assertNull($obj->getEditorChoice());
+        $this->assertNull($obj->getEditorsChoice());
         $this->assertNull($obj->getId());
         $this->assertNull($obj->getLang());
         $this->assertNull($obj->getMinHeight());
@@ -59,16 +59,16 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setEditorChoice() method.
+     * Tests the setEditorsChoice() method.
      *
      * @return void
      */
-    public function testSetEditorChoice() {
+    public function testSetEditorsChoice() {
 
         $obj = new TestRequest();
 
-        $obj->setEditorChoice(true);
-        $this->assertTrue($obj->getEditorChoice());
+        $obj->setEditorsChoice(true);
+        $this->assertTrue($obj->getEditorsChoice());
     }
 
     /**

@@ -32,11 +32,11 @@ abstract class AbstractRequest {
     private $category;
 
     /**
-     * Editor choice.
+     * Editor's choice.
      *
      * @var bool
      */
-    private $editorChoice;
+    private $editorsChoice;
 
     /**
      * Id.
@@ -125,12 +125,12 @@ abstract class AbstractRequest {
     }
 
     /**
-     * Get the editor choice.
+     * Get the editor's choice.
      *
-     * @return bool Returns the editor choice.
+     * @return bool Returns the editor's choice.
      */
-    public function getEditorChoice() {
-        return $this->editorChoice;
+    public function getEditorsChoice() {
+        return $this->editorsChoice;
     }
 
     /**
@@ -235,13 +235,13 @@ abstract class AbstractRequest {
     }
 
     /**
-     * Set the editor choice.
+     * Set the editor's choice.
      *
-     * @param bool $editorChoice The editor choice.
+     * @param bool $editorsChoice The editor's choice.
      * @return AbstractRequest Returns this request.
      */
-    public function setEditorChoice($editorChoice) {
-        $this->editorChoice = $editorChoice;
+    public function setEditorsChoice($editorsChoice) {
+        $this->editorsChoice = $editorsChoice;
         return $this;
     }
 
