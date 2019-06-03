@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pixabay\Tests\Model;
 
+use Exception;
+use UnexpectedValueException;
 use WBW\Library\Pixabay\API\RequestInterface;
 use WBW\Library\Pixabay\Model\AbstractRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -149,8 +151,27 @@ class AbstractRequestTest extends AbstractTestCase {
 
         $obj = new TestRequest();
 
-        $obj->setLang("lang");
-        $this->assertEquals("lang", $obj->getLang());
+        $obj->setLang("en");
+        $this->assertEquals("en", $obj->getLang());
+    }
+
+    /**
+     * Tests the setLang() method.
+     *
+     * @return void
+     */
+    public function testSetLangWithUnexpectedValueException() {
+
+        $obj = new TestRequest();
+
+        try {
+
+            $obj->setLang("lang");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The lang \"lang\" is invalid", $ex->getMessage());
+        }
     }
 
     /**
@@ -188,8 +209,27 @@ class AbstractRequestTest extends AbstractTestCase {
 
         $obj = new TestRequest();
 
-        $obj->setOrder("order");
-        $this->assertEquals("order", $obj->getOrder());
+        $obj->setOrder("latest");
+        $this->assertEquals("latest", $obj->getOrder());
+    }
+
+    /**
+     * Tests the setOrder() method.
+     *
+     * @return void
+     */
+    public function testSetOrderWithUnexpectedValueException() {
+
+        $obj = new TestRequest();
+
+        try {
+
+            $obj->setOrder("order");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The order \"order\" is invalid", $ex->getMessage());
+        }
     }
 
     /**

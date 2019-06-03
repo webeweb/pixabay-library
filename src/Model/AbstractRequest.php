@@ -15,6 +15,7 @@
 
 namespace WBW\Library\Pixabay\Model;
 
+use UnexpectedValueException;
 use WBW\Library\Pixabay\API\RequestInterface;
 
 /**
@@ -311,8 +312,12 @@ abstract class AbstractRequest implements RequestInterface {
      *
      * @param string $lang The lang.
      * @return AbstractRequest Returns this request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the lang is invalid.
      */
     public function setLang($lang) {
+        if (false === in_array($lang, static::enumLang())) {
+            throw new UnexpectedValueException(sprintf("The lang \"%s\" is invalid", $lang));
+        }
         $this->lang = $lang;
         return $this;
     }
@@ -344,8 +349,12 @@ abstract class AbstractRequest implements RequestInterface {
      *
      * @param string $order The order.
      * @return AbstractRequest Returns this request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the order is invalid.
      */
     public function setOrder($order) {
+        if (false === in_array($order, static::enumOrder())) {
+            throw new UnexpectedValueException(sprintf("The order \"%s\" is invalid", $order));
+        }
         $this->order = $order;
         return $this;
     }
