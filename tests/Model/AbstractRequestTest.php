@@ -87,6 +87,21 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the enumOrder() method.
+     *
+     * @return void
+     */
+    public function testEnumOrder() {
+
+        $res = [
+            RequestInterface::ORDER_LATEST,
+            RequestInterface::ORDER_POPULAR,
+        ];
+
+        $this->assertEquals($res, AbstractRequest::enumOrder());
+    }
+
+    /**
      * Tests the setCategory() method.
      *
      * @return void

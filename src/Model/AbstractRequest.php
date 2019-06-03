@@ -154,6 +154,18 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
+     * Enumerates the order.
+     *
+     * @return string[] Returns the order enumeration.
+     */
+    public static function enumOrder() {
+        return [
+            self::ORDER_LATEST,
+            self::ORDER_POPULAR,
+        ];
+    }
+
+    /**
      * Get the category.
      *
      * @return string Returns the category.
