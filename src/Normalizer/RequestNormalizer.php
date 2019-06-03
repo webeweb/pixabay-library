@@ -39,11 +39,11 @@ class RequestNormalizer {
         ArrayHelper::set($parameters, "lang", $request->getLang(), [null, "en"]);
         ArrayHelper::set($parameters, "id", $request->getId(), [null]);
         ArrayHelper::set($parameters, "category", $request->getCategory(), [null]);
-        ArrayHelper::set($parameters, "min_width", $request->getMinWidth(), [null]);
-        ArrayHelper::set($parameters, "min_height", $request->getMinHeight(), [null]);
+        ArrayHelper::set($parameters, "min_width", $request->getMinWidth(), [null, 0]);
+        ArrayHelper::set($parameters, "min_height", $request->getMinHeight(), [null, 0]);
         ArrayHelper::set($parameters, "editors_choice", StringHelper::parseBoolean($request->getEditorsChoice()), [null, "false"]);
         ArrayHelper::set($parameters, "safesearch", StringHelper::parseBoolean($request->getSafeSearch()), [null, "false"]);
-        ArrayHelper::set($parameters, "order", $request->getOrder(), [null, "popular"]);
+        ArrayHelper::set($parameters, "order", $request->getOrder(), [null, AbstractRequest::ORDER_POPULAR]);
         ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
         ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, 20]);
         ArrayHelper::set($parameters, "pretty", StringHelper::parseBoolean($request->getPretty()), [null, "false"]);
@@ -61,8 +61,8 @@ class RequestNormalizer {
 
         $parameters = static::normalizeRequest($searchImagesRequest);
 
-        ArrayHelper::set($parameters, "image_type", $searchImagesRequest->getImageType(), [null, "all"]);
-        ArrayHelper::set($parameters, "orientation", $searchImagesRequest->getOrientation(), [null, "all"]);
+        ArrayHelper::set($parameters, "image_type", $searchImagesRequest->getImageType(), [null, SearchImagesRequest::IMAGE_TYPE_ALL]);
+        ArrayHelper::set($parameters, "orientation", $searchImagesRequest->getOrientation(), [null, SearchImagesRequest::ORIENTATION_ALL]);
         ArrayHelper::set($parameters, "colors", $searchImagesRequest->getColors(), [null]);
 
         return $parameters;
@@ -78,7 +78,7 @@ class RequestNormalizer {
 
         $parameters = static::normalizeRequest($searchVideosRequest);
 
-        ArrayHelper::set($parameters, "video_type", $searchVideosRequest->getVideoType(), [null, "all"]);
+        ArrayHelper::set($parameters, "video_type", $searchVideosRequest->getVideoType(), [null, SearchVideosRequest::VIDEO_TYPE_ALL]);
 
         return $parameters;
     }

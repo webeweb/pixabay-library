@@ -39,7 +39,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $searchImagesRequest->setLang("fr");
         $searchImagesRequest->setMinHeight(720);
         $searchImagesRequest->setMinWidth(1280);
-        $searchImagesRequest->setOrder("latest");
+        $searchImagesRequest->setOrder(SearchImagesRequest::ORDER_LATEST);
         $searchImagesRequest->setPage(2);
         $searchImagesRequest->setPerPage(15);
         $searchImagesRequest->setPretty(true);
@@ -47,8 +47,8 @@ class RequestNormalizerTest extends AbstractTestCase {
         $searchImagesRequest->setSafeSearch(true);
 
         $searchImagesRequest->setColors("colors");
-        $searchImagesRequest->setImageType("imageType");
-        $searchImagesRequest->setOrientation("orientation");
+        $searchImagesRequest->setImageType(SearchImagesRequest::IMAGE_TYPE_PHOTO);
+        $searchImagesRequest->setOrientation(SearchImagesRequest::ORIENTATION_HORIZONTAL);
 
         $res = RequestNormalizer::normalizeSearchImagesRequest($searchImagesRequest);
         $this->assertArrayHasKey("category", $res);
@@ -74,7 +74,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $this->assertEquals("fr", $res["lang"]);
         $this->assertEquals(720, $res["min_height"]);
         $this->assertEquals(1280, $res["min_width"]);
-        $this->assertEquals("latest", $res["order"]);
+        $this->assertEquals(SearchImagesRequest::ORDER_LATEST, $res["order"]);
         $this->assertEquals(2, $res["page"]);
         $this->assertEquals(15, $res["per_page"]);
         $this->assertEquals("true", $res["pretty"]);
@@ -82,8 +82,8 @@ class RequestNormalizerTest extends AbstractTestCase {
         $this->assertEquals("true", $res["safesearch"]);
 
         $this->assertEquals("colors", $res["colors"]);
-        $this->assertEquals("imageType", $res["image_type"]);
-        $this->assertEquals("orientation", $res["orientation"]);
+        $this->assertEquals(SearchImagesRequest::IMAGE_TYPE_PHOTO, $res["image_type"]);
+        $this->assertEquals(SearchImagesRequest::ORIENTATION_HORIZONTAL, $res["orientation"]);
     }
 
     /**
@@ -101,14 +101,14 @@ class RequestNormalizerTest extends AbstractTestCase {
         $searchVideosRequest->setLang("fr");
         $searchVideosRequest->setMinHeight(720);
         $searchVideosRequest->setMinWidth(1280);
-        $searchVideosRequest->setOrder("latest");
+        $searchVideosRequest->setOrder(SearchVideosRequest::ORDER_LATEST);
         $searchVideosRequest->setPage(2);
         $searchVideosRequest->setPerPage(15);
         $searchVideosRequest->setPretty(true);
         $searchVideosRequest->setQ("github");
         $searchVideosRequest->setSafeSearch(true);
 
-        $searchVideosRequest->setVideoType("film");
+        $searchVideosRequest->setVideoType(SearchVideosRequest::VIDEO_TYPE_FILM);
 
         $res = RequestNormalizer::normalizeSearchVideosRequest($searchVideosRequest);
         $this->assertArrayHasKey("category", $res);
@@ -132,13 +132,13 @@ class RequestNormalizerTest extends AbstractTestCase {
         $this->assertEquals("fr", $res["lang"]);
         $this->assertEquals(720, $res["min_height"]);
         $this->assertEquals(1280, $res["min_width"]);
-        $this->assertEquals("latest", $res["order"]);
+        $this->assertEquals(SearchVideosRequest::ORDER_LATEST, $res["order"]);
         $this->assertEquals(2, $res["page"]);
         $this->assertEquals(15, $res["per_page"]);
         $this->assertEquals("true", $res["pretty"]);
         $this->assertEquals("github", $res["q"]);
         $this->assertEquals("true", $res["safesearch"]);
 
-        $this->assertEquals("film", $res["video_type"]);
+        $this->assertEquals(SearchVideosRequest::VIDEO_TYPE_FILM, $res["video_type"]);
     }
 }
