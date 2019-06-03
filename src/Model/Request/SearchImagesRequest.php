@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pixabay\Model\Request;
 
+use WBW\Library\Pixabay\API\SearchImagesRequestInterface;
 use WBW\Library\Pixabay\Model\AbstractRequest;
 
 /**
@@ -19,7 +20,7 @@ use WBW\Library\Pixabay\Model\AbstractRequest;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Model\Request
  */
-class SearchImagesRequest extends AbstractRequest {
+class SearchImagesRequest extends AbstractRequest implements SearchImagesRequestInterface {
 
     /**
      * Colors.
@@ -41,6 +42,20 @@ class SearchImagesRequest extends AbstractRequest {
      * @var string
      */
     private $orientation;
+
+    /**
+     * Enumerate image type.
+     *
+     * @return string[] Returns the image type enumeration.
+     */
+    public static function enumImageType() {
+        return [
+            self::IMAGE_TYPE_ALL,
+            self::IMAGE_TYPE_ILLUSTRATION,
+            self::IMAGE_TYPE_PHOTO,
+            self::IMAGE_TYPE_VECTOR,
+        ];
+    }
 
     /**
      * Get the colors.

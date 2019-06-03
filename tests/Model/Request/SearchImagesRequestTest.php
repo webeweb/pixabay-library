@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pixabay\Tests\Model\Request;
 
+use WBW\Library\Pixabay\API\SearchImagesRequestInterface;
 use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
@@ -34,6 +35,23 @@ class SearchImagesRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getColors());
         $this->assertNull($obj->getImageType());
         $this->assertNull($obj->getOrientation());
+    }
+
+    /**
+     * Tests the enumImageType() method.
+     *
+     * @return void
+     */
+    public function testEnumImageType() {
+
+        $res = [
+            SearchImagesRequestInterface::IMAGE_TYPE_ALL,
+            SearchImagesRequestInterface::IMAGE_TYPE_ILLUSTRATION,
+            SearchImagesRequestInterface::IMAGE_TYPE_PHOTO,
+            SearchImagesRequestInterface::IMAGE_TYPE_VECTOR,
+        ];
+
+        $this->assertEquals($res, SearchImagesRequest::enumImageType());
     }
 
     /**
