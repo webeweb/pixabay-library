@@ -11,6 +11,9 @@
 
 namespace WBW\Library\Pixabay\Tests\Model\Request;
 
+use Exception;
+use UnexpectedValueException;
+use WBW\Library\Pixabay\API\SearchVideosRequestInterface;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
@@ -35,6 +38,22 @@ class SearchVideosRequestTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the enumVideoType() method.
+     *
+     * @return void
+     */
+    public function testEnumVideoType() {
+
+        $res = [
+            SearchVideosRequestInterface::VIDEO_TYPE_ALL,
+            SearchVideosRequestInterface::VIDEO_TYPE_ANIMATION,
+            SearchVideosRequestInterface::VIDEO_TYPE_FILM,
+        ];
+
+        $this->assertEquals($res, SearchVideosRequest::enumVideoType());
+    }
+
+    /**
      * Tests the setVideoType() method.
      *
      * @return void
@@ -43,7 +62,26 @@ class SearchVideosRequestTest extends AbstractTestCase {
 
         $obj = new SearchVideosRequest();
 
-        $obj->setVideoType("videoType");
-        $this->assertEquals("videoType", $obj->getVideoType());
+        $obj->setVideoType("all");
+        $this->assertEquals("all", $obj->getVideoType());
+    }
+
+    /**
+     * Tests the setVideoType() method.
+     *
+     * @return void
+     */
+    public function testSetVideoTypeWithUnexpectedValueException() {
+
+        $obj = new SearchVideosRequest();
+
+        try {
+
+            $obj->setVideoType("videoType");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The video type \"videoType\" is invalid", $ex->getMessage());
+        }
     }
 }

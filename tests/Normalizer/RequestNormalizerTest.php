@@ -108,7 +108,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $searchVideosRequest->setQ("github");
         $searchVideosRequest->setSafeSearch(true);
 
-        $searchVideosRequest->setVideoType("videoType");
+        $searchVideosRequest->setVideoType("film");
 
         $res = RequestNormalizer::normalizeSearchVideosRequest($searchVideosRequest);
         $this->assertArrayHasKey("category", $res);
@@ -139,6 +139,6 @@ class RequestNormalizerTest extends AbstractTestCase {
         $this->assertEquals("github", $res["q"]);
         $this->assertEquals("true", $res["safesearch"]);
 
-        $this->assertEquals("videoType", $res["video_type"]);
+        $this->assertEquals("film", $res["video_type"]);
     }
 }
