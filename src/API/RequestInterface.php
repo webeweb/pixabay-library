@@ -214,4 +214,25 @@ interface RequestInterface {
      * @var string
      */
     const ORDER_POPULAR = "popular";
+
+    /**
+     * Per page "default".
+     *
+     * @var int
+     */
+    const PER_PAGE_DEFAULT = 20;
+
+    /**
+     * Per page "max".
+     *
+     * @var int
+     */
+    const PER_PAGE_MAX = 200;
+
+    /**
+     * Per page "min".
+     *
+     * @var int
+     */
+    const PER_PAGE_MIN = 3;
 }

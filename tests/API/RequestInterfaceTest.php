@@ -58,6 +58,10 @@ class RequestInterfaceTest extends AbstractTestCase {
 
         $this->assertEquals("latest", RequestInterface::ORDER_LATEST);
         $this->assertEquals("popular", RequestInterface::ORDER_POPULAR);
+
+        $this->assertEquals(20, RequestInterface::PER_PAGE_DEFAULT);
+        $this->assertEquals(200, RequestInterface::PER_PAGE_MAX);
+        $this->assertEquals(3, RequestInterface::PER_PAGE_MIN);
     }
 
 }
