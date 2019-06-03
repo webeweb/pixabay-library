@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pixabay\Tests\Model;
 
+use WBW\Library\Pixabay\API\RequestInterface;
+use WBW\Library\Pixabay\Model\AbstractRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Model\TestRequest;
 
@@ -43,6 +45,45 @@ class AbstractRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getPretty());
         $this->assertNull($obj->getQ());
         $this->assertNull($obj->getSafeSearch());
+    }
+
+    /**
+     * Tests the enumLang() method.
+     *
+     * @return void
+     */
+    public function testEnumLang() {
+
+        $res = [
+            RequestInterface::LANG_BG,
+            RequestInterface::LANG_CS,
+            RequestInterface::LANG_DA,
+            RequestInterface::LANG_DE,
+            RequestInterface::LANG_EL,
+            RequestInterface::LANG_EN,
+            RequestInterface::LANG_ES,
+            RequestInterface::LANG_FI,
+            RequestInterface::LANG_FR,
+            RequestInterface::LANG_HU,
+            RequestInterface::LANG_ID,
+            RequestInterface::LANG_IT,
+            RequestInterface::LANG_JA,
+            RequestInterface::LANG_KO,
+            RequestInterface::LANG_NL,
+            RequestInterface::LANG_NO,
+            RequestInterface::LANG_PL,
+            RequestInterface::LANG_PT,
+            RequestInterface::LANG_RO,
+            RequestInterface::LANG_RU,
+            RequestInterface::LANG_SK,
+            RequestInterface::LANG_SV,
+            RequestInterface::LANG_TH,
+            RequestInterface::LANG_TR,
+            RequestInterface::LANG_VI,
+            RequestInterface::LANG_ZH,
+        ];
+
+        $this->assertEquals($res, AbstractRequest::enumLang());
     }
 
     /**

@@ -15,6 +15,8 @@
 
 namespace WBW\Library\Pixabay\Model;
 
+use WBW\Library\Pixabay\API\RequestInterface;
+
 /**
  * Abstract request.
  *
@@ -22,7 +24,7 @@ namespace WBW\Library\Pixabay\Model;
  * @package WBW\Library\Pixabay\Model
  * @abstract
  */
-abstract class AbstractRequest {
+abstract class AbstractRequest implements RequestInterface {
 
     /**
      * Category.
@@ -113,6 +115,42 @@ abstract class AbstractRequest {
      */
     public function __construct() {
         // NOTHING TO DO.
+    }
+
+    /**
+     * Enumerates the lang.
+     *
+     * @return string[] Returns the lang enumeration.
+     */
+    public static function enumLang() {
+        return [
+            self::LANG_BG,
+            self::LANG_CS,
+            self::LANG_DA,
+            self::LANG_DE,
+            self::LANG_EL,
+            self::LANG_EN,
+            self::LANG_ES,
+            self::LANG_FI,
+            self::LANG_FR,
+            self::LANG_HU,
+            self::LANG_ID,
+            self::LANG_IT,
+            self::LANG_JA,
+            self::LANG_KO,
+            self::LANG_NL,
+            self::LANG_NO,
+            self::LANG_PL,
+            self::LANG_PT,
+            self::LANG_RO,
+            self::LANG_RU,
+            self::LANG_SK,
+            self::LANG_SV,
+            self::LANG_TH,
+            self::LANG_TR,
+            self::LANG_VI,
+            self::LANG_ZH,
+        ];
     }
 
     /**
