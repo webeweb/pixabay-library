@@ -200,4 +200,18 @@ interface RequestInterface {
      * @var string
      */
     const LANG_ZH = "zh";
+
+    /**
+     * Order "latest".
+     *
+     * @var string
+     */
+    const ORDER_LATEST = "latest";
+
+    /**
+     * Order "popular".
+     *
+     * @var string
+     */
+    const ORDER_POPULAR = "popular";
 }

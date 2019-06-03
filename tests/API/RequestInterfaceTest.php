@@ -55,6 +55,9 @@ class RequestInterfaceTest extends AbstractTestCase {
         $this->assertEquals("tr", RequestInterface::LANG_TR);
         $this->assertEquals("vi", RequestInterface::LANG_VI);
         $this->assertEquals("zh", RequestInterface::LANG_ZH);
+
+        $this->assertEquals("latest", RequestInterface::ORDER_LATEST);
+        $this->assertEquals("popular", RequestInterface::ORDER_POPULAR);
     }
 
 }
