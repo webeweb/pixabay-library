@@ -364,8 +364,12 @@ abstract class AbstractRequest implements RequestInterface {
      *
      * @param int $page The page.
      * @return AbstractRequest Returns this request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the page is less or equal than zero.
      */
     public function setPage($page) {
+        if ($page <= 0) {
+            throw new UnexpectedValueException("The page must be greater than 0");
+        }
         $this->page = $page;
         return $this;
     }
@@ -375,8 +379,12 @@ abstract class AbstractRequest implements RequestInterface {
      *
      * @param int $perPage The per page.
      * @return AbstractRequest Returns this request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the per page is invalid.
      */
     public function setPerPage($perPage) {
+        if ($perPage < self::PER_PAGE_MIN || self::PER_PAGE_MAX < $perPage) {
+            throw new UnexpectedValueException(sprintf("The per page must be between %d and %d", self::PER_PAGE_MIN, self::PER_PAGE_MAX));
+        }
         $this->perPage = $perPage;
         return $this;
     }

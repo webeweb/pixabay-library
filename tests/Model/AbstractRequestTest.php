@@ -151,8 +151,8 @@ class AbstractRequestTest extends AbstractTestCase {
 
         $obj = new TestRequest();
 
-        $obj->setLang("en");
-        $this->assertEquals("en", $obj->getLang());
+        $obj->setLang(TestRequest::LANG_EN);
+        $this->assertEquals(TestRequest::LANG_EN, $obj->getLang());
     }
 
     /**
@@ -209,8 +209,8 @@ class AbstractRequestTest extends AbstractTestCase {
 
         $obj = new TestRequest();
 
-        $obj->setOrder("latest");
-        $this->assertEquals("latest", $obj->getOrder());
+        $obj->setOrder(TestRequest::ORDER_POPULAR);
+        $this->assertEquals(TestRequest::ORDER_POPULAR, $obj->getOrder());
     }
 
     /**
@@ -246,6 +246,25 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the setPage() method.
+     *
+     * @return void
+     */
+    public function testSetPageWithUnexpectedValueException() {
+
+        $obj = new TestRequest();
+
+        try {
+
+            $obj->setPage(0);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The page must be greater than 0", $ex->getMessage());
+        }
+    }
+
+    /**
      * Tests the setPerPage() method.
      *
      * @return void
@@ -256,6 +275,34 @@ class AbstractRequestTest extends AbstractTestCase {
 
         $obj->setPerPage(20);
         $this->assertEquals(20, $obj->getPerPage());
+    }
+
+    /**
+     * Tests the setPerPage() method.
+     *
+     * @return void
+     */
+    public function testSetPerPageWithUnexpectedValueException() {
+
+        $obj = new TestRequest();
+
+        try {
+
+            $obj->setPerPage(2);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The per page must be between 3 and 200", $ex->getMessage());
+        }
+
+        try {
+
+            $obj->setPerPage(201);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The per page must be between 3 and 200", $ex->getMessage());
+        }
     }
 
     /**
