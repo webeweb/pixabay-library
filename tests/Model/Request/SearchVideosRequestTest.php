@@ -62,8 +62,8 @@ class SearchVideosRequestTest extends AbstractTestCase {
 
         $obj = new SearchVideosRequest();
 
-        $obj->setVideoType("all");
-        $this->assertEquals("all", $obj->getVideoType());
+        $obj->setVideoType(SearchVideosRequest::VIDEO_TYPE_ALL);
+        $this->assertEquals(SearchVideosRequest::VIDEO_TYPE_ALL, $obj->getVideoType());
     }
 
     /**
