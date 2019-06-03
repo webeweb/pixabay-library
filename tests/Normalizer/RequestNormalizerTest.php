@@ -48,6 +48,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $searchImagesRequest->setColors("colors");
         $searchImagesRequest->setImageType("imageType");
+        $searchImagesRequest->setOrientation("orientation");
 
         $res = RequestNormalizer::normalizeSearchImagesRequest($searchImagesRequest);
         $this->assertArrayHasKey("category", $res);
@@ -65,6 +66,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $this->assertArrayHasKey("colors", $res);
         $this->assertArrayHasKey("image_type", $res);
+        $this->assertArrayHasKey("orientation", $res);
 
         $this->assertEquals("category", $res["category"]);
         $this->assertEquals("true", $res["editors_choice"]);
@@ -81,6 +83,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $this->assertEquals("colors", $res["colors"]);
         $this->assertEquals("imageType", $res["image_type"]);
+        $this->assertEquals("orientation", $res["orientation"]);
     }
 
     /**

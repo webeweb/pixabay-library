@@ -33,6 +33,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
 
         $this->assertNull($obj->getColors());
         $this->assertNull($obj->getImageType());
+        $this->assertNull($obj->getOrientation());
     }
 
     /**
@@ -59,5 +60,18 @@ class SearchImagesRequestTest extends AbstractTestCase {
 
         $obj->setImageType("imageType");
         $this->assertEquals("imageType", $obj->getImageType());
+    }
+
+    /**
+     * Tests the setOrientation() method.
+     *
+     * @return void
+     */
+    public function testSetOrientation() {
+
+        $obj = new SearchImagesRequest();
+
+        $obj->setOrientation("orientation");
+        $this->assertEquals("orientation", $obj->getOrientation());
     }
 }

@@ -36,6 +36,13 @@ class SearchImagesRequest extends AbstractRequest {
     private $imageType;
 
     /**
+     * Orientation.
+     *
+     * @var string
+     */
+    private $orientation;
+
+    /**
      * Get the colors.
      *
      * @return string Returns the colors.
@@ -51,6 +58,15 @@ class SearchImagesRequest extends AbstractRequest {
      */
     public function getImageType() {
         return $this->imageType;
+    }
+
+    /**
+     * Get the orientation.
+     *
+     * @return string Returns the orientation.
+     */
+    public function getOrientation() {
+        return $this->orientation;
     }
 
     /**
@@ -72,6 +88,17 @@ class SearchImagesRequest extends AbstractRequest {
      */
     public function setImageType($imageType) {
         $this->imageType = $imageType;
+        return $this;
+    }
+
+    /**
+     * Set the orientation.
+     *
+     * @param string $orientation The orientation.
+     * @return SearchImagesRequest Returns this search images request.
+     */
+    public function setOrientation($orientation) {
+        $this->orientation = $orientation;
         return $this;
     }
 }

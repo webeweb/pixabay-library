@@ -62,6 +62,7 @@ class RequestNormalizer {
         $parameters = static::normalizeRequest($searchImagesRequest);
 
         ArrayHelper::set($parameters, "image_type", $searchImagesRequest->getImageType(), [null, "all"]);
+        ArrayHelper::set($parameters, "orientation", $searchImagesRequest->getOrientation(), [null, "all"]);
         ArrayHelper::set($parameters, "colors", $searchImagesRequest->getColors(), [null]);
 
         return $parameters;
