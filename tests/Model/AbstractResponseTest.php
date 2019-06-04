@@ -50,8 +50,25 @@ class AbstractResponseTest extends AbstractTestCase {
         $obj = new TestResponse();
 
         $this->assertCount(0, $obj->getHits());
+        $this->assertNull($obj->getLimit());
+        $this->assertNull($obj->getRawResponse());
+        $this->assertNull($obj->getRemaining());
+        $this->assertNull($obj->getReset());
         $this->assertNull($obj->getTotal());
         $this->assertNull($obj->getTotalHits());
+    }
+
+    /**
+     * Tests the setRawResponse() method.
+     *
+     * @return void
+     */
+    public function testSetRawResponse() {
+
+        $obj = new TestResponse();
+
+        $obj->setRawResponse("rawResponse");
+        $this->assertEquals("rawResponse", $obj->getRawResponse());
     }
 
     /**

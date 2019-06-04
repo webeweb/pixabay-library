@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pixabay\Model;
 
+use WBW\Library\Pixabay\Traits\RateLimitTrait;
+
 /**
  * Abstract response.
  *
@@ -20,12 +22,21 @@ namespace WBW\Library\Pixabay\Model;
  */
 abstract class AbstractResponse {
 
+    use RateLimitTrait;
+
     /**
      * Hits.
      *
      * @var AbstractHit[]
      */
     private $hits;
+
+    /**
+     * Raw response.
+     *
+     * @var string
+     */
+    private $rawResponse;
 
     /**
      * Total.
@@ -69,6 +80,15 @@ abstract class AbstractResponse {
     }
 
     /**
+     * Get the raw response.
+     *
+     * @return string Returns the raw response.
+     */
+    public function getRawResponse() {
+        return $this->rawResponse;
+    }
+
+    /**
      * Get the total.
      *
      * @return int Returns the total.
@@ -94,6 +114,17 @@ abstract class AbstractResponse {
      */
     protected function setHits(array $hits) {
         $this->hits = $hits;
+        return $this;
+    }
+
+    /**
+     * Set the raw response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return AbstractResponse Returns this response.
+     */
+    public function setRawResponse($rawResponse) {
+        $this->rawResponse = $rawResponse;
         return $this;
     }
 
