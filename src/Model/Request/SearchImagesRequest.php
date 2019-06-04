@@ -24,9 +24,16 @@ use WBW\Library\Pixabay\Model\AbstractRequest;
 class SearchImagesRequest extends AbstractRequest implements SearchImagesRequestInterface {
 
     /**
-     * Colors.
+     * Search images resource path.
      *
      * @var string
+     */
+    const SEARCH_IMAGES_RESOURCE_PATH = "/";
+
+    /**
+     * Colors.
+     *
+     * @var string[]
      */
     private $colors;
 
@@ -43,6 +50,30 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      * @var string
      */
     private $orientation;
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->setColors([]);
+        $this->setImageType(self::IMAGE_TYPE_ALL);
+        $this->setOrientation(self::ORIENTATION_ALL);
+    }
+
+    /**
+     * Add a color.
+     *
+     * @param string $color The color.
+     * @return SearchImagesRequest Returns this search images request.
+     */
+    public function addColor($color) {
+        if (false === in_array($color, static::enumColor())) {
+            throw new UnexpectedValueException(sprintf("The color \"%s\" is invalid", $color));
+        }
+        $this->colors[] = $color;
+        return $this;
+    }
 
     /**
      * Enumerate category.
@@ -128,7 +159,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
     /**
      * Get the colors.
      *
-     * @return string Returns the colors.
+     * @return string[] Returns the colors.
      */
     public function getColors() {
         return $this->colors;
@@ -153,12 +184,33 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
     }
 
     /**
-     * Set the colors.
+     * {@inheritDoc}
+     */
+    public function getResourcePath() {
+        return self::SEARCH_IMAGES_RESOURCE_PATH;
+    }
+
+    /**
+     * Remove a color.
      *
-     * @param string $colors The colors.
+     * @param string $color The color.
      * @return SearchImagesRequest Returns this search images request.
      */
-    public function setColors($colors) {
+    public function removeColor($color) {
+        $pos = array_search($color, $this->colors);
+        if (false !== $pos) {
+            unset($this->colors[$pos]);
+        }
+        return $this;
+    }
+
+    /**
+     * Set the colors.
+     *
+     * @param string[] $colors The colors.
+     * @return SearchImagesRequest Returns this search images request.
+     */
+    protected function setColors(array $colors) {
         $this->colors = $colors;
         return $this;
     }

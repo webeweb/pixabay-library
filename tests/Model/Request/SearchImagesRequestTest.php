@@ -26,17 +26,53 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class SearchImagesRequestTest extends AbstractTestCase {
 
     /**
+     * Tests the addColor() method.
+     *
+     * @return void
+     */
+    public function testAddColor() {
+
+        $obj = new SearchImagesRequest();
+
+        $obj->addColor(SearchImagesRequest::COLOR_BLACK);
+        $this->assertCount(1, $obj->getColors());
+        $this->assertEquals(SearchImagesRequest::COLOR_BLACK, $obj->getColors()[0]);
+    }
+
+    /**
+     * Tests the addColor() method.
+     *
+     * @return void
+     */
+    public function testAddColorWithUnexpectedValueException() {
+
+        $obj = new SearchImagesRequest();
+
+        try {
+
+            $obj->addColor("color");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The color \"color\" is invalid", $ex->getMessage());
+        }
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
      */
     public function testConstruct() {
 
+        $this->assertEquals("/", SearchImagesRequest::SEARCH_IMAGES_RESOURCE_PATH);
+
         $obj = new SearchImagesRequest();
 
-        $this->assertNull($obj->getColors());
-        $this->assertNull($obj->getImageType());
-        $this->assertNull($obj->getOrientation());
+        $this->assertCount(0, $obj->getColors());
+        $this->assertEquals(SearchImagesRequest::IMAGE_TYPE_ALL, $obj->getImageType());
+        $this->assertEquals(SearchImagesRequest::ORIENTATION_ALL, $obj->getOrientation());
+        $this->assertEquals(SearchImagesRequest::SEARCH_IMAGES_RESOURCE_PATH, $obj->getResourcePath());
     }
 
     /**
@@ -133,16 +169,17 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setColors() method.
+     * Tests the removeColor() method.
      *
      * @return void
      */
-    public function testSetColors() {
+    public function testRemoveColor() {
 
         $obj = new SearchImagesRequest();
 
-        $obj->setColors("colors");
-        $this->assertEquals("colors", $obj->getColors());
+        $obj->addColor(SearchImagesRequest::COLOR_BLACK);
+        $obj->removeColor(SearchImagesRequest::COLOR_BLACK);
+        $this->assertCount(0, $obj->getColors());
     }
 
     /**
