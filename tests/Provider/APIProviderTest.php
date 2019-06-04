@@ -12,6 +12,7 @@
 namespace WBW\Library\Pixabay\Tests\Provider;
 
 use Exception;
+use InvalidArgumentException;
 use WBW\Library\Pixabay\Exception\APIException;
 use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
@@ -73,6 +74,7 @@ class APIProviderTest extends AbstractTestCase {
 
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
+        $searchImagesRequest->setQ("github");
 
         $obj = new APIProvider();
         $obj->setKey($this->key);
@@ -90,6 +92,28 @@ class APIProviderTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the searchImages() method.
+     *
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testSearchImagesWithInvalidArgumentException() {
+
+        // Set a Search images request mock.
+        $searchImagesRequest = new SearchImagesRequest();
+
+        $obj = new APIProvider();
+
+        try {
+
+            $obj->searchImages($searchImagesRequest);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The mandatory parameter \"key\" is missing", $ex->getMessage());
+        }
+    }
+
+    /**
      * Tests the searchVideos() method.
      *
      * @throws Exception Throws an exception if an error occurs.
@@ -98,6 +122,7 @@ class APIProviderTest extends AbstractTestCase {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
+        $searchVideosRequest->setQ("github");
 
         $obj = new APIProvider();
         $obj->setKey($this->key);
