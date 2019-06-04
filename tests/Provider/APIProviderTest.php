@@ -42,7 +42,7 @@ class APIProviderTest extends AbstractTestCase {
     protected function setUp() {
         parent::setUp();
 
-        // Set an Authorization mock.
+        // Set a key mock.
         $this->key = "YOUR_API_KEY";
     }
 
