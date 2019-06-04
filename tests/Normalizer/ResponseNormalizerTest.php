@@ -12,8 +12,11 @@
 namespace WBW\Library\Pixabay\Tests\Normalizer;
 
 use WBW\Library\Pixabay\Model\ImageHit;
+use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
+use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
+use WBW\Library\Pixabay\Normalizer\ResponseNormalizer;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Normalizer\TestResponseNormalizer;
 use WBW\Library\Pixabay\Tests\Fixtures\TestFixtures;
@@ -62,6 +65,72 @@ class ResponseNormalizerTest extends AbstractTestCase {
         $this->assertEquals("Josch13", $res->getUser());
         $this->assertEquals(48777, $res->getUserId());
         $this->assertEquals("https://cdn.pixabay.com/user/2013/11/05/02-10-23-764_250x250.jpg", $res->getUserImageURL());
+    }
+
+    /**
+     * Tests the denormalizeSearchImagesResponse() method.
+     *
+     * @return void
+     */
+    public function testDenormalizeSeachImagesResponse() {
+
+        $obj = ResponseNormalizer::denormalizeSearchImagesResponse(TestFixtures::SAMPLE_SEARCH_IMAGES_RESPONSE);
+        $this->assertInstanceOf(SearchImagesResponse::class, $obj);
+
+        $this->assertEquals(TestFixtures::SAMPLE_SEARCH_IMAGES_RESPONSE, $obj->getRawResponse());
+        $this->assertEquals(4692, $obj->getTotal());
+        $this->assertEquals(500, $obj->getTotalHits());
+
+        $this->assertCount(1, $obj->getImageHits());
+    }
+
+    /**
+     * Tests the denormalizeSearchImagesResponse() method.
+     *
+     * @return void
+     */
+    public function testDenormalizeSeachImagesResponseWithBadRawResponse() {
+
+        $obj = ResponseNormalizer::denormalizeSearchImagesResponse("");
+        $this->assertInstanceOf(SearchImagesResponse::class, $obj);
+
+        $this->assertNull($obj->getTotal());
+        $this->assertNull($obj->getTotalHits());
+
+        $this->assertCount(0, $obj->getImageHits());
+    }
+
+    /**
+     * Tests the denormalizeSearchVideosResponse() method.
+     *
+     * @return void
+     */
+    public function testDenormalizeSeachVideosResponse() {
+
+        $obj = ResponseNormalizer::denormalizeSearchVideosResponse(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE);
+        $this->assertInstanceOf(SearchVideosResponse::class, $obj);
+
+        $this->assertEquals(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE, $obj->getRawResponse());
+        $this->assertEquals(42, $obj->getTotal());
+        $this->assertEquals(42, $obj->getTotalHits());
+
+        $this->assertCount(1, $obj->getVideoHits());
+    }
+
+    /**
+     * Tests the denormalizeSearchVideosResponse() method.
+     *
+     * @return void
+     */
+    public function testDenormalizeSeachVideosResponseWithBadRawResponse() {
+
+        $obj = ResponseNormalizer::denormalizeSearchVideosResponse("");
+        $this->assertInstanceOf(SearchVideosResponse::class, $obj);
+
+        $this->assertNull($obj->getTotal());
+        $this->assertNull($obj->getTotalHits());
+
+        $this->assertCount(0, $obj->getVideoHits());
     }
 
     /**

@@ -13,7 +13,10 @@ namespace WBW\Library\Pixabay\Normalizer;
 
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Pixabay\Model\AbstractHit;
+use WBW\Library\Pixabay\Model\AbstractResponse;
 use WBW\Library\Pixabay\Model\ImageHit;
+use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
+use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
 
@@ -72,6 +75,71 @@ class ResponseNormalizer {
         $model->setWebFormatHeight(intval(ArrayHelper::get($response, "webformatHeight", -1)));
         $model->setWebFormatURL(ArrayHelper::get($response, "webformatURL"));
         $model->setWebFormatWidth(intval(ArrayHelper::get($response, "webformatWidth", -1)));
+
+        return $model;
+    }
+
+    /**
+     * Denormalize a response.
+     *
+     * @param AbstractResponse $model The response.
+     * @param array $response The response.
+     * @return void
+     */
+    protected static function denormalizeResponse(AbstractResponse $model, array $response) {
+
+        $model->setTotal(intval(ArrayHelper::get($response, "total", -1)));
+        $model->setTotalHits(intval(ArrayHelper::get($response, "totalHits", -1)));
+    }
+
+    /**
+     * Denormalize a search images response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return SearchImagesResponse Returns the search images response.
+     */
+    public static function denormalizeSearchImagesResponse($rawResponse) {
+
+        $decodedResponse = json_decode(trim($rawResponse), true);
+
+        $model = new SearchImagesResponse();
+        $model->setRawResponse($rawResponse);
+
+        if (null === $decodedResponse) {
+            return $model;
+        }
+
+        static::denormalizeResponse($model, $decodedResponse);
+
+        foreach (ArrayHelper::get($decodedResponse, "hits", []) as $current) {
+            $model->addImageHit(static::denormalizeImageHit($current));
+        }
+
+        return $model;
+    }
+
+    /**
+     * Denormalize a search videos response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return SearchVideosResponse Returns the search videos response.
+     */
+    public static function denormalizeSearchVideosResponse($rawResponse) {
+
+        $decodedResponse = json_decode(trim($rawResponse), true);
+
+        $model = new SearchVideosResponse();
+        $model->setRawResponse($rawResponse);
+
+        if (null === $decodedResponse) {
+            return $model;
+        }
+
+        static::denormalizeResponse($model, $decodedResponse);
+
+        foreach (ArrayHelper::get($decodedResponse, "hits", []) as $current) {
+            $model->addVideoHit(static::denormalizeVideoHit($current));
+        }
 
         return $model;
     }
