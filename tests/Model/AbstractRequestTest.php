@@ -36,17 +36,17 @@ class AbstractRequestTest extends AbstractTestCase {
         $obj = new TestRequest();
 
         $this->assertNull($obj->getCategory());
-        $this->assertNull($obj->getEditorsChoice());
+        $this->assertFalse($obj->getEditorsChoice());
         $this->assertNull($obj->getId());
-        $this->assertNull($obj->getLang());
-        $this->assertNull($obj->getMinHeight());
-        $this->assertNull($obj->getMinWidth());
-        $this->assertNull($obj->getOrder());
-        $this->assertNull($obj->getPage());
-        $this->assertNull($obj->getPerPage());
-        $this->assertNull($obj->getPretty());
+        $this->assertEquals(AbstractRequest::LANG_EN, $obj->getLang());
+        $this->assertEquals(0, $obj->getMinHeight());
+        $this->assertEquals(0, $obj->getMinWidth());
+        $this->assertEquals(AbstractRequest::ORDER_POPULAR, $obj->getOrder());
+        $this->assertEquals(1, $obj->getPage());
+        $this->assertEquals(AbstractRequest::PER_PAGE_DEFAULT, $obj->getPerPage());
+        $this->assertFalse($obj->getPretty());
         $this->assertNull($obj->getQ());
-        $this->assertNull($obj->getSafeSearch());
+        $this->assertFalse($obj->getSafeSearch());
     }
 
     /**

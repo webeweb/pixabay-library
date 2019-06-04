@@ -21,4 +21,10 @@ use WBW\Library\Pixabay\Model\AbstractRequest;
  */
 class TestRequest extends AbstractRequest {
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getResourcePath() {
+        return null;
+    }
 }

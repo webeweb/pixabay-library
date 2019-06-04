@@ -115,7 +115,15 @@ abstract class AbstractRequest implements RequestInterface {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        $this->setEditorsChoice(false);
+        $this->setLang(self::LANG_EN);
+        $this->setMinHeight(0);
+        $this->setMinWidth(0);
+        $this->setOrder(self::ORDER_POPULAR);
+        $this->setPage(1);
+        $this->setPerPage(self::PER_PAGE_DEFAULT);
+        $this->setPretty(false);
+        $this->setSafeSearch(false);
     }
 
     /**
@@ -264,6 +272,13 @@ abstract class AbstractRequest implements RequestInterface {
     public function getQ() {
         return $this->q;
     }
+
+    /**
+     * Get the resource path.
+     *
+     * @return string Returns the resource path.
+     */
+    abstract public function getResourcePath();
 
     /**
      * Get the safe search.
