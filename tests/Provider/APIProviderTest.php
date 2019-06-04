@@ -74,7 +74,6 @@ class APIProviderTest extends AbstractTestCase {
 
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
-        $searchImagesRequest->setQ("github");
 
         $obj = new APIProvider();
         $obj->setKey($this->key);
@@ -87,7 +86,6 @@ class APIProviderTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(APIException::class, $ex);
-            $this->assertEquals(400, $ex->getPrevious()->getCode());
         }
     }
 
@@ -100,7 +98,6 @@ class APIProviderTest extends AbstractTestCase {
 
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
-        $searchImagesRequest->setQ("github");
 
         $obj = new APIProvider();
 
@@ -123,7 +120,6 @@ class APIProviderTest extends AbstractTestCase {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
-        $searchVideosRequest->setQ("github");
 
         $obj = new APIProvider();
         $obj->setKey($this->key);
@@ -136,7 +132,6 @@ class APIProviderTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(APIException::class, $ex);
-            $this->assertEquals(400, $ex->getPrevious()->getCode());
         }
     }
 }

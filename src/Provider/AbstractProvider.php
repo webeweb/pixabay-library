@@ -96,9 +96,6 @@ abstract class AbstractProvider {
             $this->setReset(new DateTime("@" . $response->getHeaderLine("X-Ratelimit-Reset")));
 
             return $response->getBody()->getContents();
-        } catch (InvalidArgumentException $ex) {
-
-            throw $ex;
         } catch (Exception $ex) {
 
             throw new APIException("Call Pixabay API failed", $ex);
