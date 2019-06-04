@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pixabay\Normalizer;
 
+use InvalidArgumentException;
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Core\Argument\StringHelper;
 use WBW\Library\Pixabay\Model\AbstractRequest;
@@ -30,12 +31,17 @@ class RequestNormalizer {
      *
      * @param AbstractRequest $request The request.
      * @return array Returns the parameters.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     protected static function normalizeRequest(AbstractRequest $request) {
 
         $parameters = [];
 
-        ArrayHelper::set($parameters, "q", $request->getQ(), [null]);
+        if (null === $request->getQ()) {
+            throw new InvalidArgumentException("The mandatory parameter \"q\" is missing");
+        }
+
+        ArrayHelper::set($parameters, "q", $request->getQ());
         ArrayHelper::set($parameters, "lang", $request->getLang(), [null, AbstractRequest::LANG_EN]);
         ArrayHelper::set($parameters, "id", $request->getId(), [null]);
         ArrayHelper::set($parameters, "category", $request->getCategory(), [null]);
@@ -56,6 +62,7 @@ class RequestNormalizer {
      *
      * @param SearchImagesRequest $searchImagesRequest The search images request.
      * @return array Returns the parameters.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public static function normalizeSearchImagesRequest(SearchImagesRequest $searchImagesRequest) {
 
@@ -73,6 +80,7 @@ class RequestNormalizer {
      *
      * @param SearchVideosRequest $searchVideosRequest The search videos request.
      * @return array Returns the parameters.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public static function normalizeSearchVideosRequest(SearchVideosRequest $searchVideosRequest) {
 

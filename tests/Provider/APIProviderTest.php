@@ -100,6 +100,7 @@ class APIProviderTest extends AbstractTestCase {
 
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
+        $searchImagesRequest->setQ("github");
 
         $obj = new APIProvider();
 
