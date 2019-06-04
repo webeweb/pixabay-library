@@ -24,11 +24,26 @@ use WBW\Library\Pixabay\Model\AbstractRequest;
 class SearchVideosRequest extends AbstractRequest implements SearchVideosRequestInterface {
 
     /**
+     * Search videos resource path.
+     *
+     * @var string
+     */
+    const SEARCH_VIDEOS_RESOURCE_PATH = "/videos/";
+
+    /**
      * Video type.
      *
      * @var string
      */
     private $videoType;
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->setVideoType(self::VIDEO_TYPE_ALL);
+    }
 
     /**
      * Enumerate video type.
@@ -41,6 +56,13 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
             self::VIDEO_TYPE_ANIMATION,
             self::VIDEO_TYPE_FILM,
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getResourcePath() {
+        return self::SEARCH_VIDEOS_RESOURCE_PATH;
     }
 
     /**

@@ -32,9 +32,12 @@ class SearchVideosRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/videos/", SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH);
+
         $obj = new SearchVideosRequest();
 
-        $this->assertNull($obj->getVideoType());
+        $this->assertEquals(SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertEquals(SearchVideosRequest::VIDEO_TYPE_ALL, $obj->getVideoType());
     }
 
     /**
