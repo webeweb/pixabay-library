@@ -64,8 +64,13 @@ abstract class AbstractProvider {
      * @param array $queryData The query data.
      * @return string Returns the raw response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     protected function callAPI(AbstractRequest $request, array $queryData) {
+
+        if (null === $this->getKey()) {
+            throw new InvalidArgumentException("The mandatory parameter \"key\" is missing");
+        }
 
         try {
 
