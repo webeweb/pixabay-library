@@ -36,7 +36,7 @@ class RequestNormalizer {
         $parameters = [];
 
         ArrayHelper::set($parameters, "q", $request->getQ(), [null]);
-        ArrayHelper::set($parameters, "lang", $request->getLang(), [null, "en"]);
+        ArrayHelper::set($parameters, "lang", $request->getLang(), [null, AbstractRequest::LANG_EN]);
         ArrayHelper::set($parameters, "id", $request->getId(), [null]);
         ArrayHelper::set($parameters, "category", $request->getCategory(), [null]);
         ArrayHelper::set($parameters, "min_width", $request->getMinWidth(), [null, 0]);
@@ -45,7 +45,7 @@ class RequestNormalizer {
         ArrayHelper::set($parameters, "safesearch", StringHelper::parseBoolean($request->getSafeSearch()), [null, "false"]);
         ArrayHelper::set($parameters, "order", $request->getOrder(), [null, AbstractRequest::ORDER_POPULAR]);
         ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
-        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, 20]);
+        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, AbstractRequest::PER_PAGE_DEFAULT]);
         ArrayHelper::set($parameters, "pretty", StringHelper::parseBoolean($request->getPretty()), [null, "false"]);
 
         return $parameters;
@@ -63,7 +63,7 @@ class RequestNormalizer {
 
         ArrayHelper::set($parameters, "image_type", $searchImagesRequest->getImageType(), [null, SearchImagesRequest::IMAGE_TYPE_ALL]);
         ArrayHelper::set($parameters, "orientation", $searchImagesRequest->getOrientation(), [null, SearchImagesRequest::ORIENTATION_ALL]);
-        ArrayHelper::set($parameters, "colors", $searchImagesRequest->getColors(), [null]);
+        ArrayHelper::set($parameters, "colors", implode(",", $searchImagesRequest->getColors()), [null, ""]);
 
         return $parameters;
     }

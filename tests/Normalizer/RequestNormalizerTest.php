@@ -46,7 +46,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $searchImagesRequest->setQ("github");
         $searchImagesRequest->setSafeSearch(true);
 
-        $searchImagesRequest->setColors("colors");
+        $searchImagesRequest->addColor(SearchImagesRequest::COLOR_BLACK);
         $searchImagesRequest->setImageType(SearchImagesRequest::IMAGE_TYPE_PHOTO);
         $searchImagesRequest->setOrientation(SearchImagesRequest::ORIENTATION_HORIZONTAL);
 
@@ -81,7 +81,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $this->assertEquals("github", $res["q"]);
         $this->assertEquals("true", $res["safesearch"]);
 
-        $this->assertEquals("colors", $res["colors"]);
+        $this->assertEquals(SearchImagesRequest::COLOR_BLACK, $res["colors"]);
         $this->assertEquals(SearchImagesRequest::IMAGE_TYPE_PHOTO, $res["image_type"]);
         $this->assertEquals(SearchImagesRequest::ORIENTATION_HORIZONTAL, $res["orientation"]);
     }
