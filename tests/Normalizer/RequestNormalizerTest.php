@@ -11,8 +11,6 @@
 
 namespace WBW\Library\Pixabay\Tests\Normalizer;
 
-use Exception;
-use InvalidArgumentException;
 use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Normalizer\RequestNormalizer;
@@ -86,26 +84,6 @@ class RequestNormalizerTest extends AbstractTestCase {
         $this->assertEquals(SearchImagesRequest::COLOR_BLACK, $res["colors"]);
         $this->assertEquals(SearchImagesRequest::IMAGE_TYPE_PHOTO, $res["image_type"]);
         $this->assertEquals(SearchImagesRequest::ORIENTATION_HORIZONTAL, $res["orientation"]);
-    }
-
-    /**
-     * Tests the normalizeSearchImagesRequest() method.
-     *
-     * @return void
-     */
-    public function testNormalizeSearchImagesRequestWithInvalidArgumentException() {
-
-        // Set a Search images request mock.
-        $searchImagesRequest = new SearchImagesRequest();
-
-        try {
-
-            RequestNormalizer::normalizeSearchImagesRequest($searchImagesRequest);
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"q\" is missing", $ex->getMessage());
-        }
     }
 
     /**
