@@ -66,7 +66,7 @@ $ vendor/bin/phpunit
 
 ## License
 
-`pixabay-library` is released under the LGPL License. See the bundled [LICENSE](LICENSE)
+`pixabay-library` is released under the MIT License. See the bundled [LICENSE](LICENSE)
 file for details.
 
 Please note that the Pixabay API is not free for use, see their
