@@ -15,7 +15,7 @@
 
 namespace WBW\Library\Pixabay\Model;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\Pixabay\API\RequestInterface;
 
 /**
@@ -327,11 +327,11 @@ abstract class AbstractRequest implements RequestInterface {
      *
      * @param string $lang The lang.
      * @return AbstractRequest Returns this request.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the lang is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the lang is invalid.
      */
     public function setLang($lang) {
         if (false === in_array($lang, static::enumLang())) {
-            throw new UnexpectedValueException(sprintf("The lang \"%s\" is invalid", $lang));
+            throw new InvalidArgumentException(sprintf("The lang \"%s\" is invalid", $lang));
         }
         $this->lang = $lang;
         return $this;
@@ -364,11 +364,11 @@ abstract class AbstractRequest implements RequestInterface {
      *
      * @param string $order The order.
      * @return AbstractRequest Returns this request.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the order is invalid.
+     * @throws InvalidArgumentException Throws an unexpected value exception if the order is invalid.
      */
     public function setOrder($order) {
         if (false === in_array($order, static::enumOrder())) {
-            throw new UnexpectedValueException(sprintf("The order \"%s\" is invalid", $order));
+            throw new InvalidArgumentException(sprintf("The order \"%s\" is invalid", $order));
         }
         $this->order = $order;
         return $this;
@@ -379,11 +379,11 @@ abstract class AbstractRequest implements RequestInterface {
      *
      * @param int $page The page.
      * @return AbstractRequest Returns this request.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the page is less or equal than zero.
+     * @throws InvalidArgumentException Throws an unexpected value exception if the page is less or equal than zero.
      */
     public function setPage($page) {
         if ($page <= 0) {
-            throw new UnexpectedValueException("The page must be greater than 0");
+            throw new InvalidArgumentException("The page must be greater than 0");
         }
         $this->page = $page;
         return $this;
@@ -394,11 +394,11 @@ abstract class AbstractRequest implements RequestInterface {
      *
      * @param int $perPage The per page.
      * @return AbstractRequest Returns this request.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the per page is invalid.
+     * @throws InvalidArgumentException Throws an unexpected value exception if the per page is invalid.
      */
     public function setPerPage($perPage) {
         if ($perPage < self::PER_PAGE_MIN || self::PER_PAGE_MAX < $perPage) {
-            throw new UnexpectedValueException(sprintf("The per page must be between %d and %d", self::PER_PAGE_MIN, self::PER_PAGE_MAX));
+            throw new InvalidArgumentException(sprintf("The per page must be between %d and %d", self::PER_PAGE_MIN, self::PER_PAGE_MAX));
         }
         $this->perPage = $perPage;
         return $this;

@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pixabay\Model\Request;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\Pixabay\API\SearchVideosRequestInterface;
 use WBW\Library\Pixabay\Model\AbstractRequest;
 
@@ -79,11 +79,11 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      *
      * @param string $videoType The video type.
      * @return SearchVideosRequest Returns this search videos request.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the video type is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the video type is invalid.
      */
     public function setVideoType($videoType) {
         if (false === in_array($videoType, static::enumVideoType())) {
-            throw new UnexpectedValueException(sprintf("The video type \"%s\" is invalid", $videoType));
+            throw new InvalidArgumentException(sprintf("The video type \"%s\" is invalid", $videoType));
         }
         $this->videoType = $videoType;
         return $this;

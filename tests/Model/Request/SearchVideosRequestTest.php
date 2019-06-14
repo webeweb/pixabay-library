@@ -12,7 +12,7 @@
 namespace WBW\Library\Pixabay\Tests\Model\Request;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\Pixabay\API\SearchVideosRequestInterface;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -74,7 +74,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetVideoTypeWithUnexpectedValueException() {
+    public function testSetVideoTypeWithInvalidArgumentException() {
 
         $obj = new SearchVideosRequest();
 
@@ -83,7 +83,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
             $obj->setVideoType("videoType");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The video type \"videoType\" is invalid", $ex->getMessage());
         }
     }

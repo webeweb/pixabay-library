@@ -12,7 +12,7 @@
 namespace WBW\Library\Pixabay\Tests\Model;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\Pixabay\API\RequestInterface;
 use WBW\Library\Pixabay\Model\AbstractRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -160,7 +160,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLangWithUnexpectedValueException() {
+    public function testSetLangWithInvalidArgumentException() {
 
         $obj = new TestRequest();
 
@@ -169,7 +169,7 @@ class AbstractRequestTest extends AbstractTestCase {
             $obj->setLang("lang");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The lang \"lang\" is invalid", $ex->getMessage());
         }
     }
@@ -218,7 +218,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrderWithUnexpectedValueException() {
+    public function testSetOrderWithInvalidArgumentException() {
 
         $obj = new TestRequest();
 
@@ -227,7 +227,7 @@ class AbstractRequestTest extends AbstractTestCase {
             $obj->setOrder("order");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The order \"order\" is invalid", $ex->getMessage());
         }
     }
@@ -250,7 +250,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPageWithUnexpectedValueException() {
+    public function testSetPageWithInvalidArgumentException() {
 
         $obj = new TestRequest();
 
@@ -259,7 +259,7 @@ class AbstractRequestTest extends AbstractTestCase {
             $obj->setPage(0);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The page must be greater than 0", $ex->getMessage());
         }
     }
@@ -282,7 +282,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPerPageWithUnexpectedValueException() {
+    public function testSetPerPageWithInvalidArgumentException() {
 
         $obj = new TestRequest();
 
@@ -291,7 +291,7 @@ class AbstractRequestTest extends AbstractTestCase {
             $obj->setPerPage(2);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The per page must be between 3 and 200", $ex->getMessage());
         }
 
@@ -300,7 +300,7 @@ class AbstractRequestTest extends AbstractTestCase {
             $obj->setPerPage(201);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The per page must be between 3 and 200", $ex->getMessage());
         }
     }

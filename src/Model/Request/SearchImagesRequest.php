@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pixabay\Model\Request;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\Pixabay\API\SearchImagesRequestInterface;
 use WBW\Library\Pixabay\Model\AbstractRequest;
 
@@ -66,10 +66,11 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      *
      * @param string $color The color.
      * @return SearchImagesRequest Returns this search images request.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the color is invalid.
      */
     public function addColor($color) {
         if (false === in_array($color, static::enumColor())) {
-            throw new UnexpectedValueException(sprintf("The color \"%s\" is invalid", $color));
+            throw new InvalidArgumentException(sprintf("The color \"%s\" is invalid", $color));
         }
         $this->colors[] = $color;
         return $this;
@@ -220,11 +221,11 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      *
      * @param string $imageType The image type.
      * @return SearchImagesRequest Returns this search images request.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the image type is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the image type is invalid.
      */
     public function setImageType($imageType) {
         if (false === in_array($imageType, static::enumImageType())) {
-            throw new UnexpectedValueException(sprintf("The image type \"%s\" is invalid", $imageType));
+            throw new InvalidArgumentException(sprintf("The image type \"%s\" is invalid", $imageType));
         }
         $this->imageType = $imageType;
         return $this;
@@ -235,11 +236,11 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      *
      * @param string $orientation The orientation.
      * @return SearchImagesRequest Returns this search images request.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the orientation is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the orientation is invalid.
      */
     public function setOrientation($orientation) {
         if (false === in_array($orientation, static::enumOrientation())) {
-            throw new UnexpectedValueException(sprintf("The orientation \"%s\" is invalid", $orientation));
+            throw new InvalidArgumentException(sprintf("The orientation \"%s\" is invalid", $orientation));
         }
         $this->orientation = $orientation;
         return $this;

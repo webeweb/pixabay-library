@@ -12,7 +12,7 @@
 namespace WBW\Library\Pixabay\Tests\Model\Request;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\Pixabay\API\SearchImagesRequestInterface;
 use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -44,7 +44,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddColorWithUnexpectedValueException() {
+    public function testAddColorWithInvalidArgumentException() {
 
         $obj = new SearchImagesRequest();
 
@@ -53,7 +53,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
             $obj->addColor("color");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The color \"color\" is invalid", $ex->getMessage());
         }
     }
@@ -200,7 +200,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetImageTypeWithUnexpectedValueException() {
+    public function testSetImageTypeWithInvalidArgumentException() {
 
         $obj = new SearchImagesRequest();
 
@@ -209,7 +209,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
             $obj->setImageType("imageType");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The image type \"imageType\" is invalid", $ex->getMessage());
         }
     }
@@ -232,7 +232,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrientationWithUnexpectedValueException() {
+    public function testSetOrientationWithInvalidArgumentException() {
 
         $obj = new SearchImagesRequest();
 
@@ -241,7 +241,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
             $obj->setOrientation("orientation");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The orientation \"orientation\" is invalid", $ex->getMessage());
         }
     }
