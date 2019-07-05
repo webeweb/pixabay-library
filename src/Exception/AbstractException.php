@@ -12,7 +12,7 @@
 namespace WBW\Library\Pixabay\Exception;
 
 use Exception;
-use WBW\Library\Core\Exception\AbstractCoreException;
+use WBW\Library\Core\Exception\AbstractCoreException as BaseException;
 
 /**
  * Abstract exception.
@@ -21,7 +21,7 @@ use WBW\Library\Core\Exception\AbstractCoreException;
  * @package WBW\Library\Pixabay\Exception
  * @abstract
  */
-abstract class AbstractException extends AbstractCoreException {
+abstract class AbstractException extends BaseException {
 
     /**
      * Constructor.
