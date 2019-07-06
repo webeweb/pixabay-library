@@ -12,11 +12,11 @@ $provider = new APIProvider();
 $provider->setKey("key");
 
 // Create a Seacrh images model.
-$model = new SearchImagesRequest();
+$request = new SearchImagesRequest();
 // ...
 
 // Call the API and get the response.
-$response = $provider->searchImages($model);
+$response = $provider->searchImages($request);
 
 // Handle the response.
 $response->getTotal();
@@ -39,11 +39,11 @@ $provider = new APIProvider();
 $provider->setKey("key");
 
 // Create a Search videos model.
-$model = new SearchVideosRequest();
+$request = new SearchVideosRequest();
 // ...
 
 // Call the API and get the response.
-$response = $provider->searchVideos($model);
+$response = $provider->searchVideos($request);
 
 // Handle the response.
 $response->getTotal();
