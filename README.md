@@ -11,10 +11,6 @@ pixabay-library
 
 Integrate Pixabay API with your projects.
 
-> IMPORTANT NOTICE: This package is still under development. Any changes will be
-> done without prior notice to consumers of this package. Of course this code
-> will become stable at a certain point, but for now, use at your own risk.
-
 ---
 
 ## Compatibility
@@ -61,6 +57,9 @@ Once all required libraries are installed then do:
 ```bash
 $ vendor/bin/phpunit
 ```
+
+> IMPORTANT NOTICE: To test the package with your API key, edit the
+> `tests/Provider/APIProviderTest.php` file to find and replace "YOUR_API_KEY".
 
 ---
 
