@@ -58,6 +58,23 @@ abstract class AbstractProvider {
     }
 
     /**
+     * Build the configuration.
+     *
+     * @return array Returns the configuration.
+     */
+    private function buildConfiguration() {
+        return [
+            "base_uri"    => self::ENDPOINT_PATH . "/",
+            "debug"       => $this->getDebug(),
+            "headers"     => [
+                "Accept"     => "application/json",
+                "User-Agent" => "webeweb/pixabay-library",
+            ],
+            "synchronous" => true,
+        ];
+    }
+
+    /**
      * Call the API.
      *
      * @param AbstractRequest $request The request.
@@ -74,15 +91,7 @@ abstract class AbstractProvider {
 
         try {
 
-            $client = new Client([
-                "base_uri"    => self::ENDPOINT_PATH . "/",
-                "debug"       => $this->getDebug(),
-                "headers"     => [
-                    "Accept"     => "application/json",
-                    "User-Agent" => "webeweb/pixabay-library",
-                ],
-                "synchronous" => true,
-            ]);
+            $client = new Client($this->buildConfiguration());
 
             $uri     = substr($request->getResourcePath(), 1);
             $options = [
