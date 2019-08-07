@@ -6,10 +6,7 @@ Search images
 
 ```php
 // Create the API provider.
-$provider = new APIProvider();
-
-// Set an API key.
-$provider->setKey("key");
+$provider = new APIProvider("key");
 
 // Create a Seacrh images model.
 $request = new SearchImagesRequest();
@@ -33,10 +30,7 @@ Search videos
 
 ```php
 // Create the API provider.
-$provider = new APIProvider();
-
-// Set an API key.
-$provider->setKey("key");
+$provider = new APIProvider("key");
 
 // Create a Search videos model.
 $request = new SearchVideosRequest();

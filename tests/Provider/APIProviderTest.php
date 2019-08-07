@@ -13,6 +13,7 @@ namespace WBW\Library\Pixabay\Tests\Provider;
 
 use Exception;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use WBW\Library\Pixabay\Exception\APIException;
 use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
@@ -72,11 +73,13 @@ class APIProviderTest extends AbstractTestCase {
      */
     public function testSearchImages() {
 
+        // Set a Logger mock.
+        $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
+
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
 
-        $obj = new APIProvider();
-        $obj->setKey($this->key);
+        $obj = new APIProvider($this->key, $logger);
 
         try {
 
@@ -121,8 +124,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
 
-        $obj = new APIProvider();
-        $obj->setKey($this->key);
+        $obj = new APIProvider($this->key);
 
         try {
 

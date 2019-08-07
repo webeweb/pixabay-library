@@ -15,6 +15,7 @@ use DateTime;
 use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use WBW\Library\Pixabay\Exception\APIException;
 use WBW\Library\Pixabay\Model\AbstractRequest;
 use WBW\Library\Pixabay\Traits\RateLimitTrait;
@@ -51,10 +52,22 @@ abstract class AbstractProvider {
     private $key;
 
     /**
-     * Constructor.
+     * Logger.
+     *
+     * @var LoggerInterface
      */
-    public function __construct() {
+    private $logger;
+
+    /**
+     * Constructor.
+     *
+     * @param string $key The key.
+     * @param LoggerInterface|null $logger The logger.
+     */
+    public function __construct($key = null, LoggerInterface $logger = null) {
         $this->setDebug(false);
+        $this->setKey($key);
+        $this->setLogger($logger);
     }
 
     /**
@@ -91,14 +104,19 @@ abstract class AbstractProvider {
 
         try {
 
-            $client = new Client($this->buildConfiguration());
+            $config = $this->buildConfiguration();
 
+            $client = new Client($config);
+
+            $method  = "GET";
             $uri     = substr($request->getResourcePath(), 1);
             $options = [
                 "query" => array_merge(["key" => $this->getKey()], $queryData),
             ];
 
-            $response = $client->request("GET", $uri, $options);
+            $this->log(sprintf("Call Pixabay API %s %s", $method, $uri), ["config" => $config, "options" => $options]);
+
+            $response = $client->request($method, $uri, $options);
 
             $this->setLimit(intval($response->getHeaderLine("X-Ratelimit-Limit")));
             $this->setRemaining(intval($response->getHeaderLine("X-Ratelimit-Remaining")));
@@ -130,6 +148,29 @@ abstract class AbstractProvider {
     }
 
     /**
+     * Get the logger.
+     *
+     * @return LoggerInterface Returns the logger.
+     */
+    public function getLogger() {
+        return $this->logger;
+    }
+
+    /**
+     * Log.
+     *
+     * @param string $message The message.
+     * @param array $context The context.
+     * @return AbstractProvider Returns this provider.
+     */
+    protected function log($message, array $context) {
+        if (null !== $this->getLogger()) {
+            $this->getLogger()->info($message, $context);
+        }
+        return $this;
+    }
+
+    /**
      * Set the debug.
      *
      * @param bool $debug The debug.
@@ -148,6 +189,17 @@ abstract class AbstractProvider {
      */
     public function setKey($key) {
         $this->key = $key;
+        return $this;
+    }
+
+    /**
+     * Set the logger.
+     *
+     * @param LoggerInterface|null $logger The logger
+     * @return AbstractProvider Returns this provider
+     */
+    protected function setLogger(LoggerInterface $logger = null) {
+        $this->logger = $logger;
         return $this;
     }
 }
