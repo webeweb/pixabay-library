@@ -25,12 +25,14 @@ interface SearchVideosRequestInterface extends RequestInterface {
      * @var string
      */
     const VIDEO_TYPE_ALL = "all";
+
     /**
      * Video type "animation".
      *
      * @var string
      */
     const VIDEO_TYPE_ANIMATION = "animation";
+
     /**
      * Video type "film".
      *
