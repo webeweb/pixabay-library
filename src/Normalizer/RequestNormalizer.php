@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pixabay\Normalizer;
 
-use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\Core\Argument\StringHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\StringHelper;
 use WBW\Library\Pixabay\Model\AbstractRequest;
 use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;

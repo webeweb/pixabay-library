@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pixabay\Normalizer;
 
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Pixabay\Model\AbstractHit;
 use WBW\Library\Pixabay\Model\AbstractResponse;
 use WBW\Library\Pixabay\Model\ImageHit;
