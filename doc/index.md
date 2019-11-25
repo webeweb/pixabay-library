@@ -8,7 +8,7 @@ Search images
 // Create the API provider.
 $provider = new APIProvider("YOUR_API_KEY");
 
-// Create a Seacrh images model.
+// Create a Search images model.
 $request = new SearchImagesRequest();
 // ...
 
