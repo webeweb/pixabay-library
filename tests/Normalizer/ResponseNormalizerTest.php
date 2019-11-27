@@ -48,7 +48,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
         $this->assertEquals(195893, $res->getId());
         $this->assertEquals(2250, $res->getImageHeight());
         $this->assertEquals(4731420, $res->getImageSize());
-        $this->ASsertequals("https://pixabay.com/get/ed6a9364a9fd0a76647.jpg", $res->getImageURL());
+        $this->assertequals("https://pixabay.com/get/ed6a9364a9fd0a76647.jpg", $res->getImageURL());
         $this->assertEquals(4000, $res->getImageWidth());
         $this->assertEquals("https://pixabay.com/get/ed6a99fd0a76647_1280.jpg", $res->getLargeImageURL());
         $this->assertEquals(5, $res->getLikes());
