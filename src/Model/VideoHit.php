@@ -44,6 +44,8 @@ class VideoHit extends AbstractHit {
      * Constructor.
      */
     public function __construct() {
+        parent::__construct();
+
         $this->setVideos([]);
     }
 
