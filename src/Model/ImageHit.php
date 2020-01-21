@@ -104,13 +104,6 @@ class ImageHit extends AbstractHit {
     private $webFormatWidth;
 
     /**
-     * Constructor.
-     */
-    public function __construct() {
-        // NOTHING TO DO.
-    }
-
-    /**
      * Get the full HD URL.
      *
      * @return string Returns the full HD URL.
