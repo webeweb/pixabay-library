@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Normalizer;
+namespace WBW\Library\Pixabay\Serializer;
 
 use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Pixabay\Model\AbstractHit;
@@ -21,21 +21,21 @@ use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
 
 /**
- * Response normalizer.
+ * Response deserializer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Normalizer
+ * @package WBW\Library\Pixabay\Serializer
  */
-class ResponseNormalizer {
+class ResponseDeserializer {
 
     /**
-     * Denormalize an hit.
+     * Deserialize an hit.
      *
      * @param AbstractHit $model The hit.
      * @param array $response The response.
      * @return void
      */
-    protected static function denormalizeHit(AbstractHit $model, array $response) {
+    protected static function deserializeHit(AbstractHit $model, array $response) {
 
         $model->setComments(intval(ArrayHelper::get($response, "comments", -1)));
         $model->setDownloads(intval(ArrayHelper::get($response, "downloads", -1)));
@@ -52,16 +52,16 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize an image hit.
+     * Deserialize an image hit.
      *
      * @param array $response The response.
      * @return ImageHit Returns an image hit.
      */
-    protected static function denormalizeImageHit(array $response) {
+    protected static function deserializeImageHit(array $response) {
 
         $model = new ImageHit();
 
-        static::denormalizeHit($model, $response);
+        static::deserializeHit($model, $response);
 
         $model->setFullHDURL(ArrayHelper::get($response, "fullHDURL"));
         $model->setImageHeight(intval(ArrayHelper::get($response, "imageHeight", -1)));
@@ -80,25 +80,25 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a response.
+     * Deserialize a response.
      *
      * @param AbstractResponse $model The response.
      * @param array $response The response.
      * @return void
      */
-    protected static function denormalizeResponse(AbstractResponse $model, array $response) {
+    protected static function deserializeResponse(AbstractResponse $model, array $response) {
 
         $model->setTotal(intval(ArrayHelper::get($response, "total", -1)));
         $model->setTotalHits(intval(ArrayHelper::get($response, "totalHits", -1)));
     }
 
     /**
-     * Denormalize a search images response.
+     * Deserialize a search images response.
      *
      * @param string $rawResponse The raw response.
      * @return SearchImagesResponse Returns the search images response.
      */
-    public static function denormalizeSearchImagesResponse($rawResponse) {
+    public static function deserializeSearchImagesResponse($rawResponse) {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
@@ -109,22 +109,22 @@ class ResponseNormalizer {
             return $model;
         }
 
-        static::denormalizeResponse($model, $decodedResponse);
+        static::deserializeResponse($model, $decodedResponse);
 
         foreach (ArrayHelper::get($decodedResponse, "hits", []) as $current) {
-            $model->addImageHit(static::denormalizeImageHit($current));
+            $model->addImageHit(static::deserializeImageHit($current));
         }
 
         return $model;
     }
 
     /**
-     * Denormalize a search videos response.
+     * Deserialize a search videos response.
      *
      * @param string $rawResponse The raw response.
      * @return SearchVideosResponse Returns the search videos response.
      */
-    public static function denormalizeSearchVideosResponse($rawResponse) {
+    public static function deserializeSearchVideosResponse($rawResponse) {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
@@ -135,22 +135,22 @@ class ResponseNormalizer {
             return $model;
         }
 
-        static::denormalizeResponse($model, $decodedResponse);
+        static::deserializeResponse($model, $decodedResponse);
 
         foreach (ArrayHelper::get($decodedResponse, "hits", []) as $current) {
-            $model->addVideoHit(static::denormalizeVideoHit($current));
+            $model->addVideoHit(static::deserializeVideoHit($current));
         }
 
         return $model;
     }
 
     /**
-     * Denormalize a video.
+     * Deserialize a video.
      *
      * @param array $response The response.
      * @return Video Returns a video.
      */
-    protected static function denormalizeVideo(array $response) {
+    protected static function deserializeVideo(array $response) {
 
         $model = new Video();
 
@@ -163,22 +163,22 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a video hit.
+     * Deserialize a video hit.
      *
      * @param array $response The response.
      * @return VideoHit Returns a video hit.
      */
-    protected static function denormalizeVideoHit(array $response) {
+    protected static function deserializeVideoHit(array $response) {
 
         $model = new VideoHit();
 
-        static::denormalizeHit($model, $response);
+        static::deserializeHit($model, $response);
 
         $model->setDuration(intval(ArrayHelper::get($response, "duration", -1)));
         $model->setPictureId(intval(ArrayHelper::get($response, "picture_id", -1)));
 
         foreach (ArrayHelper::get($response, "videos", []) as $q => $v) {
-            $model->addVideo(static::denormalizeVideo($v)->setQuality($q));
+            $model->addVideo(static::deserializeVideo($v)->setQuality($q));
         }
 
         return $model;

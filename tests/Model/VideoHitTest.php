@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pixabay\Tests\Model;
 
-use WBW\Library\Pixabay\Model\VideoHit;
 use WBW\Library\Pixabay\Model\Video;
+use WBW\Library\Pixabay\Model\VideoHit;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**

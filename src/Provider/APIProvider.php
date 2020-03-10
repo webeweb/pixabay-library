@@ -18,8 +18,8 @@ use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
-use WBW\Library\Pixabay\Normalizer\RequestNormalizer;
-use WBW\Library\Pixabay\Normalizer\ResponseNormalizer;
+use WBW\Library\Pixabay\Serializer\RequestSerializer;
+use WBW\Library\Pixabay\Serializer\ResponseSerializer;
 
 /**
  * API provider.
@@ -54,11 +54,11 @@ class APIProvider extends AbstractProvider {
      */
     public function searchImages(SearchImagesRequest $searchImagesRequest) {
 
-        $queryData = RequestNormalizer::normalizeSearchImagesRequest($searchImagesRequest);
+        $queryData = RequestSerializer::serializeSearchImagesRequest($searchImagesRequest);
 
         $rawResponse = $this->callAPI($searchImagesRequest, $queryData);
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeSearchImagesResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializeSearchImagesResponse($rawResponse));
     }
 
     /**
@@ -71,10 +71,10 @@ class APIProvider extends AbstractProvider {
      */
     public function searchVideos(SearchVideosRequest $searchVideosRequest) {
 
-        $queryData = RequestNormalizer::normalizeSearchVideosRequest($searchVideosRequest);
+        $queryData = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
 
         $rawResponse = $this->callAPI($searchVideosRequest, $queryData);
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeSearchVideosResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializeSearchVideosResponse($rawResponse));
     }
 }

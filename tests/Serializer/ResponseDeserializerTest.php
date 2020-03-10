@@ -9,36 +9,36 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\Normalizer;
+namespace WBW\Library\Pixabay\Tests\Serializer;
 
 use WBW\Library\Pixabay\Model\ImageHit;
 use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
-use WBW\Library\Pixabay\Normalizer\ResponseNormalizer;
+use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
-use WBW\Library\Pixabay\Tests\Fixtures\Normalizer\TestResponseNormalizer;
+use WBW\Library\Pixabay\Tests\Fixtures\Serializer\TestResponseDeserializer;
 use WBW\Library\Pixabay\Tests\Fixtures\TestFixtures;
 
 /**
- * Response normalizer test.
+ * Response deserializer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\Normalizer
+ * @package WBW\Library\Pixabay\Tests\Serializer
  */
-class ResponseNormalizerTest extends AbstractTestCase {
+class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests the denormalizeImageHit() method.
+     * Tests the deserializeImageHit() method.
      *
      * @return void
      */
-    public function testDenormalizeImageHit() {
+    public function testDeserializeImageHit() {
 
         $arg = json_decode(TestFixtures::SAMPLE_SEARCH_IMAGES_RESPONSE, true)["hits"][0];
 
-        $res = TestResponseNormalizer::denormalizeImageHit($arg);
+        $res = TestResponseDeserializer::deserializeImageHit($arg);
         $this->assertInstanceOf(ImageHit::class, $res);
 
         $this->assertEquals(2, $res->getComments());
@@ -68,13 +68,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeSearchImagesResponse() method.
+     * Tests the deserializeSearchImagesResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSeachImagesResponse() {
+    public function testDeserializeSeachImagesResponse() {
 
-        $obj = ResponseNormalizer::denormalizeSearchImagesResponse(TestFixtures::SAMPLE_SEARCH_IMAGES_RESPONSE);
+        $obj = ResponseDeserializer::deserializeSearchImagesResponse(TestFixtures::SAMPLE_SEARCH_IMAGES_RESPONSE);
         $this->assertInstanceOf(SearchImagesResponse::class, $obj);
 
         $this->assertEquals(TestFixtures::SAMPLE_SEARCH_IMAGES_RESPONSE, $obj->getRawResponse());
@@ -85,13 +85,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeSearchImagesResponse() method.
+     * Tests the deserializeSearchImagesResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSeachImagesResponseWithBadRawResponse() {
+    public function testDeserializeSeachImagesResponseWithBadRawResponse() {
 
-        $obj = ResponseNormalizer::denormalizeSearchImagesResponse("");
+        $obj = ResponseDeserializer::deserializeSearchImagesResponse("");
         $this->assertInstanceOf(SearchImagesResponse::class, $obj);
 
         $this->assertNull($obj->getTotal());
@@ -101,13 +101,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeSearchVideosResponse() method.
+     * Tests the deserializeSearchVideosResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSeachVideosResponse() {
+    public function testDeserializeSeachVideosResponse() {
 
-        $obj = ResponseNormalizer::denormalizeSearchVideosResponse(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE);
+        $obj = ResponseDeserializer::deserializeSearchVideosResponse(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE);
         $this->assertInstanceOf(SearchVideosResponse::class, $obj);
 
         $this->assertEquals(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE, $obj->getRawResponse());
@@ -118,13 +118,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeSearchVideosResponse() method.
+     * Tests the deserializeSearchVideosResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSeachVideosResponseWithBadRawResponse() {
+    public function testDeserializeSeachVideosResponseWithBadRawResponse() {
 
-        $obj = ResponseNormalizer::denormalizeSearchVideosResponse("");
+        $obj = ResponseDeserializer::deserializeSearchVideosResponse("");
         $this->assertInstanceOf(SearchVideosResponse::class, $obj);
 
         $this->assertNull($obj->getTotal());
@@ -134,15 +134,15 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests denormalizeVideo() method.
+     * Tests deserializeVideo() method.
      *
      * @return void
      */
-    public function testDenormalizeVideo() {
+    public function testDeserializeVideo() {
 
         $arg = json_decode(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE, true)["hits"][0]["videos"]["large"];
 
-        $res = TestResponseNormalizer::denormalizeVideo($arg);
+        $res = TestResponseDeserializer::deserializeVideo($arg);
         $this->assertInstanceOf(Video::class, $res);
 
         $this->assertEquals(1080, $res->getHeight());
@@ -153,15 +153,15 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeVideoHit() method.
+     * Tests the deserializeVideoHit() method.
      *
      * @return void
      */
-    public function testDenormalizeVideoHit() {
+    public function testDeserializeVideoHit() {
 
         $arg = json_decode(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE, true)["hits"][0];
 
-        $res = TestResponseNormalizer::denormalizeVideoHit($arg);
+        $res = TestResponseDeserializer::deserializeVideoHit($arg);
         $this->assertInstanceOf(VideoHit::class, $res);
 
         $this->assertEquals(2, $res->getComments());

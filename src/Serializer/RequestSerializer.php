@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Normalizer;
+namespace WBW\Library\Pixabay\Serializer;
 
 use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Core\Argument\Helper\StringHelper;
@@ -18,20 +18,20 @@ use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
 
 /**
- * Request normalizer.
+ * Request serializer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Normalizer
+ * @package WBW\Library\Pixabay\Serializer
  */
-class RequestNormalizer {
+class RequestSerializer {
 
     /**
-     * Normalize a request.
+     * Serialize a request.
      *
      * @param AbstractRequest $request The request.
      * @return array Returns the parameters.
      */
-    protected static function normalizeRequest(AbstractRequest $request) {
+    protected static function serializeRequest(AbstractRequest $request) {
 
         $parameters = [];
 
@@ -52,14 +52,14 @@ class RequestNormalizer {
     }
 
     /**
-     * Normalize a search images request.
+     * Serialize a search images request.
      *
      * @param SearchImagesRequest $searchImagesRequest The search images request.
      * @return array Returns the parameters.
      */
-    public static function normalizeSearchImagesRequest(SearchImagesRequest $searchImagesRequest) {
+    public static function serializeSearchImagesRequest(SearchImagesRequest $searchImagesRequest) {
 
-        $parameters = static::normalizeRequest($searchImagesRequest);
+        $parameters = static::serializeRequest($searchImagesRequest);
 
         ArrayHelper::set($parameters, "image_type", $searchImagesRequest->getImageType(), [null, SearchImagesRequest::IMAGE_TYPE_ALL]);
         ArrayHelper::set($parameters, "orientation", $searchImagesRequest->getOrientation(), [null, SearchImagesRequest::ORIENTATION_ALL]);
@@ -69,14 +69,14 @@ class RequestNormalizer {
     }
 
     /**
-     * Normalize a search videos request.
+     * Serialize a search videos request.
      *
      * @param SearchVideosRequest $searchVideosRequest The search videos request.
      * @return array Returns the parameters.
      */
-    public static function normalizeSearchVideosRequest(SearchVideosRequest $searchVideosRequest) {
+    public static function serializeSearchVideosRequest(SearchVideosRequest $searchVideosRequest) {
 
-        $parameters = static::normalizeRequest($searchVideosRequest);
+        $parameters = static::serializeRequest($searchVideosRequest);
 
         ArrayHelper::set($parameters, "video_type", $searchVideosRequest->getVideoType(), [null, SearchVideosRequest::VIDEO_TYPE_ALL]);
 

@@ -9,27 +9,27 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\Normalizer;
+namespace WBW\Library\Pixabay\Tests\Serializer;
 
 use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
-use WBW\Library\Pixabay\Normalizer\RequestNormalizer;
+use WBW\Library\Pixabay\Serializer\RequestSerializer;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
- * Request normalizer test.
+ * Request serializer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\Normalizer
+ * @package WBW\Library\Pixabay\Tests\Serializer
  */
-class RequestNormalizerTest extends AbstractTestCase {
+class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests the normalizeSearchImagesRequest() method.
+     * Tests the serializeSearchImagesRequest() method.
      *
      * @return void
      */
-    public function testNormalizeSearchImagesRequest() {
+    public function testSerializeSearchImagesRequest() {
 
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
@@ -50,7 +50,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $searchImagesRequest->setImageType(SearchImagesRequest::IMAGE_TYPE_PHOTO);
         $searchImagesRequest->setOrientation(SearchImagesRequest::ORIENTATION_HORIZONTAL);
 
-        $res = RequestNormalizer::normalizeSearchImagesRequest($searchImagesRequest);
+        $res = RequestSerializer::serializeSearchImagesRequest($searchImagesRequest);
         $this->assertArrayHasKey("category", $res);
         $this->assertArrayHasKey("editors_choice", $res);
         $this->assertArrayHasKey("id", $res);
@@ -87,11 +87,11 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalizeSearchVideosRequest() method.
+     * Tests the serializeSearchVideosRequest() method.
      *
      * @return void
      */
-    public function testNormalizeSearchVideosRequest() {
+    public function testSerializeSearchVideosRequest() {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
@@ -110,7 +110,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $searchVideosRequest->setVideoType(SearchVideosRequest::VIDEO_TYPE_FILM);
 
-        $res = RequestNormalizer::normalizeSearchVideosRequest($searchVideosRequest);
+        $res = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
         $this->assertArrayHasKey("category", $res);
         $this->assertArrayHasKey("editors_choice", $res);
         $this->assertArrayHasKey("id", $res);
