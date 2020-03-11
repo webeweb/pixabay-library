@@ -11,8 +11,6 @@
 
 namespace WBW\Library\Pixabay\Model;
 
-use WBW\Library\Pixabay\Traits\RateLimitTrait;
-
 /**
  * Abstract response.
  *

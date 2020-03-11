@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\Fixtures\Traits;
+namespace WBW\Library\Pixabay\Tests\Fixtures\Model;
 
-use WBW\Library\Pixabay\Traits\RateLimitTrait;
+use WBW\Library\Pixabay\Model\RateLimitTrait;
 
 /**
  * Test rate limit trait.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\Fixtures\Traits
+ * @package WBW\Library\Pixabay\Tests\Fixtures\Model
  */
 class TestRateLimitTrait {
 

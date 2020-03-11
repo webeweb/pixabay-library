@@ -18,7 +18,7 @@ use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Pixabay\Exception\APIException;
 use WBW\Library\Pixabay\Model\AbstractRequest;
-use WBW\Library\Pixabay\Traits\RateLimitTrait;
+use WBW\Library\Pixabay\Model\RateLimitTrait;
 
 /**
  * Abstract provider.

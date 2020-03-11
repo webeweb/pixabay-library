@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Traits;
+namespace WBW\Library\Pixabay\Model;
 
 use DateTime;
 
@@ -17,7 +17,7 @@ use DateTime;
  * Rate limit trait.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Traits
+ * @package WBW\Library\Pixabay\Model
  */
 trait RateLimitTrait {
 

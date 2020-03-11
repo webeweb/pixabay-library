@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\Traits;
+namespace WBW\Library\Pixabay\Tests\Model;
 
 use DateTime;
 use Exception;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
-use WBW\Library\Pixabay\Tests\Fixtures\Traits\TestRateLimitTrait;
+use WBW\Library\Pixabay\Tests\Fixtures\Model\TestRateLimitTrait;
 
 /**
  * Rate limit trait test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\Traits
+ * @package WBW\Library\Pixabay\Tests\Model
  */
 class RateLimitTraitTest extends AbstractTestCase {
 
