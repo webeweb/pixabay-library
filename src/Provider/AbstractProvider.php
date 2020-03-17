@@ -11,7 +11,6 @@
 
 namespace WBW\Library\Pixabay\Provider;
 
-use DateTime;
 use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
@@ -120,7 +119,7 @@ abstract class AbstractProvider {
 
             $this->setLimit(intval($response->getHeaderLine("X-Ratelimit-Limit")));
             $this->setRemaining(intval($response->getHeaderLine("X-Ratelimit-Remaining")));
-            $this->setReset(new DateTime("@" . $response->getHeaderLine("X-Ratelimit-Reset")));
+            //$this->setReset(new DateTime("@" . $response->getHeaderLine("X-Ratelimit-Reset")));
 
             return $response->getBody()->getContents();
         } catch (Exception $ex) {
