@@ -19,7 +19,7 @@ use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Serializer\RequestSerializer;
-use WBW\Library\Pixabay\Serializer\ResponseSerializer;
+use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
 
 /**
  * API provider.
@@ -58,7 +58,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($searchImagesRequest, $queryData);
 
-        return $this->beforeReturnResponse(ResponseSerializer::deserializeSearchImagesResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseDeserializer::deserializeSearchImagesResponse($rawResponse));
     }
 
     /**
@@ -75,6 +75,6 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($searchVideosRequest, $queryData);
 
-        return $this->beforeReturnResponse(ResponseSerializer::deserializeSearchVideosResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseDeserializer::deserializeSearchVideosResponse($rawResponse));
     }
 }
