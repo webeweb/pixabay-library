@@ -3,8 +3,8 @@ CHANGELOG
 
 ### [1.4.1](https://github.com/webeweb/pixabay-library/tree/v1.4.1) (2020-03-17)
 
-- Fix #1: Failed to parse time string
-- Fix #2: Uncaught Error: Class 'WBW\Library\Pixabay\Serializer\ResponseSerializer' not found
+- Fix [#1](https://github.com/webeweb/pixabay-library/issues/1): Failed to parse time string
+- Fix [#2](https://github.com/webeweb/pixabay-library/issues/2): Uncaught Error: Class 'WBW\Library\Pixabay\Serializer\ResponseSerializer' not found
 
 ### [1.4.0](https://github.com/webeweb/pixabay-library/tree/v1.4.0) (2020-03-11)
 
