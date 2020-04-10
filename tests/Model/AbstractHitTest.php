@@ -23,28 +23,6 @@ use WBW\Library\Pixabay\Tests\Fixtures\Model\TestHit;
 class AbstractHitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestHit();
-
-        $this->assertNull($obj->getComments());
-        $this->assertNull($obj->getDownloads());
-        $this->assertNull($obj->getFavorites());
-        $this->assertNull($obj->getLikes());
-        $this->assertNull($obj->getPageURL());
-        $this->assertNull($obj->getTags());
-        $this->assertNull($obj->getType());
-        $this->assertNull($obj->getUser());
-        $this->assertNull($obj->getUserId());
-        $this->assertNull($obj->getUserImageURL());
-        $this->assertNull($obj->getViews());
-    }
-
-    /**
      * Tests the setComments() method.
      *
      * @return void
@@ -198,5 +176,27 @@ class AbstractHitTest extends AbstractTestCase {
 
         $obj->setViews(1);
         $this->assertEquals(1, $obj->getViews());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestHit();
+
+        $this->assertNull($obj->getComments());
+        $this->assertNull($obj->getDownloads());
+        $this->assertNull($obj->getFavorites());
+        $this->assertNull($obj->getLikes());
+        $this->assertNull($obj->getPageURL());
+        $this->assertNull($obj->getTags());
+        $this->assertNull($obj->getType());
+        $this->assertNull($obj->getUser());
+        $this->assertNull($obj->getUserId());
+        $this->assertNull($obj->getUserImageURL());
+        $this->assertNull($obj->getViews());
     }
 }

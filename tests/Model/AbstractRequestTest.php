@@ -27,29 +27,6 @@ use WBW\Library\Pixabay\Tests\Fixtures\Model\TestRequest;
 class AbstractRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestRequest();
-
-        $this->assertNull($obj->getCategory());
-        $this->assertFalse($obj->getEditorsChoice());
-        $this->assertNull($obj->getId());
-        $this->assertEquals(AbstractRequest::LANG_EN, $obj->getLang());
-        $this->assertEquals(0, $obj->getMinHeight());
-        $this->assertEquals(0, $obj->getMinWidth());
-        $this->assertEquals(AbstractRequest::ORDER_POPULAR, $obj->getOrder());
-        $this->assertEquals(1, $obj->getPage());
-        $this->assertEquals(AbstractRequest::PER_PAGE_DEFAULT, $obj->getPerPage());
-        $this->assertFalse($obj->getPretty());
-        $this->assertNull($obj->getQ());
-        $this->assertFalse($obj->getSafeSearch());
-    }
-
-    /**
      * Tests the enumLang() method.
      *
      * @return void
@@ -342,5 +319,28 @@ class AbstractRequestTest extends AbstractTestCase {
 
         $obj->setSafeSearch(true);
         $this->assertTrue($obj->getSafeSearch());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestRequest();
+
+        $this->assertNull($obj->getCategory());
+        $this->assertFalse($obj->getEditorsChoice());
+        $this->assertNull($obj->getId());
+        $this->assertEquals(AbstractRequest::LANG_EN, $obj->getLang());
+        $this->assertEquals(0, $obj->getMinHeight());
+        $this->assertEquals(0, $obj->getMinWidth());
+        $this->assertEquals(AbstractRequest::ORDER_POPULAR, $obj->getOrder());
+        $this->assertEquals(1, $obj->getPage());
+        $this->assertEquals(AbstractRequest::PER_PAGE_DEFAULT, $obj->getPerPage());
+        $this->assertFalse($obj->getPretty());
+        $this->assertNull($obj->getQ());
+        $this->assertFalse($obj->getSafeSearch());
     }
 }

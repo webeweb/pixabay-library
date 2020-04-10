@@ -24,24 +24,6 @@ use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestProvider;
 class AbstractProviderTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("https://pixabay.com/api", AbstractProvider::ENDPOINT_PATH);
-
-        $obj = new TestProvider();
-
-        $this->assertFalse($obj->getDebug());
-        $this->assertNull($obj->getKey());
-        $this->assertNull($obj->getLimit());
-        $this->assertNull($obj->getRemaining());
-        $this->assertNull($obj->getReset());
-    }
-
-    /**
      * Tests the setDebug() method.
      *
      * @return void
@@ -65,5 +47,23 @@ class AbstractProviderTest extends AbstractTestCase {
 
         $obj->setKey("key");
         $this->assertEquals("key", $obj->getKey());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("https://pixabay.com/api", AbstractProvider::ENDPOINT_PATH);
+
+        $obj = new TestProvider();
+
+        $this->assertFalse($obj->getDebug());
+        $this->assertNull($obj->getKey());
+        $this->assertNull($obj->getLimit());
+        $this->assertNull($obj->getRemaining());
+        $this->assertNull($obj->getReset());
     }
 }

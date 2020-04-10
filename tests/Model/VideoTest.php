@@ -23,22 +23,6 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class VideoTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void.
-     */
-    public function testConstruct() {
-
-        $obj = new Video();
-
-        $this->assertNull($obj->getHeight());
-        $this->assertNull($obj->getQuality());
-        $this->assertNull($obj->getSize());
-        $this->assertNull($obj->getUrl());
-        $this->assertNull($obj->getWidth());
-    }
-
-    /**
      * Tests the setHeight() method.
      *
      * @return void.
@@ -101,5 +85,21 @@ class VideoTest extends AbstractTestCase {
 
         $obj->setWidth(1);
         $this->assertEquals(1, $obj->getWidth());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void.
+     */
+    public function test__construct() {
+
+        $obj = new Video();
+
+        $this->assertNull($obj->getHeight());
+        $this->assertNull($obj->getQuality());
+        $this->assertNull($obj->getSize());
+        $this->assertNull($obj->getUrl());
+        $this->assertNull($obj->getWidth());
     }
 }

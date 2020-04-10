@@ -37,18 +37,18 @@ class ResponseDeserializer {
      */
     protected static function deserializeHit(AbstractHit $model, array $response) {
 
-        $model->setComments(intval(ArrayHelper::get($response, "comments", -1)));
+        $model->setId(intval(ArrayHelper::get($response, "id", -1)));
+        $model->setPageURL(ArrayHelper::get($response, "pageURL"));
+        $model->setType(ArrayHelper::get($response, "type"));
+        $model->setTags(ArrayHelper::get($response, "tags"));
+        $model->setViews(intval(ArrayHelper::get($response, "views", -1)));
         $model->setDownloads(intval(ArrayHelper::get($response, "downloads", -1)));
         $model->setFavorites(intval(ArrayHelper::get($response, "favorites", -1)));
-        $model->setId(intval(ArrayHelper::get($response, "id", -1)));
         $model->setLikes(intval(ArrayHelper::get($response, "likes", -1)));
-        $model->setPageURL(ArrayHelper::get($response, "pageURL"));
-        $model->setTags(ArrayHelper::get($response, "tags"));
-        $model->setType(ArrayHelper::get($response, "type"));
-        $model->setUser(ArrayHelper::get($response, "user"));
+        $model->setComments(intval(ArrayHelper::get($response, "comments", -1)));
         $model->setUserId(intval(ArrayHelper::get($response, "user_id", -1)));
+        $model->setUser(ArrayHelper::get($response, "user"));
         $model->setUserImageURL(ArrayHelper::get($response, "userImageURL"));
-        $model->setViews(intval(ArrayHelper::get($response, "views", -1)));
     }
 
     /**
@@ -63,18 +63,18 @@ class ResponseDeserializer {
 
         static::deserializeHit($model, $response);
 
-        $model->setFullHDURL(ArrayHelper::get($response, "fullHDURL"));
-        $model->setImageHeight(intval(ArrayHelper::get($response, "imageHeight", -1)));
-        $model->setImageSize(intval(ArrayHelper::get($response, "imageSize", -1)));
-        $model->setImageURL(ArrayHelper::get($response, "imageURL"));
-        $model->setImageWidth(intval(ArrayHelper::get($response, "imageWidth", -1)));
-        $model->setLargeImageURL(ArrayHelper::get($response, "largeImageURL"));
-        $model->setPreviewHeight(intval(ArrayHelper::get($response, "previewHeight", -1)));
         $model->setPreviewURL(ArrayHelper::get($response, "previewURL"));
         $model->setPreviewWidth(intval(ArrayHelper::get($response, "previewWidth", -1)));
-        $model->setWebFormatHeight(intval(ArrayHelper::get($response, "webformatHeight", -1)));
+        $model->setPreviewHeight(intval(ArrayHelper::get($response, "previewHeight", -1)));
         $model->setWebFormatURL(ArrayHelper::get($response, "webformatURL"));
         $model->setWebFormatWidth(intval(ArrayHelper::get($response, "webformatWidth", -1)));
+        $model->setWebFormatHeight(intval(ArrayHelper::get($response, "webformatHeight", -1)));
+        $model->setLargeImageURL(ArrayHelper::get($response, "largeImageURL"));
+        $model->setFullHDURL(ArrayHelper::get($response, "fullHDURL"));
+        $model->setImageURL(ArrayHelper::get($response, "imageURL"));
+        $model->setImageWidth(intval(ArrayHelper::get($response, "imageWidth", -1)));
+        $model->setImageHeight(intval(ArrayHelper::get($response, "imageHeight", -1)));
+        $model->setImageSize(intval(ArrayHelper::get($response, "imageSize", -1)));
 
         return $model;
     }
@@ -154,10 +154,10 @@ class ResponseDeserializer {
 
         $model = new Video();
 
-        $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
-        $model->setSize(intval(ArrayHelper::get($response, "size", -1)));
         $model->setUrl(ArrayHelper::get($response, "url"));
         $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
+        $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
+        $model->setSize(intval(ArrayHelper::get($response, "size", -1)));
 
         return $model;
     }

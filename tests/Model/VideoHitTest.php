@@ -41,20 +41,6 @@ class VideoHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new VideoHit();
-
-        $this->assertNull($obj->getDuration());
-        $this->assertNull($obj->getPictureId());
-        $this->assertCount(0, $obj->getVideos());
-    }
-
-    /**
      * Tests the setDuration() method.
      *
      * @return void.
@@ -78,5 +64,19 @@ class VideoHitTest extends AbstractTestCase {
 
         $obj->setPictureId("pictureId");
         $this->assertEquals("pictureId", $obj->getPictureId());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new VideoHit();
+
+        $this->assertNull($obj->getDuration());
+        $this->assertNull($obj->getPictureId());
+        $this->assertCount(0, $obj->getVideos());
     }
 }

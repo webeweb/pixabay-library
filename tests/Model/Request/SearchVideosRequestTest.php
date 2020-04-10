@@ -26,21 +26,6 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class SearchVideosRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/videos/", SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH);
-
-        $obj = new SearchVideosRequest();
-
-        $this->assertEquals(SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH, $obj->getResourcePath());
-        $this->assertEquals(SearchVideosRequest::VIDEO_TYPE_ALL, $obj->getVideoType());
-    }
-
-    /**
      * Tests the enumVideoType() method.
      *
      * @return void
@@ -86,5 +71,20 @@ class SearchVideosRequestTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The video type \"videoType\" is invalid", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/videos/", SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH);
+
+        $obj = new SearchVideosRequest();
+
+        $this->assertEquals(SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertEquals(SearchVideosRequest::VIDEO_TYPE_ALL, $obj->getVideoType());
     }
 }

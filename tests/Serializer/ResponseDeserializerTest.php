@@ -41,29 +41,29 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $res = TestResponseDeserializer::deserializeImageHit($arg);
         $this->assertInstanceOf(ImageHit::class, $res);
 
-        $this->assertEquals(2, $res->getComments());
-        $this->assertEquals(6439, $res->getDownloads());
-        $this->assertEquals(1, $res->getFavorites());
-        $this->assertEquals("https://pixabay.com/get/ed6a9369fd0a76647_1920.jpg", $res->getFullHDURL());
         $this->assertEquals(195893, $res->getId());
-        $this->assertEquals(2250, $res->getImageHeight());
-        $this->assertEquals(4731420, $res->getImageSize());
-        $this->assertequals("https://pixabay.com/get/ed6a9364a9fd0a76647.jpg", $res->getImageURL());
-        $this->assertEquals(4000, $res->getImageWidth());
-        $this->assertEquals("https://pixabay.com/get/ed6a99fd0a76647_1280.jpg", $res->getLargeImageURL());
-        $this->assertEquals(5, $res->getLikes());
         $this->assertEquals("https://pixabay.com/en/blossom-bloom-flower-195893/", $res->getPageURL());
-        $this->assertEquals(84, $res->getPreviewHeight());
+        $this->assertEquals("photo", $res->getType());
+        $this->assertEquals("blossom, bloom, flower", $res->getTags());
         $this->assErtEquals("https://cdn.pixabay.com/photo/2013/10/15/09/12/flower-195893_150.jpg", $res->getPreviewURL());
         $this->assertEquals(150, $res->getPreviewWidth());
-        $this->assertEquals("blossom, bloom, flower", $res->getTags());
-        $this->assertEquals("photo", $res->getType());
-        $this->assertEquals(7671, $res->getViews());
-        $this->assertEquals(360, $res->getWebformatHeight());
+        $this->assertEquals(84, $res->getPreviewHeight());
         $this->assertEquals("https://pixabay.com/get/35bbf209e13e39d2_640.jpg", $res->getWebformatURL());
         $this->assertEquals(640, $res->getWebformatWidth());
-        $this->assertEquals("Josch13", $res->getUser());
+        $this->assertEquals(360, $res->getWebformatHeight());
+        $this->assertEquals("https://pixabay.com/get/ed6a99fd0a76647_1280.jpg", $res->getLargeImageURL());
+        $this->assertEquals("https://pixabay.com/get/ed6a9369fd0a76647_1920.jpg", $res->getFullHDURL());
+        $this->assertequals("https://pixabay.com/get/ed6a9364a9fd0a76647.jpg", $res->getImageURL());
+        $this->assertEquals(4000, $res->getImageWidth());
+        $this->assertEquals(2250, $res->getImageHeight());
+        $this->assertEquals(4731420, $res->getImageSize());
+        $this->assertEquals(7671, $res->getViews());
+        $this->assertEquals(6439, $res->getDownloads());
+        $this->assertEquals(1, $res->getFavorites());
+        $this->assertEquals(5, $res->getLikes());
+        $this->assertEquals(2, $res->getComments());
         $this->assertEquals(48777, $res->getUserId());
+        $this->assertEquals("Josch13", $res->getUser());
         $this->assertEquals("https://cdn.pixabay.com/user/2013/11/05/02-10-23-764_250x250.jpg", $res->getUserImageURL());
     }
 
@@ -145,11 +145,11 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $res = TestResponseDeserializer::deserializeVideo($arg);
         $this->assertInstanceOf(Video::class, $res);
 
-        $this->assertEquals(1080, $res->getHeight());
-        $this->assertNull($res->getQuality());
-        $this->assertEquals(6615235, $res->getSize());
         $this->assertEquals("https://player.vimeo.com/external/135736646.hd.mp4?s=ed02d71c92dd0df7d1110045e6eb65a6&profile_id=119", $res->getUrl());
         $this->assertEquals(1920, $res->getWidth());
+        $this->assertEquals(1080, $res->getHeight());
+        $this->assertEquals(6615235, $res->getSize());
+        $this->assertNull($res->getQuality());
     }
 
     /**
@@ -164,20 +164,20 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $res = TestResponseDeserializer::deserializeVideoHit($arg);
         $this->assertInstanceOf(VideoHit::class, $res);
 
-        $this->assertEquals(2, $res->getComments());
-        $this->assertEquals(66, $res->getDownloads());
-        $this->assertEquals(12, $res->getDuration());
-        $this->assertEquals(7, $res->getFavorites());
         $this->assertEquals(125, $res->getId());
-        $this->assertEquals(3, $res->getLikes());
         $this->assertEquals("https://pixabay.com/videos/id-125/", $res->getPageURL());
-        $this->assertEquals("529927645", $res->getPictureId());
-        $this->assertEquals("flowers, yellow, blossom", $res->getTags());
         $this->assertEquals("film", $res->getType());
+        $this->assertEquals("flowers, yellow, blossom", $res->getTags());
+        $this->assertEquals(12, $res->getDuration());
+        $this->assertEquals("529927645", $res->getPictureId());
         $this->assertCount(4, $res->getVideos());
         $this->assertEquals(169, $res->getViews());
-        $this->assertEquals("CoverrFreeFootage", $res->getUser());
+        $this->assertEquals(66, $res->getDownloads());
+        $this->assertEquals(7, $res->getFavorites());
+        $this->assertEquals(3, $res->getLikes());
+        $this->assertEquals(2, $res->getComments());
         $this->assertEquals(1281706, $res->getUserId());
+        $this->assertEquals("CoverrFreeFootage", $res->getUser());
         $this->assertEquals("https://cdn.pixabay.com/user/2015/10/16/09-28-45-303_250x250.png", $res->getUserImageURL());
 
         $this->assertEquals("large", $res->getVideos()[0]->getQuality());

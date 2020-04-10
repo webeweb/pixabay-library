@@ -41,24 +41,6 @@ class AbstractResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestResponse();
-
-        $this->assertCount(0, $obj->getHits());
-        $this->assertNull($obj->getLimit());
-        $this->assertNull($obj->getRawResponse());
-        $this->assertNull($obj->getRemaining());
-        $this->assertNull($obj->getReset());
-        $this->assertNull($obj->getTotal());
-        $this->assertNull($obj->getTotalHits());
-    }
-
-    /**
      * Tests the setRawResponse() method.
      *
      * @return void
@@ -95,5 +77,23 @@ class AbstractResponseTest extends AbstractTestCase {
 
         $obj->setTotalHits(1);
         $this->assertEquals(1, $obj->getTotalHits());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestResponse();
+
+        $this->assertCount(0, $obj->getHits());
+        $this->assertNull($obj->getLimit());
+        $this->assertNull($obj->getRawResponse());
+        $this->assertNull($obj->getRemaining());
+        $this->assertNull($obj->getReset());
+        $this->assertNull($obj->getTotal());
+        $this->assertNull($obj->getTotalHits());
     }
 }

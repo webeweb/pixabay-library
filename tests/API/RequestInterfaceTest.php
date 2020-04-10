@@ -27,7 +27,7 @@ class RequestInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("bg", RequestInterface::LANG_BG);
         $this->assertEquals("cs", RequestInterface::LANG_CS);

@@ -23,29 +23,6 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class ImageHitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new ImageHit();
-
-        $this->assertNull($obj->getFullHDURL());
-        $this->assertNull($obj->getImageHeight());
-        $this->assertNull($obj->getImageSize());
-        $this->assertNull($obj->getImageURL());
-        $this->assertNull($obj->getImageWidth());
-        $this->assertNull($obj->getLargeImageURL());
-        $this->assertNull($obj->getPreviewHeight());
-        $this->assertNull($obj->getPreviewURL());
-        $this->assertNull($obj->getPreviewWidth());
-        $this->assertNull($obj->getWebFormatHeight());
-        $this->assertNull($obj->getWebFormatURL());
-        $this->assertNull($obj->getWebFormatWidth());
-    }
-
-    /**
      * Tests the setFullHDURL() method.
      *
      * @return void
@@ -199,5 +176,28 @@ class ImageHitTest extends AbstractTestCase {
 
         $obj->setWebFormatWidth(1);
         $this->assertEquals(1, $obj->getWebFormatWidth());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new ImageHit();
+
+        $this->assertNull($obj->getFullHDURL());
+        $this->assertNull($obj->getImageHeight());
+        $this->assertNull($obj->getImageSize());
+        $this->assertNull($obj->getImageURL());
+        $this->assertNull($obj->getImageWidth());
+        $this->assertNull($obj->getLargeImageURL());
+        $this->assertNull($obj->getPreviewHeight());
+        $this->assertNull($obj->getPreviewURL());
+        $this->assertNull($obj->getPreviewWidth());
+        $this->assertNull($obj->getWebFormatHeight());
+        $this->assertNull($obj->getWebFormatURL());
+        $this->assertNull($obj->getWebFormatWidth());
     }
 }

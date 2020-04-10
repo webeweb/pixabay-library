@@ -59,23 +59,6 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/", SearchImagesRequest::SEARCH_IMAGES_RESOURCE_PATH);
-
-        $obj = new SearchImagesRequest();
-
-        $this->assertCount(0, $obj->getColors());
-        $this->assertEquals(SearchImagesRequest::IMAGE_TYPE_ALL, $obj->getImageType());
-        $this->assertEquals(SearchImagesRequest::ORIENTATION_ALL, $obj->getOrientation());
-        $this->assertEquals(SearchImagesRequest::SEARCH_IMAGES_RESOURCE_PATH, $obj->getResourcePath());
-    }
-
-    /**
      * Tests the enumCategory() method..
      *
      * @return void
@@ -244,5 +227,22 @@ class SearchImagesRequestTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The orientation \"orientation\" is invalid", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/", SearchImagesRequest::SEARCH_IMAGES_RESOURCE_PATH);
+
+        $obj = new SearchImagesRequest();
+
+        $this->assertCount(0, $obj->getColors());
+        $this->assertEquals(SearchImagesRequest::IMAGE_TYPE_ALL, $obj->getImageType());
+        $this->assertEquals(SearchImagesRequest::ORIENTATION_ALL, $obj->getOrientation());
+        $this->assertEquals(SearchImagesRequest::SEARCH_IMAGES_RESOURCE_PATH, $obj->getResourcePath());
     }
 }
