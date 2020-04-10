@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve unit tests
+
 ### [1.4.1](https://github.com/webeweb/pixabay-library/tree/v1.4.1) (2020-03-17)
 
 - Fix [#1](https://github.com/webeweb/pixabay-library/issues/1): Failed to parse time string
