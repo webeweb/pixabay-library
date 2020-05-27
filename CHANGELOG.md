@@ -1,9 +1,10 @@
 CHANGELOG
 =========
 
-### master
+### [1.5.0](https://github.com/webeweb/pixabay-library/tree/v1.5.0) (2020-05-27)
 
 - Improve unit tests
+- Update dependencies
 
 ### [1.4.1](https://github.com/webeweb/pixabay-library/tree/v1.4.1) (2020-03-17)
 
