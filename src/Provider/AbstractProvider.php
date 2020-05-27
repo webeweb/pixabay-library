@@ -15,7 +15,8 @@ use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\Pixabay\Exception\APIException;
+use WBW\Library\Core\Exception\ApiException;
+use WBW\Library\Core\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Pixabay\Model\AbstractRequest;
 use WBW\Library\Pixabay\Model\RateLimitTrait;
 
@@ -25,7 +26,7 @@ use WBW\Library\Pixabay\Model\RateLimitTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Provider
  */
-abstract class AbstractProvider {
+abstract class AbstractProvider extends BaseProvider {
 
     use RateLimitTrait;
 
@@ -37,25 +38,11 @@ abstract class AbstractProvider {
     const ENDPOINT_PATH = "https://pixabay.com/api";
 
     /**
-     * Debug.
-     *
-     * @var bool
-     */
-    private $debug;
-
-    /**
      * Key.
      *
      * @var string
      */
     private $key;
-
-    /**
-     * Logger.
-     *
-     * @var LoggerInterface
-     */
-    private $logger;
 
     /**
      * Constructor.
@@ -64,6 +51,7 @@ abstract class AbstractProvider {
      * @param LoggerInterface|null $logger The logger.
      */
     public function __construct($key = null, LoggerInterface $logger = null) {
+        parent::__construct($logger);
         $this->setDebug(false);
         $this->setKey($key);
         $this->setLogger($logger);
@@ -92,7 +80,7 @@ abstract class AbstractProvider {
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
      * @return string Returns the raw response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     protected function callAPI(AbstractRequest $request, array $queryData) {
@@ -124,17 +112,8 @@ abstract class AbstractProvider {
             return $response->getBody()->getContents();
         } catch (Exception $ex) {
 
-            throw new APIException("Call Pixabay API failed", $ex);
+            throw new APIException("Call Pixabay API failed", 500, $ex);
         }
-    }
-
-    /**
-     * Get the debug.
-     *
-     * @return bool Returns the debug.
-     */
-    public function getDebug() {
-        return $this->debug;
     }
 
     /**
@@ -147,40 +126,6 @@ abstract class AbstractProvider {
     }
 
     /**
-     * Get the logger.
-     *
-     * @return LoggerInterface Returns the logger.
-     */
-    public function getLogger() {
-        return $this->logger;
-    }
-
-    /**
-     * Log an info.
-     *
-     * @param string $message The message.
-     * @param array $context The context.
-     * @return AbstractProvider Returns this provider.
-     */
-    protected function logInfo($message, array $context) {
-        if (null !== $this->getLogger()) {
-            $this->getLogger()->info($message, $context);
-        }
-        return $this;
-    }
-
-    /**
-     * Set the debug.
-     *
-     * @param bool $debug The debug.
-     * @return AbstractProvider Returns this provider.
-     */
-    public function setDebug($debug) {
-        $this->debug = $debug;
-        return $this;
-    }
-
-    /**
      * Set the key.
      *
      * @param string $key The key.
@@ -188,17 +133,6 @@ abstract class AbstractProvider {
      */
     public function setKey($key) {
         $this->key = $key;
-        return $this;
-    }
-
-    /**
-     * Set the logger.
-     *
-     * @param LoggerInterface|null $logger The logger
-     * @return AbstractProvider Returns this provider
-     */
-    protected function setLogger(LoggerInterface $logger = null) {
-        $this->logger = $logger;
         return $this;
     }
 }

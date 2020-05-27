@@ -14,7 +14,7 @@ namespace WBW\Library\Pixabay\Tests\Provider;
 use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\Pixabay\Exception\APIException;
+use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
@@ -88,7 +88,7 @@ class APIProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(SearchImagesResponse::class, $res);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertInstanceOf(ApiException::class, $ex);
         }
     }
 
@@ -133,7 +133,7 @@ class APIProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(SearchVideosResponse::class, $res);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertInstanceOf(ApiException::class, $ex);
         }
     }
 }
