@@ -4,6 +4,7 @@ CHANGELOG
 ### [1.5.1](https://github.com/webeweb/pixabay-library/tree/v1.5.1) (2020-05-28)
 
 - Code chekstyle
+- Update documentation
 
 ### [1.5.0](https://github.com/webeweb/pixabay-library/tree/v1.5.0) (2020-05-27)
 
