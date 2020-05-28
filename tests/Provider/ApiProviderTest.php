@@ -19,9 +19,9 @@ use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
-use WBW\Library\Pixabay\Provider\APIProvider;
+use WBW\Library\Pixabay\Provider\ApiProvider;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
-use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestAPIProvider;
+use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestApiProvider;
 
 /**
  * API provider test.
@@ -29,7 +29,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestAPIProvider;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Tests\Provider
  */
-class APIProviderTest extends AbstractTestCase {
+class ApiProviderTest extends AbstractTestCase {
 
     /**
      * Key.
@@ -58,7 +58,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Search images response mock.
         $searchImageResponse = new SearchImagesResponse();
 
-        $obj = new TestAPIProvider();
+        $obj = new TestApiProvider();
 
         $obj->beforeReturnResponse($searchImageResponse);
         $this->assertSame($obj->getLimit(), $searchImageResponse->getLimit());
@@ -79,7 +79,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
 
-        $obj = new APIProvider($this->key, $logger);
+        $obj = new ApiProvider($this->key, $logger);
 
         try {
 
@@ -102,7 +102,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
 
-        $obj = new APIProvider();
+        $obj = new ApiProvider();
 
         try {
 
@@ -124,7 +124,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
 
-        $obj = new APIProvider($this->key);
+        $obj = new ApiProvider($this->key);
 
         try {
 

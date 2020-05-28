@@ -27,7 +27,7 @@ use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pixabay\Provider
  */
-class APIProvider extends AbstractProvider {
+class ApiProvider extends AbstractProvider {
 
     /**
      * Before return a response.
@@ -56,7 +56,7 @@ class APIProvider extends AbstractProvider {
 
         $queryData = RequestSerializer::serializeSearchImagesRequest($searchImagesRequest);
 
-        $rawResponse = $this->callAPI($searchImagesRequest, $queryData);
+        $rawResponse = $this->callApi($searchImagesRequest, $queryData);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializeSearchImagesResponse($rawResponse));
     }
@@ -73,7 +73,7 @@ class APIProvider extends AbstractProvider {
 
         $queryData = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
 
-        $rawResponse = $this->callAPI($searchVideosRequest, $queryData);
+        $rawResponse = $this->callApi($searchVideosRequest, $queryData);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializeSearchVideosResponse($rawResponse));
     }
