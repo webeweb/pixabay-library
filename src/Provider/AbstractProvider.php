@@ -54,7 +54,6 @@ abstract class AbstractProvider extends BaseProvider {
         parent::__construct($logger);
         $this->setDebug(false);
         $this->setKey($key);
-        $this->setLogger($logger);
     }
 
     /**
