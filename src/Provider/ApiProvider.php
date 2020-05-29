@@ -47,16 +47,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Search images.
      *
-     * @param SearchImagesRequest $searchImagesRequest The search images request.
+     * @param SearchImagesRequest $request The search images request.
      * @return SearchImagesResponse Returns the search images response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function searchImages(SearchImagesRequest $searchImagesRequest) {
+    public function searchImages(SearchImagesRequest $request) {
 
-        $queryData = RequestSerializer::serializeSearchImagesRequest($searchImagesRequest);
+        $queryData = RequestSerializer::serializeSearchImagesRequest($request);
 
-        $rawResponse = $this->callApi($searchImagesRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializeSearchImagesResponse($rawResponse));
     }
@@ -64,16 +64,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Search videos.
      *
-     * @param SearchVideosRequest $searchVideosRequest The search videos request.
+     * @param SearchVideosRequest $request The search videos request.
      * @return SearchVideosResponse Returns the search videos response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function searchVideos(SearchVideosRequest $searchVideosRequest) {
+    public function searchVideos(SearchVideosRequest $request) {
 
-        $queryData = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
+        $queryData = RequestSerializer::serializeSearchVideosRequest($request);
 
-        $rawResponse = $this->callApi($searchVideosRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializeSearchVideosResponse($rawResponse));
     }
