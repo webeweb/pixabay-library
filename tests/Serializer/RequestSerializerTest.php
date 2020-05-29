@@ -51,22 +51,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $searchImagesRequest->setOrientation(SearchImagesRequest::ORIENTATION_HORIZONTAL);
 
         $res = RequestSerializer::serializeSearchImagesRequest($searchImagesRequest);
-        $this->assertArrayHasKey("category", $res);
-        $this->assertArrayHasKey("editors_choice", $res);
-        $this->assertArrayHasKey("id", $res);
-        $this->assertArrayHasKey("lang", $res);
-        $this->assertArrayHasKey("min_height", $res);
-        $this->assertArrayHasKey("min_width", $res);
-        $this->assertArrayHasKey("order", $res);
-        $this->assertArrayHasKey("page", $res);
-        $this->assertArrayHasKey("per_page", $res);
-        $this->assertArrayHasKey("pretty", $res);
-        $this->assertArrayHasKey("q", $res);
-        $this->assertArrayHasKey("safesearch", $res);
-
-        $this->assertArrayHasKey("colors", $res);
-        $this->assertArrayHasKey("image_type", $res);
-        $this->assertArrayHasKey("orientation", $res);
 
         $this->assertEquals("category", $res["category"]);
         $this->assertEquals("true", $res["editors_choice"]);
@@ -111,20 +95,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $searchVideosRequest->setVideoType(SearchVideosRequest::VIDEO_TYPE_FILM);
 
         $res = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
-        $this->assertArrayHasKey("category", $res);
-        $this->assertArrayHasKey("editors_choice", $res);
-        $this->assertArrayHasKey("id", $res);
-        $this->assertArrayHasKey("lang", $res);
-        $this->assertArrayHasKey("min_height", $res);
-        $this->assertArrayHasKey("min_width", $res);
-        $this->assertArrayHasKey("order", $res);
-        $this->assertArrayHasKey("page", $res);
-        $this->assertArrayHasKey("per_page", $res);
-        $this->assertArrayHasKey("pretty", $res);
-        $this->assertArrayHasKey("q", $res);
-        $this->assertArrayHasKey("safesearch", $res);
-
-        $this->assertArrayHasKey("video_type", $res);
 
         $this->assertEquals("category", $res["category"]);
         $this->assertEquals("true", $res["editors_choice"]);
