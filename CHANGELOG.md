@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.5.2](https://github.com/webeweb/pixabay-library/tree/v1.5.2) (2020-05-29)
+
+- Code chekstyle
+
 ### [1.5.1](https://github.com/webeweb/pixabay-library/tree/v1.5.1) (2020-05-28)
 
 - Code chekstyle
