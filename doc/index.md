@@ -2,7 +2,6 @@ DOCUMENTATION
 =============
 
 Search images
--------------
 
 ```php
 // Create the API provider.
@@ -26,7 +25,6 @@ foreach ($response->getImageHits() as $current) {
 ```
 
 Search videos
--------------
 
 ```php
 // Create the API provider.
