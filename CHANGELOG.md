@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.5.4](https://github.com/webeweb/pixabay-library/tree/v1.5.4) (2020-06-25)
+
+- Improve code quality
+
 ### [1.5.3](https://github.com/webeweb/pixabay-library/tree/v1.5.3) (2020-06-03)
 
 - Update documentation
