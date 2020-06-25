@@ -69,7 +69,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The video type \"videoType\" is invalid", $ex->getMessage());
+            $this->assertEquals('The video type "videoType" is invalid', $ex->getMessage());
         }
     }
 

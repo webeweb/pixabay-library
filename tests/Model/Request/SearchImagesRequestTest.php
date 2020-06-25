@@ -54,7 +54,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The color \"color\" is invalid", $ex->getMessage());
+            $this->assertEquals('The color "color" is invalid', $ex->getMessage());
         }
     }
 
@@ -193,7 +193,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The image type \"imageType\" is invalid", $ex->getMessage());
+            $this->assertEquals('The image type "imageType" is invalid', $ex->getMessage());
         }
     }
 
@@ -225,7 +225,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The orientation \"orientation\" is invalid", $ex->getMessage());
+            $this->assertEquals('The orientation "orientation" is invalid', $ex->getMessage());
         }
     }
 

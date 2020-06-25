@@ -331,7 +331,7 @@ abstract class AbstractRequest implements RequestInterface {
      */
     public function setLang($lang) {
         if (false === in_array($lang, static::enumLang())) {
-            throw new InvalidArgumentException(sprintf("The lang \"%s\" is invalid", $lang));
+            throw new InvalidArgumentException(sprintf('The lang "%s" is invalid', $lang));
         }
         $this->lang = $lang;
         return $this;
@@ -368,7 +368,7 @@ abstract class AbstractRequest implements RequestInterface {
      */
     public function setOrder($order) {
         if (false === in_array($order, static::enumOrder())) {
-            throw new InvalidArgumentException(sprintf("The order \"%s\" is invalid", $order));
+            throw new InvalidArgumentException(sprintf('The order "%s" is invalid', $order));
         }
         $this->order = $order;
         return $this;

@@ -147,7 +147,7 @@ class AbstractRequestTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The lang \"lang\" is invalid", $ex->getMessage());
+            $this->assertEquals('The lang "lang" is invalid', $ex->getMessage());
         }
     }
 
@@ -205,7 +205,7 @@ class AbstractRequestTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The order \"order\" is invalid", $ex->getMessage());
+            $this->assertEquals('The order "order" is invalid', $ex->getMessage());
         }
     }
 
