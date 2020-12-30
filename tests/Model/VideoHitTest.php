@@ -28,7 +28,7 @@ class VideoHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddVideo() {
+    public function testAddVideo(): void {
 
         // Set a Video mock.
         $video = new Video();
@@ -45,7 +45,7 @@ class VideoHitTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testSetDuration() {
+    public function testSetDuration(): void {
 
         $obj = new VideoHit();
 
@@ -58,7 +58,7 @@ class VideoHitTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testSetPictureId() {
+    public function testSetPictureId(): void {
 
         $obj = new VideoHit();
 
@@ -71,7 +71,7 @@ class VideoHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new VideoHit();
 

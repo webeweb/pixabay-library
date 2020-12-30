@@ -11,6 +11,9 @@
 
 namespace WBW\Library\Pixabay\Tests\Fixtures\Serializer;
 
+use WBW\Library\Pixabay\Model\ImageHit;
+use WBW\Library\Pixabay\Model\Video;
+use WBW\Library\Pixabay\Model\VideoHit;
 use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
 
 /**
@@ -24,21 +27,21 @@ class TestResponseDeserializer extends ResponseDeserializer {
     /**
      * {@inheritDoc}
      */
-    public static function deserializeImageHit(array $response) {
+    public static function deserializeImageHit(array $response): ImageHit {
         return parent::deserializeImageHit($response);
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function deserializeVideo(array $response) {
+    public static function deserializeVideo(array $response): Video {
         return parent::deserializeVideo($response);
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function deserializeVideoHit(array $response) {
+    public static function deserializeVideoHit(array $response): VideoHit {
         return parent::deserializeVideoHit($response);
     }
 }

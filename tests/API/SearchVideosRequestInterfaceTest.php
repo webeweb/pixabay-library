@@ -27,7 +27,7 @@ class SearchVideosRequestInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("all", SearchVideosRequestInterface::VIDEO_TYPE_ALL);
         $this->assertEquals("animation", SearchVideosRequestInterface::VIDEO_TYPE_ANIMATION);

@@ -27,7 +27,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testSetHeight() {
+    public function testSetHeight(): void {
 
         $obj = new Video();
 
@@ -40,7 +40,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testSetQuality() {
+    public function testSetQuality(): void {
 
         $obj = new Video();
 
@@ -53,7 +53,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testSetSize() {
+    public function testSetSize(): void {
 
         $obj = new Video();
 
@@ -66,7 +66,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testSetUrl() {
+    public function testSetUrl(): void {
 
         $obj = new Video();
 
@@ -79,7 +79,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testSetWidth() {
+    public function testSetWidth(): void {
 
         $obj = new Video();
 
@@ -92,7 +92,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new Video();
 

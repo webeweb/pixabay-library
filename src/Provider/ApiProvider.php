@@ -35,7 +35,7 @@ class ApiProvider extends AbstractProvider {
      * @param AbstractResponse $response The response.
      * @return AbstractResponse Returns the response.
      */
-    protected function beforeReturnResponse(AbstractResponse $response) {
+    protected function beforeReturnResponse(AbstractResponse $response): AbstractResponse {
 
         $response->setLimit($this->getLimit());
         $response->setRemaining($this->getRemaining());
@@ -52,7 +52,7 @@ class ApiProvider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function searchImages(SearchImagesRequest $request) {
+    public function searchImages(SearchImagesRequest $request): SearchImagesResponse {
 
         $queryData = RequestSerializer::serializeSearchImagesRequest($request);
 
@@ -69,7 +69,7 @@ class ApiProvider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function searchVideos(SearchVideosRequest $request) {
+    public function searchVideos(SearchVideosRequest $request): SearchVideosResponse {
 
         $queryData = RequestSerializer::serializeSearchVideosRequest($request);
 

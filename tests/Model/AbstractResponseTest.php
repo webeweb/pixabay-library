@@ -28,7 +28,7 @@ class AbstractResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddHit() {
+    public function testAddHit(): void {
 
         // Set a Hit mock.
         $hit = new TestHit();
@@ -45,7 +45,7 @@ class AbstractResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRawResponse() {
+    public function testSetRawResponse(): void {
 
         $obj = new TestResponse();
 
@@ -58,7 +58,7 @@ class AbstractResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTotal() {
+    public function testSetTotal(): void {
 
         $obj = new TestResponse();
 
@@ -71,7 +71,7 @@ class AbstractResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTotalHits() {
+    public function testSetTotalHits(): void {
 
         $obj = new TestResponse();
 
@@ -84,7 +84,7 @@ class AbstractResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestResponse();
 

@@ -33,7 +33,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
     /**
      * Video type.
      *
-     * @var string
+     * @var string|null
      */
     private $videoType;
 
@@ -50,7 +50,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      *
      * @return string[] Returns the video type enumeration.
      */
-    public static function enumVideoType() {
+    public static function enumVideoType(): array {
         return [
             self::VIDEO_TYPE_ALL,
             self::VIDEO_TYPE_ANIMATION,
@@ -61,27 +61,27 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
     /**
      * {@inheritDoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::SEARCH_VIDEOS_RESOURCE_PATH;
     }
 
     /**
      * Get the video type.
      *
-     * @return string Returns the video type.
+     * @return string|null Returns the video type.
      */
-    public function getVideoType() {
+    public function getVideoType(): ?string {
         return $this->videoType;
     }
 
     /**
      * Set the video type.
      *
-     * @param string $videoType The video type.
+     * @param string|null $videoType The video type.
      * @return SearchVideosRequest Returns this search videos request.
      * @throws InvalidArgumentException Throws an invalid argument exception if the video type is invalid.
      */
-    public function setVideoType($videoType) {
+    public function setVideoType(?string $videoType): SearchVideosRequest {
         if (false === in_array($videoType, static::enumVideoType())) {
             throw new InvalidArgumentException(sprintf('The video type "%s" is invalid', $videoType));
         }

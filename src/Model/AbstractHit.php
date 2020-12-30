@@ -11,6 +11,9 @@
 
 namespace WBW\Library\Pixabay\Model;
 
+use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
+use WBW\Library\Core\Model\Attribute\StringTypeTrait;
+
 /**
  * Abstract hit.
  *
@@ -20,87 +23,78 @@ namespace WBW\Library\Pixabay\Model;
  */
 abstract class AbstractHit {
 
+    use IntegerIdTrait {
+        setId as public;
+    }
+    use StringTypeTrait;
+
     /**
      * Comments.
      *
-     * @var int
+     * @var int|null
      */
     private $comments;
 
     /**
      * Downloads.
      *
-     * @var int
+     * @var int|null
      */
     private $downloads;
 
     /**
      * Favorites.
      *
-     * @var int
+     * @var int|null
      */
     private $favorites;
 
     /**
-     * Id.
-     *
-     * @var int
-     */
-    private $id;
-
-    /**
      * Likes.
      *
-     * @var int
+     * @var int|null
      */
     private $likes;
 
     /**
      * Page URL.
      *
-     * @var string
+     * @var string|null
      */
     private $pageURL;
 
     /**
      * Tags.
      *
-     * @var string
+     * @var string|null
      */
     private $tags;
 
     /**
-     * Type.
-     *
-     * @var string
-     */
-    private $type;
-
-    /**
      * User.
      *
-     * @var string
+     * @var string|null
      */
     private $user;
 
     /**
      * User id.
      *
-     * @var int
+     * @var int|null
      */
     private $userId;
 
     /**
      * User image URL.
      *
-     * @var string
+     * @var string|null
      */
     private $userImageURL;
 
     /**
      * Views.
      *
-     * @var int
+     * @var int|null
      */
     private $views;
 
@@ -108,124 +102,106 @@ abstract class AbstractHit {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        // NOTHING TO DO
     }
 
     /**
      * Get the comments.
      *
-     * @return int Returns the comments.
+     * @return int|null Returns the comments.
      */
-    public function getComments() {
+    public function getComments(): ?int {
         return $this->comments;
     }
 
     /**
      * Get the downloads.
      *
-     * @return int Returns the downloads.
+     * @return int|null Returns the downloads.
      */
-    public function getDownloads() {
+    public function getDownloads(): ?int {
         return $this->downloads;
     }
 
     /**
      * Get the favorites.
      *
-     * @return int Returns the favorites.
+     * @return int|null Returns the favorites.
      */
-    public function getFavorites() {
+    public function getFavorites(): ?int {
         return $this->favorites;
-    }
-
-    /**
-     * Get the id.
-     *
-     * @return int Returns the id.
-     */
-    public function getId() {
-        return $this->id;
     }
 
     /**
      * Get the likes.
      *
-     * @return int Returns the likes.
+     * @return int|null Returns the likes.
      */
-    public function getLikes() {
+    public function getLikes(): ?int {
         return $this->likes;
     }
 
     /**
      * Get the page URL.
      *
-     * @return string Returns the page URL.
+     * @return string|null Returns the page URL.
      */
-    public function getPageURL() {
+    public function getPageURL(): ?string {
         return $this->pageURL;
     }
 
     /**
      * Get the tags.
      *
-     * @return string Returns the tags.
+     * @return string|null Returns the tags.
      */
-    public function getTags() {
+    public function getTags(): ?string {
         return $this->tags;
-    }
-
-    /**
-     * Get the type.
-     *
-     * @return string Returns the type.
-     */
-    public function getType() {
-        return $this->type;
     }
 
     /**
      * Get the user.
      *
-     * @return string Returns the user.
+     * @return string|null Returns the user.
      */
-    public function getUser() {
+    public function getUser(): ?string {
         return $this->user;
     }
 
     /**
      * Get the user id.
      *
-     * @return int Returns the user id.
+     * @return int|null Returns the user id.
      */
-    public function getUserId() {
+    public function getUserId(): ?int {
         return $this->userId;
     }
 
     /**
      * Get the user image URL.
      *
-     * @return string Returns the user image URL.
+     * @return string|null Returns the user image URL.
      */
-    public function getUserImageURL() {
+    public function getUserImageURL(): ?string {
         return $this->userImageURL;
     }
 
     /**
      * Get the views.
      *
-     * @return int Returns the views.
+     * @return int|null Returns the views.
      */
-    public function getViews() {
+    public function getViews(): ?int {
         return $this->views;
     }
 
     /**
      * Set the comments.
      *
-     * @param int $comments The comments.
+     * @param int|null $comments The comments.
      * @return AbstractHit Returns this hit.
      */
-    public function setComments($comments) {
+    public function setComments(?int $comments): AbstractHit {
         $this->comments = $comments;
         return $this;
     }
@@ -233,10 +209,10 @@ abstract class AbstractHit {
     /**
      * Set the downloads.
      *
-     * @param int $downloads The downloads.
+     * @param int|null $downloads The downloads.
      * @return AbstractHit Returns this hit.
      */
-    public function setDownloads($downloads) {
+    public function setDownloads(?int $downloads): AbstractHit {
         $this->downloads = $downloads;
         return $this;
     }
@@ -244,32 +220,21 @@ abstract class AbstractHit {
     /**
      * Set the favorites.
      *
-     * @param int $favorites The favorites.
+     * @param int|null $favorites The favorites.
      * @return AbstractHit Returns this hit.
      */
-    public function setFavorites($favorites) {
+    public function setFavorites(?int $favorites): AbstractHit {
         $this->favorites = $favorites;
-        return $this;
-    }
-
-    /**
-     * Set the id.
-     *
-     * @param int $id The id.
-     * @return AbstractHit Returns this hit.
-     */
-    public function setId($id) {
-        $this->id = $id;
         return $this;
     }
 
     /**
      * Set the likes.
      *
-     * @param int $likes The likes.
+     * @param int|null $likes The likes.
      * @return AbstractHit Returns this hit.
      */
-    public function setLikes($likes) {
+    public function setLikes(?int $likes): AbstractHit {
         $this->likes = $likes;
         return $this;
     }
@@ -277,10 +242,10 @@ abstract class AbstractHit {
     /**
      * Set the page URL.
      *
-     * @param string $pageURL The page URL.
+     * @param string|null $pageURL The page URL.
      * @return AbstractHit Returns this hit.
      */
-    public function setPageURL($pageURL) {
+    public function setPageURL(?string $pageURL): AbstractHit {
         $this->pageURL = $pageURL;
         return $this;
     }
@@ -288,32 +253,21 @@ abstract class AbstractHit {
     /**
      * Set the tags.
      *
-     * @param string $tags The tags.
+     * @param string|null $tags The tags.
      * @return AbstractHit Returns this hit.
      */
-    public function setTags($tags) {
+    public function setTags(?string $tags): AbstractHit {
         $this->tags = $tags;
-        return $this;
-    }
-
-    /**
-     * Set the type.
-     *
-     * @param string $type The type.
-     * @return AbstractHit Returns this hit.
-     */
-    public function setType($type) {
-        $this->type = $type;
         return $this;
     }
 
     /**
      * Set the user.
      *
-     * @param string $user The user.
+     * @param string|null $user The user.
      * @return AbstractHit Returns this hit.
      */
-    public function setUser($user) {
+    public function setUser(?string $user): AbstractHit {
         $this->user = $user;
         return $this;
     }
@@ -321,10 +275,10 @@ abstract class AbstractHit {
     /**
      * Set the user id.
      *
-     * @param int $userId The user id.
+     * @param int|null $userId The user id.
      * @return AbstractHit Returns this hit.
      */
-    public function setUserId($userId) {
+    public function setUserId(?int $userId): AbstractHit {
         $this->userId = $userId;
         return $this;
     }
@@ -332,10 +286,10 @@ abstract class AbstractHit {
     /**
      * Set the user image URL.
      *
-     * @param string $userImageURL The user image URL.
+     * @param string|null $userImageURL The user image URL.
      * @return AbstractHit Returns this hit.
      */
-    public function setUserImageURL($userImageURL) {
+    public function setUserImageURL(?string $userImageURL): AbstractHit {
         $this->userImageURL = $userImageURL;
         return $this;
     }
@@ -343,10 +297,10 @@ abstract class AbstractHit {
     /**
      * Set the views.
      *
-     * @param int $views Set the views.
+     * @param int|null $views Set the views.
      * @return AbstractHit Returns this hit.
      */
-    public function setViews($views) {
+    public function setViews(?int $views): AbstractHit {
         $this->views = $views;
         return $this;
     }

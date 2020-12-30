@@ -31,7 +31,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumLang() {
+    public function testEnumLang(): void {
 
         $res = [
             RequestInterface::LANG_BG,
@@ -70,7 +70,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumOrder() {
+    public function testEnumOrder(): void {
 
         $res = [
             RequestInterface::ORDER_LATEST,
@@ -85,7 +85,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetCategory() {
+    public function testSetCategory(): void {
 
         $obj = new TestRequest();
 
@@ -98,7 +98,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetEditorsChoice() {
+    public function testSetEditorsChoice(): void {
 
         $obj = new TestRequest();
 
@@ -107,24 +107,11 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setId() method.
-     *
-     * @return void
-     */
-    public function testSetId() {
-
-        $obj = new TestRequest();
-
-        $obj->setId("id");
-        $this->assertEquals("id", $obj->getId());
-    }
-
-    /**
      * Tests the setLang() method.
      *
      * @return void
      */
-    public function testSetLang() {
+    public function testSetLang(): void {
 
         $obj = new TestRequest();
 
@@ -137,7 +124,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLangWithInvalidArgumentException() {
+    public function testSetLangWithInvalidArgumentException(): void {
 
         $obj = new TestRequest();
 
@@ -156,12 +143,12 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMinHeight() {
+    public function testSetMinHeight(): void {
 
         $obj = new TestRequest();
 
-        $obj->setMinHeight("minHeight");
-        $this->assertEquals("minHeight", $obj->getMinHeight());
+        $obj->setMinHeight(0);
+        $this->assertEquals(0, $obj->getMinHeight());
     }
 
     /**
@@ -169,12 +156,12 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMinWidth() {
+    public function testSetMinWidth(): void {
 
         $obj = new TestRequest();
 
-        $obj->setMinWidth("minWidth");
-        $this->assertEquals("minWidth", $obj->getMinWidth());
+        $obj->setMinWidth(0);
+        $this->assertEquals(0, $obj->getMinWidth());
     }
 
     /**
@@ -182,7 +169,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrder() {
+    public function testSetOrder(): void {
 
         $obj = new TestRequest();
 
@@ -195,7 +182,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrderWithInvalidArgumentException() {
+    public function testSetOrderWithInvalidArgumentException(): void {
 
         $obj = new TestRequest();
 
@@ -214,7 +201,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPage() {
+    public function testSetPage(): void {
 
         $obj = new TestRequest();
 
@@ -227,7 +214,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPageWithInvalidArgumentException() {
+    public function testSetPageWithInvalidArgumentException(): void {
 
         $obj = new TestRequest();
 
@@ -246,7 +233,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPerPage() {
+    public function testSetPerPage(): void {
 
         $obj = new TestRequest();
 
@@ -259,7 +246,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPerPageWithInvalidArgumentException() {
+    public function testSetPerPageWithInvalidArgumentException(): void {
 
         $obj = new TestRequest();
 
@@ -287,7 +274,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPretty() {
+    public function testSetPretty(): void {
 
         $obj = new TestRequest();
 
@@ -300,7 +287,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetQ() {
+    public function testSetQ(): void {
 
         $obj = new TestRequest();
 
@@ -313,7 +300,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSafeSearch() {
+    public function testSetSafeSearch(): void {
 
         $obj = new TestRequest();
 
@@ -326,7 +313,7 @@ class AbstractRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestRequest();
 

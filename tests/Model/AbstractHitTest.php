@@ -27,7 +27,7 @@ class AbstractHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetComments() {
+    public function testSetComments(): void {
 
         $obj = new TestHit();
 
@@ -40,7 +40,7 @@ class AbstractHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDownloads() {
+    public function testSetDownloads(): void {
 
         $obj = new TestHit();
 
@@ -53,7 +53,7 @@ class AbstractHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetFavorites() {
+    public function testSetFavorites(): void {
 
         $obj = new TestHit();
 
@@ -62,24 +62,11 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setId() method.
-     *
-     * @return void
-     */
-    public function testSetId() {
-
-        $obj = new TestHit();
-
-        $obj->setId(1);
-        $this->assertEquals(1, $obj->getId());
-    }
-
-    /**
      * Tests the setLikes() method.
      *
      * @return void
      */
-    public function testSetLikes() {
+    public function testSetLikes(): void {
 
         $obj = new TestHit();
 
@@ -92,7 +79,7 @@ class AbstractHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPageURL() {
+    public function testSetPageURL(): void {
 
         $obj = new TestHit();
 
@@ -105,7 +92,7 @@ class AbstractHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTags() {
+    public function testSetTags(): void {
 
         $obj = new TestHit();
 
@@ -114,24 +101,11 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setType() method.
-     *
-     * @return void
-     */
-    public function testSetType() {
-
-        $obj = new TestHit();
-
-        $obj->setType("type");
-        $this->assertEquals("type", $obj->getType());
-    }
-
-    /**
      * Tests the setUser() method.
      *
      * @return void
      */
-    public function testSetUser() {
+    public function testSetUser(): void {
 
         $obj = new TestHit();
 
@@ -144,7 +118,7 @@ class AbstractHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetUserId() {
+    public function testSetUserId(): void {
 
         $obj = new TestHit();
 
@@ -157,7 +131,7 @@ class AbstractHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetUserImageURL() {
+    public function testSetUserImageURL(): void {
 
         $obj = new TestHit();
 
@@ -170,7 +144,7 @@ class AbstractHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetViews() {
+    public function testSetViews(): void {
 
         $obj = new TestHit();
 
@@ -183,7 +157,7 @@ class AbstractHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestHit();
 

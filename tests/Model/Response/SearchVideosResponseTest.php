@@ -28,7 +28,7 @@ class SearchVideosResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddVideoHit() {
+    public function testAddVideoHit(): void {
 
         // Set an Video hit mock.
         $videoHit = new VideoHit();
@@ -45,7 +45,7 @@ class SearchVideosResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new SearchVideosResponse();
 

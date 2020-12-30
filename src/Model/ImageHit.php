@@ -22,202 +22,202 @@ class ImageHit extends AbstractHit {
     /**
      * Full HD URL.
      *
-     * @var string
+     * @var string|null
      */
     private $fullHDURL;
 
     /**
      * Image height.
      *
-     * @var int
+     * @var int|null
      */
     private $imageHeight;
 
     /**
      * Image size.
      *
-     * @var int
+     * @var int|null
      */
     private $imageSize;
 
     /**
      * Image URL.
      *
-     * @var string
+     * @var string|null
      */
     private $imageURL;
 
     /**
      * Image width.
      *
-     * @var int
+     * @var int|null
      */
     private $imageWidth;
 
     /**
      * Large image URL.
      *
-     * @var string
+     * @var string|null
      */
     private $largeImageURL;
 
     /**
      * Preview height.
      *
-     * @var int
+     * @var int|null
      */
     private $previewHeight;
 
     /**
      * Preview URL.
      *
-     * @var string
+     * @var string|null
      */
     private $previewURL;
 
     /**
      * Preview width.
      *
-     * @var int
+     * @var int|null
      */
     private $previewWidth;
 
     /**
      * Web format height.
      *
-     * @var int
+     * @var int|null
      */
     private $webFormatHeight;
 
     /**
      * Web format URL.
      *
-     * @var string
+     * @var string|null
      */
     private $webFormatURL;
 
     /**
      * Web format width.
      *
-     * @var int
+     * @var int|null
      */
     private $webFormatWidth;
 
     /**
      * Get the full HD URL.
      *
-     * @return string Returns the full HD URL.
+     * @return string|null Returns the full HD URL.
      */
-    public function getFullHDURL() {
+    public function getFullHDURL(): ?string {
         return $this->fullHDURL;
     }
 
     /**
      * Get the image height.
      *
-     * @return int Returns the image height.
+     * @return int|null Returns the image height.
      */
-    public function getImageHeight() {
+    public function getImageHeight(): ?int {
         return $this->imageHeight;
     }
 
     /**
      * Get the image size.
      *
-     * @return int Returns the image size.
+     * @return int|null Returns the image size.
      */
-    public function getImageSize() {
+    public function getImageSize(): ?int {
         return $this->imageSize;
     }
 
     /**
      * Get the image URL.
      *
-     * @return string Returns the image URL.
+     * @return string|null Returns the image URL.
      */
-    public function getImageURL() {
+    public function getImageURL(): ?string {
         return $this->imageURL;
     }
 
     /**
      * Get the image width.
      *
-     * @return int Returns the image width.
+     * @return int|null Returns the image width.
      */
-    public function getImageWidth() {
+    public function getImageWidth(): ?int {
         return $this->imageWidth;
     }
 
     /**
      * Get the large image URL.
      *
-     * @return string Returns the large format URL.
+     * @return string|null Returns the large format URL.
      */
-    public function getLargeImageURL() {
+    public function getLargeImageURL(): ?string {
         return $this->largeImageURL;
     }
 
     /**
      * Get the preview height.
      *
-     * @return int Returns the preview height.
+     * @return int|null Returns the preview height.
      */
-    public function getPreviewHeight() {
+    public function getPreviewHeight(): ?int {
         return $this->previewHeight;
     }
 
     /**
      * Get the preview URL.
      *
-     * @return string Returns the preview.
+     * @return string|null Returns the preview.
      */
-    public function getPreviewURL() {
+    public function getPreviewURL(): ?string {
         return $this->previewURL;
     }
 
     /**
      * Get the preview width.
      *
-     * @return int Returns the preview width.
+     * @return int|null Returns the preview width.
      */
-    public function getPreviewWidth() {
+    public function getPreviewWidth(): ?int {
         return $this->previewWidth;
     }
 
     /**
      * Get the web format height.
      *
-     * @return int Returns the web format height.
+     * @return int|null Returns the web format height.
      */
-    public function getWebFormatHeight() {
+    public function getWebFormatHeight(): ?int {
         return $this->webFormatHeight;
     }
 
     /**
      * Get the web format URL.
      *
-     * @return string Returns the web format URL.
+     * @return string|null Returns the web format URL.
      */
-    public function getWebFormatURL() {
+    public function getWebFormatURL(): ?string {
         return $this->webFormatURL;
     }
 
     /**
      * Get the wbe format width.
      *
-     * @return int Returns the web format width.
+     * @return int|null Returns the web format width.
      */
-    public function getWebFormatWidth() {
+    public function getWebFormatWidth(): ?int {
         return $this->webFormatWidth;
     }
 
     /**
      * Set the full HD URL.
      *
-     * @param string $fullHDURL The full HD URL.
+     * @param string|null $fullHDURL The full HD URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setFullHDURL($fullHDURL) {
+    public function setFullHDURL(?string $fullHDURL): ImageHit {
         $this->fullHDURL = $fullHDURL;
         return $this;
     }
@@ -225,10 +225,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the image height.
      *
-     * @param int $imageHeight The image height.
+     * @param int|null $imageHeight The image height.
      * @return ImageHit Returns this image hit.
      */
-    public function setImageHeight($imageHeight) {
+    public function setImageHeight(?int $imageHeight): ImageHit {
         $this->imageHeight = $imageHeight;
         return $this;
     }
@@ -236,10 +236,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the image size.
      *
-     * @param int $imageSize The image size.
+     * @param int|null $imageSize The image size.
      * @return ImageHit Returns this image hit.
      */
-    public function setImageSize($imageSize) {
+    public function setImageSize(?int $imageSize): ImageHit {
         $this->imageSize = $imageSize;
         return $this;
     }
@@ -247,10 +247,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the image URL.
      *
-     * @param string $imageURL The image URL.
+     * @param string|null $imageURL The image URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setImageURL($imageURL) {
+    public function setImageURL(?string $imageURL): ImageHit {
         $this->imageURL = $imageURL;
         return $this;
     }
@@ -258,10 +258,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the image width.
      *
-     * @param int $imageWidth The image width.
+     * @param int|null $imageWidth The image width.
      * @return ImageHit Returns this image hit.
      */
-    public function setImageWidth($imageWidth) {
+    public function setImageWidth(?int $imageWidth): ImageHit {
         $this->imageWidth = $imageWidth;
         return $this;
     }
@@ -269,10 +269,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the large image URL.
      *
-     * @param string $largeImageURL The large image URL.
+     * @param string|null $largeImageURL The large image URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setLargeImageURL($largeImageURL) {
+    public function setLargeImageURL(?string $largeImageURL): ImageHit {
         $this->largeImageURL = $largeImageURL;
         return $this;
     }
@@ -280,10 +280,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the preview height.
      *
-     * @param int $previewHeight The preview height.
+     * @param int|null $previewHeight The preview height.
      * @return ImageHit Returns this image hit.
      */
-    public function setPreviewHeight($previewHeight) {
+    public function setPreviewHeight(?int $previewHeight): ImageHit {
         $this->previewHeight = $previewHeight;
         return $this;
     }
@@ -291,10 +291,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the preview URL.
      *
-     * @param string $previewURL The preview URL.
+     * @param string|null $previewURL The preview URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setPreviewURL($previewURL) {
+    public function setPreviewURL(?string $previewURL): ImageHit {
         $this->previewURL = $previewURL;
         return $this;
     }
@@ -302,10 +302,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the preview width.
      *
-     * @param int $previewWidth The preview width.
+     * @param int|null $previewWidth The preview width.
      * @return ImageHit Returns this image hit.
      */
-    public function setPreviewWidth($previewWidth) {
+    public function setPreviewWidth(?int $previewWidth): ImageHit {
         $this->previewWidth = $previewWidth;
         return $this;
     }
@@ -313,10 +313,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the web format height.
      *
-     * @param int $webFormatHeight The web format height.
+     * @param int|null $webFormatHeight The web format height.
      * @return ImageHit Returns this image hit.
      */
-    public function setWebFormatHeight($webFormatHeight) {
+    public function setWebFormatHeight(?int $webFormatHeight): ImageHit {
         $this->webFormatHeight = $webFormatHeight;
         return $this;
     }
@@ -324,10 +324,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the web format URL.
      *
-     * @param string $webFormatURL The web format URL.
+     * @param string|null $webFormatURL The web format URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setWebFormatURL($webFormatURL) {
+    public function setWebFormatURL(?string $webFormatURL): ImageHit {
         $this->webFormatURL = $webFormatURL;
         return $this;
     }
@@ -335,10 +335,10 @@ class ImageHit extends AbstractHit {
     /**
      * Set the web format width.
      *
-     * @param int $webFormatWidth The web format width.
+     * @param int|null $webFormatWidth The web format width.
      * @return ImageHit Returns this image hit.
      */
-    public function setWebFormatWidth($webFormatWidth) {
+    public function setWebFormatWidth(?int $webFormatWidth): ImageHit {
         $this->webFormatWidth = $webFormatWidth;
         return $this;
     }

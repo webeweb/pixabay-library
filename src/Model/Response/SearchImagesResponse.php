@@ -28,7 +28,7 @@ class SearchImagesResponse extends AbstractResponse {
      * @param ImageHit $imageHit The image hit.
      * @return SearchImagesResponse Returns this search image response.
      */
-    public function addImageHit(ImageHit $imageHit) {
+    public function addImageHit(ImageHit $imageHit): SearchImagesResponse {
         return $this->addHit($imageHit);
     }
 
@@ -37,7 +37,7 @@ class SearchImagesResponse extends AbstractResponse {
      *
      * @return ImageHit[] Returns the image hits.
      */
-    public function getImageHits() {
+    public function getImageHits(): array {
         return $this->getHits();
     }
 }

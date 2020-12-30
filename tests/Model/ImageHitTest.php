@@ -27,7 +27,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetFullHDURL() {
+    public function testSetFullHDURL(): void {
 
         $obj = new ImageHit();
 
@@ -40,7 +40,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetImageHeight() {
+    public function testSetImageHeight(): void {
 
         $obj = new ImageHit();
 
@@ -53,7 +53,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetImageSize() {
+    public function testSetImageSize(): void {
 
         $obj = new ImageHit();
 
@@ -66,7 +66,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetImageURL() {
+    public function testSetImageURL(): void {
 
         $obj = new ImageHit();
 
@@ -79,7 +79,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetImageWidth() {
+    public function testSetImageWidth(): void {
 
         $obj = new ImageHit();
 
@@ -92,7 +92,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLargeImageURL() {
+    public function testSetLargeImageURL(): void {
 
         $obj = new ImageHit();
 
@@ -105,7 +105,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPreviewHeight() {
+    public function testSetPreviewHeight(): void {
 
         $obj = new ImageHit();
 
@@ -118,7 +118,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPreviewURL() {
+    public function testSetPreviewURL(): void {
 
         $obj = new ImageHit();
 
@@ -131,7 +131,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPreviewWidth() {
+    public function testSetPreviewWidth(): void {
 
         $obj = new ImageHit();
 
@@ -144,7 +144,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetWebFormatHeight() {
+    public function testSetWebFormatHeight(): void {
 
         $obj = new ImageHit();
 
@@ -157,7 +157,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetWebFormatURL() {
+    public function testSetWebFormatURL(): void {
 
         $obj = new ImageHit();
 
@@ -170,7 +170,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetWebFormatWidth() {
+    public function testSetWebFormatWidth(): void {
 
         $obj = new ImageHit();
 
@@ -183,7 +183,7 @@ class ImageHitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new ImageHit();
 

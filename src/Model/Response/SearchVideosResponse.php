@@ -28,7 +28,7 @@ class SearchVideosResponse extends AbstractResponse {
      * @param VideoHit $videoHit The video hit.
      * @return SearchVideosResponse Returns this search video response.
      */
-    public function addVideoHit(VideoHit $videoHit) {
+    public function addVideoHit(VideoHit $videoHit): SearchVideosResponse {
         return $this->addHit($videoHit);
     }
 
@@ -37,7 +37,7 @@ class SearchVideosResponse extends AbstractResponse {
      *
      * @return VideoHit[] Returns the video hits.
      */
-    public function getVideoHits() {
+    public function getVideoHits(): array {
         return $this->getHits();
     }
 }

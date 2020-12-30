@@ -27,7 +27,7 @@ class SearchImagesRequestInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("animals", SearchImagesRequestInterface::CATEGORY_ANIMALS);
         $this->assertEquals("backgrounds", SearchImagesRequestInterface::CATEGORY_BACKGROUNDS);

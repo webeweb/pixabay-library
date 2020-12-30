@@ -29,7 +29,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSearchImagesRequest() {
+    public function testSerializeSearchImagesRequest(): void {
 
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
@@ -75,7 +75,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSearchVideosRequest() {
+    public function testSerializeSearchVideosRequest(): void {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();

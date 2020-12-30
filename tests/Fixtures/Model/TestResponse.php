@@ -25,14 +25,14 @@ class TestResponse extends AbstractResponse {
     /**
      * {@inheritDoc}
      */
-    public function addHit(AbstractHit $hit) {
+    public function addHit(AbstractHit $hit): AbstractResponse {
         return parent::addHit($hit);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getHits() {
+    public function getHits(): array {
         return parent::getHits();
     }
 }

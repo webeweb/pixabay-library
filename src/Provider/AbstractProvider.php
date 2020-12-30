@@ -40,17 +40,17 @@ abstract class AbstractProvider extends BaseProvider {
     /**
      * Key.
      *
-     * @var string
+     * @var string|null
      */
     private $key;
 
     /**
      * Constructor.
      *
-     * @param string $key The key.
+     * @param string|null $key The key.
      * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct($key = null, LoggerInterface $logger = null) {
+    public function __construct(string $key = null, LoggerInterface $logger = null) {
         parent::__construct($logger);
         $this->setDebug(false);
         $this->setKey($key);
@@ -61,7 +61,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @return array Returns the configuration.
      */
-    private function buildConfiguration() {
+    private function buildConfiguration(): array {
         return [
             "base_uri"    => self::ENDPOINT_PATH . "/",
             "debug"       => $this->getDebug(),
@@ -82,7 +82,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callApi(AbstractRequest $request, array $queryData) {
+    protected function callApi(AbstractRequest $request, array $queryData): string {
 
         if (null === $this->getKey()) {
             throw new InvalidArgumentException('The mandatory parameter "key" is missing');
@@ -118,19 +118,19 @@ abstract class AbstractProvider extends BaseProvider {
     /**
      * Get the key.
      *
-     * @return string Returns the key.
+     * @return string|null Returns the key.
      */
-    public function getKey() {
+    public function getKey(): ?string {
         return $this->key;
     }
 
     /**
      * Set the key.
      *
-     * @param string $key The key.
+     * @param string|null $key The key.
      * @return AbstractProvider Returns this provider.
      */
-    public function setKey($key) {
+    public function setKey(?string $key): AbstractProvider {
         $this->key = $key;
         return $this;
     }

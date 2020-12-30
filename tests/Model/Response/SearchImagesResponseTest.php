@@ -28,7 +28,7 @@ class SearchImagesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddImageHit() {
+    public function testAddImageHit(): void {
 
         // Set an Image hit mock.
         $imageHit = new ImageHit();
@@ -45,7 +45,7 @@ class SearchImagesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new SearchImagesResponse();
 

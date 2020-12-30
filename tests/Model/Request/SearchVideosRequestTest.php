@@ -30,7 +30,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumVideoType() {
+    public function testEnumVideoType(): void {
 
         $res = [
             SearchVideosRequestInterface::VIDEO_TYPE_ALL,
@@ -46,7 +46,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetVideoType() {
+    public function testSetVideoType(): void {
 
         $obj = new SearchVideosRequest();
 
@@ -59,7 +59,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetVideoTypeWithInvalidArgumentException() {
+    public function testSetVideoTypeWithInvalidArgumentException(): void {
 
         $obj = new SearchVideosRequest();
 
@@ -78,7 +78,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/videos/", SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH);
 

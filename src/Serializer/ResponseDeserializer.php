@@ -35,7 +35,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return void
      */
-    protected static function deserializeHit(AbstractHit $model, array $response) {
+    protected static function deserializeHit(AbstractHit $model, array $response): void {
 
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
         $model->setPageURL(ArrayHelper::get($response, "pageURL"));
@@ -57,7 +57,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return ImageHit Returns an image hit.
      */
-    protected static function deserializeImageHit(array $response) {
+    protected static function deserializeImageHit(array $response): ImageHit {
 
         $model = new ImageHit();
 
@@ -86,7 +86,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return void
      */
-    protected static function deserializeResponse(AbstractResponse $model, array $response) {
+    protected static function deserializeResponse(AbstractResponse $model, array $response): void {
 
         $model->setTotal(intval(ArrayHelper::get($response, "total", -1)));
         $model->setTotalHits(intval(ArrayHelper::get($response, "totalHits", -1)));
@@ -98,7 +98,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return SearchImagesResponse Returns the search images response.
      */
-    public static function deserializeSearchImagesResponse($rawResponse) {
+    public static function deserializeSearchImagesResponse(string $rawResponse): SearchImagesResponse {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
@@ -124,7 +124,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return SearchVideosResponse Returns the search videos response.
      */
-    public static function deserializeSearchVideosResponse($rawResponse) {
+    public static function deserializeSearchVideosResponse(string $rawResponse): SearchVideosResponse {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
@@ -150,7 +150,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return Video Returns a video.
      */
-    protected static function deserializeVideo(array $response) {
+    protected static function deserializeVideo(array $response): Video {
 
         $model = new Video();
 
@@ -168,7 +168,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return VideoHit Returns a video hit.
      */
-    protected static function deserializeVideoHit(array $response) {
+    protected static function deserializeVideoHit(array $response): VideoHit {
 
         $model = new VideoHit();
 

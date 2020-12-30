@@ -22,14 +22,14 @@ class VideoHit extends AbstractHit {
     /**
      * Duration.
      *
-     * @var int
+     * @var int|null
      */
     private $duration;
 
     /**
      * Picture id.
      *
-     * @var string
+     * @var string|null
      */
     private $pictureId;
 
@@ -55,7 +55,7 @@ class VideoHit extends AbstractHit {
      * @param Video $video The video.
      * @return VideoHit Retuns this video.
      */
-    public function addVideo(Video $video) {
+    public function addVideo(Video $video): VideoHit {
         $this->videos[] = $video;
         return $this;
     }
@@ -63,18 +63,18 @@ class VideoHit extends AbstractHit {
     /**
      * Get the duration.
      *
-     * @return int Returns the duration.
+     * @return int|null Returns the duration.
      */
-    public function getDuration() {
+    public function getDuration(): ?int {
         return $this->duration;
     }
 
     /**
      * Get the picture id.
      *
-     * @return string Returns the picture id.
+     * @return string|null Returns the picture id.
      */
-    public function getPictureId() {
+    public function getPictureId(): ?string {
         return $this->pictureId;
     }
 
@@ -83,17 +83,17 @@ class VideoHit extends AbstractHit {
      *
      * @return Video[] Returns the videos.
      */
-    public function getVideos() {
+    public function getVideos(): array {
         return $this->videos;
     }
 
     /**
      * Set the duration.
      *
-     * @param int $duration The duration.
+     * @param int|null $duration The duration.
      * @return VideoHit Returns this video hit.
      */
-    public function setDuration($duration) {
+    public function setDuration(?int $duration): VideoHit {
         $this->duration = $duration;
         return $this;
     }
@@ -101,10 +101,10 @@ class VideoHit extends AbstractHit {
     /**
      * Set the picture id.
      *
-     * @param string $pictureId The picture id.
+     * @param string|null $pictureId The picture id.
      * @return VideoHit Returns this video hit.
      */
-    public function setPictureId($pictureId) {
+    public function setPictureId(?string $pictureId): VideoHit {
         $this->pictureId = $pictureId;
         return $this;
     }
@@ -115,7 +115,7 @@ class VideoHit extends AbstractHit {
      * @param Video[] $videos The video siizes.
      * @return VideoHit Returns this video hit.
      */
-    protected function setVideos(array $videos) {
+    protected function setVideos(array $videos): VideoHit {
         $this->videos = $videos;
         return $this;
     }

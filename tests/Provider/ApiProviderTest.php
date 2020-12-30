@@ -41,7 +41,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * {inheritdoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set a key mock.
@@ -53,7 +53,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testBeforeReturnResponse() {
+    public function testBeforeReturnResponse(): void {
 
         // Set a Search images response mock.
         $searchImageResponse = new SearchImagesResponse();
@@ -71,7 +71,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSearchImages() {
+    public function testSearchImages(): void {
 
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
@@ -97,7 +97,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSearchImagesWithInvalidArgumentException() {
+    public function testSearchImagesWithInvalidArgumentException(): void {
 
         // Set a Search images request mock.
         $searchImagesRequest = new SearchImagesRequest();
@@ -119,7 +119,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSearchVideos() {
+    public function testSearchVideos(): void {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();

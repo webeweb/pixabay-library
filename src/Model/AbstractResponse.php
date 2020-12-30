@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pixabay\Model;
 
+use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
+
 /**
  * Abstract response.
  *
@@ -21,6 +23,7 @@ namespace WBW\Library\Pixabay\Model;
 abstract class AbstractResponse {
 
     use RateLimitTrait;
+    use StringRawResponseTrait;
 
     /**
      * Hits.
@@ -30,23 +33,16 @@ abstract class AbstractResponse {
     private $hits;
 
     /**
-     * Raw response.
-     *
-     * @var string
-     */
-    private $rawResponse;
-
-    /**
      * Total.
      *
-     * @var int
+     * @var int|null
      */
     private $total;
 
     /**
      * Total hits.
      *
-     * @var int
+     * @var int|null
      */
     private $totalHits;
 
@@ -63,7 +59,7 @@ abstract class AbstractResponse {
      * @param AbstractHit $hit The hit.
      * @return AbstractResponse Returns this response.
      */
-    protected function addHit(AbstractHit $hit) {
+    protected function addHit(AbstractHit $hit): AbstractResponse {
         $this->hits[] = $hit;
         return $this;
     }
@@ -73,34 +69,25 @@ abstract class AbstractResponse {
      *
      * @return AbstractHit[] Returns the hits.
      */
-    protected function getHits() {
+    protected function getHits(): array {
         return $this->hits;
-    }
-
-    /**
-     * Get the raw response.
-     *
-     * @return string Returns the raw response.
-     */
-    public function getRawResponse() {
-        return $this->rawResponse;
     }
 
     /**
      * Get the total.
      *
-     * @return int Returns the total.
+     * @return int|null Returns the total.
      */
-    public function getTotal() {
+    public function getTotal(): ?int {
         return $this->total;
     }
 
     /**
      * Get the total hits.
      *
-     * @return int Returns the total hits.
+     * @return int|null Returns the total hits.
      */
-    public function getTotalHits() {
+    public function getTotalHits(): ?int {
         return $this->totalHits;
     }
 
@@ -110,29 +97,18 @@ abstract class AbstractResponse {
      * @param AbstractHit[] $hits The hits.
      * @return AbstractResponse Returns this response.
      */
-    protected function setHits(array $hits) {
+    protected function setHits(array $hits): AbstractResponse {
         $this->hits = $hits;
-        return $this;
-    }
-
-    /**
-     * Set the raw response.
-     *
-     * @param string $rawResponse The raw response.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setRawResponse($rawResponse) {
-        $this->rawResponse = $rawResponse;
         return $this;
     }
 
     /**
      * Set the total.
      *
-     * @param int $total The total.
+     * @param int|null $total The total.
      * @return AbstractResponse Returns this response.
      */
-    public function setTotal($total) {
+    public function setTotal(?int $total): AbstractResponse {
         $this->total = $total;
         return $this;
     }
@@ -140,10 +116,10 @@ abstract class AbstractResponse {
     /**
      * Set the total hits.
      *
-     * @param int $totalHits The total hits.
+     * @param int|null $totalHits The total hits.
      * @return AbstractResponse Returns this response.
      */
-    public function setTotalHits($totalHits) {
+    public function setTotalHits(?int $totalHits): AbstractResponse {
         $this->totalHits = $totalHits;
         return $this;
     }

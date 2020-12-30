@@ -30,7 +30,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddColor() {
+    public function testAddColor(): void {
 
         $obj = new SearchImagesRequest();
 
@@ -44,7 +44,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddColorWithInvalidArgumentException() {
+    public function testAddColorWithInvalidArgumentException(): void {
 
         $obj = new SearchImagesRequest();
 
@@ -63,7 +63,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumCategory() {
+    public function testEnumCategory(): void {
 
         $res = [
             SearchImagesRequestInterface::CATEGORY_ANIMALS,
@@ -96,7 +96,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumColor() {
+    public function testEnumColor(): void {
 
         $res = [
             SearchImagesRequestInterface::COLOR_BLACK,
@@ -123,7 +123,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumImageType() {
+    public function testEnumImageType(): void {
 
         $res = [
             SearchImagesRequestInterface::IMAGE_TYPE_ALL,
@@ -140,7 +140,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testEnumOrientation() {
+    public function testEnumOrientation(): void {
 
         $res = [
             SearchImagesRequestInterface::ORIENTATION_ALL,
@@ -156,7 +156,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRemoveColor() {
+    public function testRemoveColor(): void {
 
         $obj = new SearchImagesRequest();
 
@@ -170,7 +170,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetImageType() {
+    public function testSetImageType(): void {
 
         $obj = new SearchImagesRequest();
 
@@ -183,7 +183,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetImageTypeWithInvalidArgumentException() {
+    public function testSetImageTypeWithInvalidArgumentException(): void {
 
         $obj = new SearchImagesRequest();
 
@@ -202,7 +202,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrientation() {
+    public function testSetOrientation(): void {
 
         $obj = new SearchImagesRequest();
 
@@ -215,7 +215,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrientationWithInvalidArgumentException() {
+    public function testSetOrientationWithInvalidArgumentException(): void {
 
         $obj = new SearchImagesRequest();
 
@@ -234,7 +234,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/", SearchImagesRequest::SEARCH_IMAGES_RESOURCE_PATH);
 
