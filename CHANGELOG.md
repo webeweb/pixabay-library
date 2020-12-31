@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.6.1](https://github.com/webeweb/pixabay-library/tree/v1.6.1) (2020-12-31)
+
+- Fix compatibility
+
 ### [1.6.0](https://github.com/webeweb/pixabay-library/tree/v1.6.0) (2020-12-30)
 
 > IMPORTANT NOTICE: The following PHP versions are now not supported
