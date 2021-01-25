@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [1.6.2](https://github.com/webeweb/pixabay-library/tree/v1.6.2) (2021-01-25)
+
+- Improve code quality
+- Improve PHPDoc
+
 ### [1.6.1](https://github.com/webeweb/pixabay-library/tree/v1.6.1) (2020-12-31)
 
 - Fix compatibility
