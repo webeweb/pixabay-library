@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pixabay\Provider;
 
+use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Pixabay\Model\AbstractResponse;
@@ -49,8 +50,9 @@ class ApiProvider extends AbstractProvider {
      *
      * @param SearchImagesRequest $request The search images request.
      * @return SearchImagesResponse Returns the search images response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function searchImages(SearchImagesRequest $request): SearchImagesResponse {
 
@@ -66,8 +68,9 @@ class ApiProvider extends AbstractProvider {
      *
      * @param SearchVideosRequest $request The search videos request.
      * @return SearchVideosResponse Returns the search videos response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function searchVideos(SearchVideosRequest $request): SearchVideosResponse {
 

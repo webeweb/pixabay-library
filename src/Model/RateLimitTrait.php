@@ -73,8 +73,9 @@ trait RateLimitTrait {
      * Set the limit.
      *
      * @param int|null $limit The limit.
+     * @return self Returns this instance.
      */
-    public function setLimit(?int $limit) {
+    public function setLimit(?int $limit): self {
         $this->limit = $limit;
         return $this;
     }
@@ -83,8 +84,9 @@ trait RateLimitTrait {
      * Set the remaining.
      *
      * @param int|null $remaining The remaining.
+     * @return self Returns this instance.
      */
-    public function setRemaining(?int $remaining) {
+    public function setRemaining(?int $remaining): self {
         $this->remaining = $remaining;
         return $this;
     }
@@ -93,8 +95,9 @@ trait RateLimitTrait {
      * Set the reset.
      *
      * @param DateTime|null $reset The reset.
+     * @return self Returns this instance.
      */
-    public function setReset(?DateTime $reset) {
+    public function setReset(?DateTime $reset): self {
         $this->reset = $reset;
         return $this;
     }
