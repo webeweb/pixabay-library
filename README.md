@@ -1,8 +1,8 @@
 pixabay-library
 ===============
 
-[![Build Status](https://img.shields.io/scrutinizer/build/g/webeweb/pixabay-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/pixabay-library/build-status/master)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/webeweb/pixabay-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/pixabay-library/?branch=master)
+[![Build Status](https://img.shields.io/github/workflow/status/webeweb/pixabay-library/build?style=flat-square)](https://github.com/webeweb/pixabay-library/actions)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/webeweb/pixabay-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/pixabay-library?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/pixabay-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/pixabay-library/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/pixabay-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pixabay-library)
 [![Latest Unstable Version](https://img.shields.io/packagist/vpre/webeweb/pixabay-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pixabay-library)
