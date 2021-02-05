@@ -57,8 +57,8 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
     public function __construct() {
         parent::__construct();
         $this->setColors([]);
-        $this->setImageType(self::IMAGE_TYPE_ALL);
-        $this->setOrientation(self::ORIENTATION_ALL);
+        $this->setImageType(static::IMAGE_TYPE_ALL);
+        $this->setOrientation(static::ORIENTATION_ALL);
     }
 
     /**
@@ -83,26 +83,26 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      */
     public static function enumCategory(): array {
         return [
-            self::CATEGORY_ANIMALS,
-            self::CATEGORY_BACKGROUNDS,
-            self::CATEGORY_BUILDINGS,
-            self::CATEGORY_BUSINESS,
-            self::CATEGORY_COMPUTER,
-            self::CATEGORY_EDUCATION,
-            self::CATEGORY_FASHION,
-            self::CATEGORY_FEELINGS,
-            self::CATEGORY_FOOD,
-            self::CATEGORY_HEALTH,
-            self::CATEGORY_INDUSTRY,
-            self::CATEGORY_MUSIC,
-            self::CATEGORY_NATURE,
-            self::CATEGORY_PEOPLE,
-            self::CATEGORY_PLACES,
-            self::CATEGORY_RELIGION,
-            self::CATEGORY_SCIENCE,
-            self::CATEGORY_SPORTS,
-            self::CATEGORY_TRANSPORTATION,
-            self::CATEGORY_TRAVEL,
+            static::CATEGORY_ANIMALS,
+            static::CATEGORY_BACKGROUNDS,
+            static::CATEGORY_BUILDINGS,
+            static::CATEGORY_BUSINESS,
+            static::CATEGORY_COMPUTER,
+            static::CATEGORY_EDUCATION,
+            static::CATEGORY_FASHION,
+            static::CATEGORY_FEELINGS,
+            static::CATEGORY_FOOD,
+            static::CATEGORY_HEALTH,
+            static::CATEGORY_INDUSTRY,
+            static::CATEGORY_MUSIC,
+            static::CATEGORY_NATURE,
+            static::CATEGORY_PEOPLE,
+            static::CATEGORY_PLACES,
+            static::CATEGORY_RELIGION,
+            static::CATEGORY_SCIENCE,
+            static::CATEGORY_SPORTS,
+            static::CATEGORY_TRANSPORTATION,
+            static::CATEGORY_TRAVEL,
         ];
     }
 
@@ -113,20 +113,20 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      */
     public static function enumColor(): array {
         return [
-            self::COLOR_BLACK,
-            self::COLOR_BLUE,
-            self::COLOR_BROWN,
-            self::COLOR_GRAY,
-            self::COLOR_GRAYSCALE,
-            self::COLOR_GREEN,
-            self::COLOR_LILAC,
-            self::COLOR_ORANGE,
-            self::COLOR_PINK,
-            self::COLOR_RED,
-            self::COLOR_TRANSPARENT,
-            self::COLOR_TURQUOISE,
-            self::COLOR_YELLOW,
-            self::COLOR_WHITE,
+            static::COLOR_BLACK,
+            static::COLOR_BLUE,
+            static::COLOR_BROWN,
+            static::COLOR_GRAY,
+            static::COLOR_GRAYSCALE,
+            static::COLOR_GREEN,
+            static::COLOR_LILAC,
+            static::COLOR_ORANGE,
+            static::COLOR_PINK,
+            static::COLOR_RED,
+            static::COLOR_TRANSPARENT,
+            static::COLOR_TURQUOISE,
+            static::COLOR_YELLOW,
+            static::COLOR_WHITE,
         ];
     }
 
@@ -137,10 +137,10 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      */
     public static function enumImageType(): array {
         return [
-            self::IMAGE_TYPE_ALL,
-            self::IMAGE_TYPE_ILLUSTRATION,
-            self::IMAGE_TYPE_PHOTO,
-            self::IMAGE_TYPE_VECTOR,
+            static::IMAGE_TYPE_ALL,
+            static::IMAGE_TYPE_ILLUSTRATION,
+            static::IMAGE_TYPE_PHOTO,
+            static::IMAGE_TYPE_VECTOR,
         ];
     }
 
@@ -151,9 +151,9 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      */
     public static function enumOrientation(): array {
         return [
-            self::ORIENTATION_ALL,
-            self::ORIENTATION_HORIZONTAL,
-            self::ORIENTATION_VERTICAL,
+            static::ORIENTATION_ALL,
+            static::ORIENTATION_HORIZONTAL,
+            static::ORIENTATION_VERTICAL,
         ];
     }
 
@@ -188,7 +188,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      * {@inheritDoc}
      */
     public function getResourcePath(): string {
-        return self::SEARCH_IMAGES_RESOURCE_PATH;
+        return static::SEARCH_IMAGES_RESOURCE_PATH;
     }
 
     /**
