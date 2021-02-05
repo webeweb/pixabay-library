@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.6.3](https://github.com/webeweb/pixabay-library/tree/v1.6.3) (2021-02-05)
+
+- Replace Class:: by static::
+
 ### [1.6.2](https://github.com/webeweb/pixabay-library/tree/v1.6.2) (2021-01-25)
 
 - Improve code quality
