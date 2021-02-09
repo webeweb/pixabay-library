@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.6.4](https://github.com/webeweb/pixabay-library/tree/v1.6.4) (2021-02-09)
+
+- Improve unit tests
+
 ### [1.6.3](https://github.com/webeweb/pixabay-library/tree/v1.6.3) (2021-02-05)
 
 - Replace Class:: by static::
