@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.6.5](https://github.com/webeweb/pixabay-library/tree/v1.6.5) (2021-03-01)
+
+- Improve code quality
+
 ### [1.6.4](https://github.com/webeweb/pixabay-library/tree/v1.6.4) (2021-02-09)
 
 - Improve unit tests
