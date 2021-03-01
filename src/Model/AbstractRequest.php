@@ -102,12 +102,12 @@ abstract class AbstractRequest implements RequestInterface {
      */
     public function __construct() {
         $this->setEditorsChoice(false);
-        $this->setLang(static::LANG_EN);
+        $this->setLang(self::LANG_EN);
         $this->setMinHeight(0);
         $this->setMinWidth(0);
-        $this->setOrder(static::ORDER_POPULAR);
+        $this->setOrder(self::ORDER_POPULAR);
         $this->setPage(1);
-        $this->setPerPage(static::PER_PAGE_DEFAULT);
+        $this->setPerPage(self::PER_PAGE_DEFAULT);
         $this->setPretty(false);
         $this->setSafeSearch(false);
     }
@@ -119,32 +119,32 @@ abstract class AbstractRequest implements RequestInterface {
      */
     public static function enumLang(): array {
         return [
-            static::LANG_BG,
-            static::LANG_CS,
-            static::LANG_DA,
-            static::LANG_DE,
-            static::LANG_EL,
-            static::LANG_EN,
-            static::LANG_ES,
-            static::LANG_FI,
-            static::LANG_FR,
-            static::LANG_HU,
-            static::LANG_ID,
-            static::LANG_IT,
-            static::LANG_JA,
-            static::LANG_KO,
-            static::LANG_NL,
-            static::LANG_NO,
-            static::LANG_PL,
-            static::LANG_PT,
-            static::LANG_RO,
-            static::LANG_RU,
-            static::LANG_SK,
-            static::LANG_SV,
-            static::LANG_TH,
-            static::LANG_TR,
-            static::LANG_VI,
-            static::LANG_ZH,
+            self::LANG_BG,
+            self::LANG_CS,
+            self::LANG_DA,
+            self::LANG_DE,
+            self::LANG_EL,
+            self::LANG_EN,
+            self::LANG_ES,
+            self::LANG_FI,
+            self::LANG_FR,
+            self::LANG_HU,
+            self::LANG_ID,
+            self::LANG_IT,
+            self::LANG_JA,
+            self::LANG_KO,
+            self::LANG_NL,
+            self::LANG_NO,
+            self::LANG_PL,
+            self::LANG_PT,
+            self::LANG_RO,
+            self::LANG_RU,
+            self::LANG_SK,
+            self::LANG_SV,
+            self::LANG_TH,
+            self::LANG_TR,
+            self::LANG_VI,
+            self::LANG_ZH,
         ];
     }
 
@@ -155,8 +155,8 @@ abstract class AbstractRequest implements RequestInterface {
      */
     public static function enumOrder(): array {
         return [
-            static::ORDER_LATEST,
-            static::ORDER_POPULAR,
+            self::ORDER_LATEST,
+            self::ORDER_POPULAR,
         ];
     }
 
@@ -345,8 +345,8 @@ abstract class AbstractRequest implements RequestInterface {
      * @throws InvalidArgumentException Throws an unexpected value exception if the per page is invalid.
      */
     public function setPerPage(?int $perPage): AbstractRequest {
-        if ($perPage < static::PER_PAGE_MIN || static::PER_PAGE_MAX < $perPage) {
-            throw new InvalidArgumentException(sprintf("The per page must be between %d and %d", static::PER_PAGE_MIN, static::PER_PAGE_MAX));
+        if ($perPage < self::PER_PAGE_MIN || self::PER_PAGE_MAX < $perPage) {
+            throw new InvalidArgumentException(sprintf("The per page must be between %d and %d", self::PER_PAGE_MIN, self::PER_PAGE_MAX));
         }
         $this->perPage = $perPage;
         return $this;

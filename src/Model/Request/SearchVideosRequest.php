@@ -42,7 +42,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      */
     public function __construct() {
         parent::__construct();
-        $this->setVideoType(static::VIDEO_TYPE_ALL);
+        $this->setVideoType(self::VIDEO_TYPE_ALL);
     }
 
     /**
@@ -52,9 +52,9 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      */
     public static function enumVideoType(): array {
         return [
-            static::VIDEO_TYPE_ALL,
-            static::VIDEO_TYPE_ANIMATION,
-            static::VIDEO_TYPE_FILM,
+            self::VIDEO_TYPE_ALL,
+            self::VIDEO_TYPE_ANIMATION,
+            self::VIDEO_TYPE_FILM,
         ];
     }
 
@@ -62,7 +62,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      * {@inheritDoc}
      */
     public function getResourcePath(): string {
-        return static::SEARCH_VIDEOS_RESOURCE_PATH;
+        return self::SEARCH_VIDEOS_RESOURCE_PATH;
     }
 
     /**
