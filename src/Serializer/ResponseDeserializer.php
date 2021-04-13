@@ -13,12 +13,12 @@ namespace WBW\Library\Pixabay\Serializer;
 
 use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Pixabay\Model\AbstractHit;
-use WBW\Library\Pixabay\Model\AbstractResponse;
 use WBW\Library\Pixabay\Model\ImageHit;
-use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
-use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
+use WBW\Library\Pixabay\Response\AbstractResponse;
+use WBW\Library\Pixabay\Response\SearchImagesResponse;
+use WBW\Library\Pixabay\Response\SearchVideosResponse;
 
 /**
  * Response deserializer.

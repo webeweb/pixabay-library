@@ -12,10 +12,10 @@
 namespace WBW\Library\Pixabay\Tests\Serializer;
 
 use WBW\Library\Pixabay\Model\ImageHit;
-use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
-use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
+use WBW\Library\Pixabay\Response\SearchImagesResponse;
+use WBW\Library\Pixabay\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Serializer\TestResponseDeserializer;

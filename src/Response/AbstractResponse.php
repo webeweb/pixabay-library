@@ -9,15 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Model;
+namespace WBW\Library\Pixabay\Response;
 
 use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
+use WBW\Library\Pixabay\Model\AbstractHit;
+use WBW\Library\Pixabay\Model\RateLimitTrait;
 
 /**
  * Abstract response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Model
+ * @package WBW\Library\Pixabay\Response
  * @abstract
  */
 abstract class AbstractResponse {

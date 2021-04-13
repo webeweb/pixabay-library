@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\Model\Response;
+namespace WBW\Library\Pixabay\Tests\Response;
 
-use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Model\VideoHit;
+use WBW\Library\Pixabay\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
  * Search videos response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\Model\Response
+ * @package WBW\Library\Pixabay\Tests\Response
  */
 class SearchVideosResponseTest extends AbstractTestCase {
 

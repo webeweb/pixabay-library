@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\Model\Response;
+namespace WBW\Library\Pixabay\Tests\Response;
 
 use WBW\Library\Pixabay\Model\ImageHit;
-use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
+use WBW\Library\Pixabay\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
  * Search images response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\Model\Response
+ * @package WBW\Library\Pixabay\Tests\Response
  */
 class SearchImagesResponseTest extends AbstractTestCase {
 

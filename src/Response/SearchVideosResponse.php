@@ -9,16 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Model\Response;
+namespace WBW\Library\Pixabay\Response;
 
-use WBW\Library\Pixabay\Model\AbstractResponse;
 use WBW\Library\Pixabay\Model\VideoHit;
 
 /**
  * Search videos response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Model\Response
+ * @package WBW\Library\Pixabay\Response
  */
 class SearchVideosResponse extends AbstractResponse {
 

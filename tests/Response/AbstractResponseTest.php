@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\Model;
+namespace WBW\Library\Pixabay\Tests\Response;
 
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Model\TestHit;
-use WBW\Library\Pixabay\Tests\Fixtures\Model\TestResponse;
+use WBW\Library\Pixabay\Tests\Fixtures\Response\TestResponse;
 
 /**
  * Abstract response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\Model
+ * @package WBW\Library\Pixabay\Tests\Response
  */
 class AbstractResponseTest extends AbstractTestCase {
 
