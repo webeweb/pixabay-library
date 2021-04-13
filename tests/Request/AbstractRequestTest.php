@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\Model;
+namespace WBW\Library\Pixabay\Tests\Request;
 
 use Exception;
 use InvalidArgumentException;
 use WBW\Library\Pixabay\API\RequestInterface;
-use WBW\Library\Pixabay\Model\AbstractRequest;
+use WBW\Library\Pixabay\Request\AbstractRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
-use WBW\Library\Pixabay\Tests\Fixtures\Model\TestRequest;
+use WBW\Library\Pixabay\Tests\Fixtures\Request\TestRequest;
 
 /**
  * Abstract request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\Model
+ * @package WBW\Library\Pixabay\Tests\Request
  */
 class AbstractRequestTest extends AbstractTestCase {
 

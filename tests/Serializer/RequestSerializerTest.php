@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pixabay\Tests\Serializer;
 
-use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
-use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
+use WBW\Library\Pixabay\Request\SearchImagesRequest;
+use WBW\Library\Pixabay\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Serializer\RequestSerializer;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 

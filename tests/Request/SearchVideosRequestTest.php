@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\Model\Request;
+namespace WBW\Library\Pixabay\Tests\Request;
 
 use Exception;
 use InvalidArgumentException;
 use WBW\Library\Pixabay\API\SearchVideosRequestInterface;
-use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
+use WBW\Library\Pixabay\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
  * Search videos request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\Model\Request
+ * @package WBW\Library\Pixabay\Tests\Request
  */
 class SearchVideosRequestTest extends AbstractTestCase {
 

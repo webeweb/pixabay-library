@@ -13,7 +13,7 @@
  * (c) 2019 All rights reserved.
  */
 
-namespace WBW\Library\Pixabay\Model;
+namespace WBW\Library\Pixabay\Request;
 
 use InvalidArgumentException;
 use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
@@ -25,7 +25,7 @@ use WBW\Library\Pixabay\API\RequestInterface;
  * Abstract request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Model
+ * @package WBW\Library\Pixabay\Request
  * @abstract
  */
 abstract class AbstractRequest implements RequestInterface {

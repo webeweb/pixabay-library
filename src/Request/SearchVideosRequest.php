@@ -9,17 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Model\Request;
+namespace WBW\Library\Pixabay\Request;
 
 use InvalidArgumentException;
 use WBW\Library\Pixabay\API\SearchVideosRequestInterface;
-use WBW\Library\Pixabay\Model\AbstractRequest;
 
 /**
  * Search videos request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Model\Request
+ * @package WBW\Library\Pixabay\Request
  */
 class SearchVideosRequest extends AbstractRequest implements SearchVideosRequestInterface {
 
