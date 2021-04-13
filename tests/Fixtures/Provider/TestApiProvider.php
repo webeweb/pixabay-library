@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pixabay\Tests\Fixtures\Provider;
 
-use WBW\Library\Pixabay\Model\AbstractResponse;
 use WBW\Library\Pixabay\Provider\ApiProvider;
+use WBW\Library\Pixabay\Response\AbstractResponse;
 
 /**
  * Test API provider.

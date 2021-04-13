@@ -15,11 +15,11 @@ use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Core\Exception\ApiException;
-use WBW\Library\Pixabay\Model\Request\SearchImagesRequest;
-use WBW\Library\Pixabay\Model\Request\SearchVideosRequest;
-use WBW\Library\Pixabay\Model\Response\SearchImagesResponse;
-use WBW\Library\Pixabay\Model\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Provider\ApiProvider;
+use WBW\Library\Pixabay\Request\SearchImagesRequest;
+use WBW\Library\Pixabay\Request\SearchVideosRequest;
+use WBW\Library\Pixabay\Response\SearchImagesResponse;
+use WBW\Library\Pixabay\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestApiProvider;
 
