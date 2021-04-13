@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.0.0](https://github.com/webeweb/pixabay-library/tree/v2.0.0) (2021-04-13)
+
+- Move Request models
+- Move Response models
+
 ### [1.6.5](https://github.com/webeweb/pixabay-library/tree/v1.6.5) (2021-03-01)
 
 - Improve code quality
