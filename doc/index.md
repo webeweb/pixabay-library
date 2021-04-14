@@ -7,7 +7,7 @@ Search images
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
-// Create a Search images model.
+// Create a Search images request.
 $request = new SearchImagesRequest();
 // ...
 
@@ -30,7 +30,7 @@ Search videos
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
-// Create a Search videos model.
+// Create a Search videos request.
 $request = new SearchVideosRequest();
 // ...
 
