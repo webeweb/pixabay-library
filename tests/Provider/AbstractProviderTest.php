@@ -24,19 +24,6 @@ use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestProvider;
 class AbstractProviderTest extends AbstractTestCase {
 
     /**
-     * Tests the setDebug() method.
-     *
-     * @return void
-     */
-    public function testSetDebug(): void {
-
-        $obj = new TestProvider();
-
-        $obj->setDebug(true);
-        $this->assertTrue($obj->getDebug());
-    }
-
-    /**
      * Tests the setKey() method.
      *
      * @retunr void.
@@ -60,7 +47,6 @@ class AbstractProviderTest extends AbstractTestCase {
 
         $obj = new TestProvider();
 
-        $this->assertFalse($obj->getDebug());
         $this->assertNull($obj->getKey());
         $this->assertNull($obj->getLimit());
         $this->assertNull($obj->getRemaining());
