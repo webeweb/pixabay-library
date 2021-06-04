@@ -49,11 +49,11 @@ class AbstractProviderTest extends AbstractTestCase {
 
         $this->assertEquals("https://pixabay.com/api", AbstractProvider::ENDPOINT_PATH);
 
-        $obj = new TestProvider(null, $logger);
+        $obj = new TestProvider("key", $logger);
 
         $this->assertSame($logger, $obj->getLogger());
 
-        $this->assertNull($obj->getKey());
+        $this->assertEquals("key", $obj->getKey());
         $this->assertNull($obj->getLimit());
         $this->assertNull($obj->getRemaining());
         $this->assertNull($obj->getReset());
