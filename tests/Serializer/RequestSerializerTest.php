@@ -51,6 +51,7 @@ class RequestSerializerTest extends AbstractTestCase {
         $searchImagesRequest->setOrientation(SearchImagesRequest::ORIENTATION_HORIZONTAL);
 
         $res = RequestSerializer::serializeSearchImagesRequest($searchImagesRequest);
+        $this->assertCount(15, $res);
 
         $this->assertEquals("category", $res["category"]);
         $this->assertEquals("true", $res["editors_choice"]);
@@ -95,6 +96,7 @@ class RequestSerializerTest extends AbstractTestCase {
         $searchVideosRequest->setVideoType(SearchVideosRequest::VIDEO_TYPE_FILM);
 
         $res = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
+        $this->assertCount(13, $res);
 
         $this->assertEquals("category", $res["category"]);
         $this->assertEquals("true", $res["editors_choice"]);
