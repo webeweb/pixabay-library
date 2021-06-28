@@ -11,10 +11,10 @@
 
 namespace WBW\Library\Pixabay\Model;
 
-use WBW\Library\Core\Model\Attribute\IntegerHeightTrait;
-use WBW\Library\Core\Model\Attribute\IntegerSizeTrait;
-use WBW\Library\Core\Model\Attribute\IntegerWidthTrait;
-use WBW\Library\Core\Model\Attribute\StringUrlTrait;
+use WBW\Library\Traits\Integers\IntegerHeightTrait;
+use WBW\Library\Traits\Integers\IntegerSizeTrait;
+use WBW\Library\Traits\Integers\IntegerWidthTrait;
+use WBW\Library\Traits\Strings\StringUrlTrait;
 
 /**
  * Video.

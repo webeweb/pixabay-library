@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pixabay\Model;
 
-use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
-use WBW\Library\Core\Model\Attribute\StringTypeTrait;
+use WBW\Library\Traits\Integers\IntegerIdTrait;
+use WBW\Library\Traits\Strings\StringTypeTrait;
 
 /**
  * Abstract hit.

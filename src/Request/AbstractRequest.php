@@ -16,9 +16,9 @@
 namespace WBW\Library\Pixabay\Request;
 
 use InvalidArgumentException;
-use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
-use WBW\Library\Core\Model\Attribute\StringIdTrait;
-use WBW\Library\Core\Model\Attribute\StringLangTrait;
+use WBW\Library\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Traits\Strings\StringIdTrait;
+use WBW\Library\Traits\Strings\StringLangTrait;
 use WBW\Library\Pixabay\API\RequestInterface;
 
 /**
