@@ -11,9 +11,9 @@
 
 namespace WBW\Library\Pixabay\Response;
 
-use WBW\Library\Traits\Strings\StringRawResponseTrait;
 use WBW\Library\Pixabay\Model\AbstractHit;
 use WBW\Library\Pixabay\Model\RateLimitTrait;
+use WBW\Library\Traits\Strings\StringRawResponseTrait;
 
 /**
  * Abstract response.
