@@ -12,7 +12,7 @@
 namespace WBW\Library\Pixabay\Response;
 
 use WBW\Library\Pixabay\Model\AbstractHit;
-use WBW\Library\Pixabay\Model\RateLimitTrait;
+use WBW\Library\Traits\Composite\CompositeRateLimitTrait;
 use WBW\Library\Traits\Strings\StringRawResponseTrait;
 
 /**
@@ -24,7 +24,7 @@ use WBW\Library\Traits\Strings\StringRawResponseTrait;
  */
 abstract class AbstractResponse {
 
-    use RateLimitTrait;
+    use CompositeRateLimitTrait;
     use StringRawResponseTrait;
 
     /**
