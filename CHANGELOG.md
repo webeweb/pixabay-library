@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.0.3](https://github.com/webeweb/pixabay-library/tree/v2.0.3) (2021-07-16)
+
+- Update dependencies
+
 ### [2.0.2](https://github.com/webeweb/pixabay-library/tree/v2.0.2) (2021-06-29)
 
 - Update dependencies
