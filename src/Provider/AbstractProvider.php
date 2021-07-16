@@ -17,9 +17,9 @@ use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Core\Exception\ApiException;
-use WBW\Library\Core\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Pixabay\Model\RateLimitTrait;
 use WBW\Library\Pixabay\Request\AbstractRequest;
+use WBW\Library\Provider\Provider\AbstractProvider as BaseProvider;
 
 /**
  * Abstract provider.

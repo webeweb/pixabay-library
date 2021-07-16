@@ -12,8 +12,8 @@
 namespace WBW\Library\Pixabay\Response;
 
 use WBW\Library\Pixabay\Model\AbstractHit;
+use WBW\Library\Provider\Response\AbstractResponse as BaseResponse;
 use WBW\Library\Traits\Composite\CompositeRateLimitTrait;
-use WBW\Library\Traits\Strings\StringRawResponseTrait;
 
 /**
  * Abstract response.
@@ -22,10 +22,9 @@ use WBW\Library\Traits\Strings\StringRawResponseTrait;
  * @package WBW\Library\Pixabay\Response
  * @abstract
  */
-abstract class AbstractResponse {
+abstract class AbstractResponse extends BaseResponse {
 
     use CompositeRateLimitTrait;
-    use StringRawResponseTrait;
 
     /**
      * Hits.
