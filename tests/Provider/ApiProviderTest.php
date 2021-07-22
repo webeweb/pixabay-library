@@ -14,7 +14,6 @@ namespace WBW\Library\Pixabay\Tests\Provider;
 use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Pixabay\Provider\ApiProvider;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
@@ -22,6 +21,7 @@ use WBW\Library\Pixabay\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestApiProvider;
+use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API provider test.

@@ -13,7 +13,6 @@ namespace WBW\Library\Pixabay\Provider;
 
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
-use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Response\AbstractResponse;
@@ -21,6 +20,7 @@ use WBW\Library\Pixabay\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Serializer\RequestSerializer;
 use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
+use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API provider.
