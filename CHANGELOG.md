@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.0.5](https://github.com/webeweb/pixabay-library/tree/v2.0.5) (2021-08-12)
+
+- Replace rate limit trait 
+- Update dependencies
+
 ### [2.0.4](https://github.com/webeweb/pixabay-library/tree/v2.0.4) (2021-08-12)
 
 - Update dependencies
