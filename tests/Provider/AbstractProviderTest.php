@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pixabay\Tests\Provider;
 
-use WBW\Library\Core\Logger\NullLogger;
+use Psr\Log\LoggerInterface;
 use WBW\Library\Pixabay\Provider\AbstractProvider;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestProvider;
@@ -45,7 +45,7 @@ class AbstractProviderTest extends AbstractTestCase {
     public function test__construct(): void {
 
         // Set a Logger mock.
-        $logger = new NullLogger();
+        $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
         $this->assertEquals("https://pixabay.com/api", AbstractProvider::ENDPOINT_PATH);
 

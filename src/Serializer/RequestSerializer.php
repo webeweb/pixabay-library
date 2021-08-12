@@ -11,11 +11,11 @@
 
 namespace WBW\Library\Pixabay\Serializer;
 
-use WBW\Library\Core\Argument\Helper\ArrayHelper;
-use WBW\Library\Core\Argument\Helper\StringHelper;
 use WBW\Library\Pixabay\Request\AbstractRequest;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
+use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Types\Helper\StringHelper;
 
 /**
  * Request serializer.
