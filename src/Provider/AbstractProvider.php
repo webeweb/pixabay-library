@@ -16,10 +16,10 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\Pixabay\Model\RateLimitTrait;
 use WBW\Library\Pixabay\Request\AbstractRequest;
 use WBW\Library\Provider\Exception\ApiException;
 use WBW\Library\Provider\Provider\AbstractProvider as BaseProvider;
+use WBW\Library\Traits\Compounds\CompoundRateLimitTrait;
 
 /**
  * Abstract provider.
@@ -29,7 +29,7 @@ use WBW\Library\Provider\Provider\AbstractProvider as BaseProvider;
  */
 abstract class AbstractProvider extends BaseProvider {
 
-    use RateLimitTrait;
+    use CompoundRateLimitTrait;
 
     /**
      * Endpoint path.
