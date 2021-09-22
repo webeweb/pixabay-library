@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### [2.0.7](https://github.com/webeweb/pixabay-library/tree/v2.0.7) (2021-09-20)
+### [2.0.7](https://github.com/webeweb/pixabay-library/tree/v2.0.7) (2021-09-22)
 
 - Improve documentation
 
