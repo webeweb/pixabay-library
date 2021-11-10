@@ -28,33 +28,36 @@ $request->setQ("paysage");
 $response = $provider->searchVideos($request);
 
 // Handle the response.
-echo "Total:" . $response->getTotal() . "\n";
-echo "Total hits:" . $response->getTotalHits() . "\n";
+$format = "%20s: %s\n";
+
+echo sprintf($format, "Total", $response->getTotal());
+echo sprintf($format, "Total hits", $response->getTotalHits());
 
 /** @var VideoHit $current */
 foreach ($response->getVideoHits() as $current) {
 
     echo "\n";
-    echo "Id: " . $current->getId() . "\n";
-    echo "Page URL: " . $current->getPageURL() . "\n";
-    echo "Type: " . $current->getType() . "\n";
-    echo "Tags: " . $current->getTags() . "\n";
-    echo "Duration: " . $current->getDuration() . "\n";
-    echo "Picture id: " . $current->getPictureId() . "\n";
+    echo sprintf($format, "Id", $current->getId());
+    echo sprintf($format, "Page URL", $current->getPageURL());
+    echo sprintf($format, "Type", $current->getType());
+    echo sprintf($format, "Tags", $current->getTags());
+    echo sprintf($format, "Duration", $current->getDuration());
+    echo sprintf($format, "Picture id", $current->getPictureId());
 
     /** @var Video $v */
     foreach ($current->getVideos() as $v) {
-        echo "Video " . $v->getQuality() . " URL:" . $v->getUrl() . "\n";
-        echo "Video " . $v->getQuality() . " width:" . $v->getWidth() . "\n";
-        echo "Video " . $v->getQuality() . " height:" . $v->getHeight() . "\n";
-        echo "Video " . $v->getQuality() . " size:" . $v->getSize() . "\n";
+        echo sprintf($format, "Quality", $v->getQuality());
+        echo sprintf($format, "URL", $v->getUrl());
+        echo sprintf($format, "Width", $v->getWidth());
+        echo sprintf($format, "Height", $v->getHeight());
+        echo sprintf($format, "Size", $v->getSize());
     }
 
-    echo "Views: " . $current->getViews() . "\n";
-    echo "Downloads: " . $current->getDownloads() . "\n";
-    echo "Likes: " . $current->getLikes() . "\n";
-    echo "Comments: " . $current->getComments() . "\n";
-    echo "User id: " . $current->getUserId() . "\n";
-    echo "User: " . $current->getUser() . "\n";
-    echo "User image URL: " . $current->getUserImageURL() . "\n";
+    echo sprintf($format, "Views", $current->getViews());
+    echo sprintf($format, "Downloads", $current->getDownloads());
+    echo sprintf($format, "Likes", $current->getLikes());
+    echo sprintf($format, "Comments", $current->getComments());
+    echo sprintf($format, "User id", $current->getUserId());
+    echo sprintf($format, "User", $current->getUser());
+    echo sprintf($format, "User image URL", $current->getUserImageURL());
 }

@@ -27,34 +27,36 @@ $request->setQ("paysage");
 $response = $provider->searchImages($request);
 
 // Handle the response.
-echo "Total:" . $response->getTotal() . "\n";
-echo "Total hits:" . $response->getTotalHits() . "\n";
+$format = "%20s: %s\n";
+
+echo sprintf($format, "Total", $response->getTotal());
+echo sprintf($format, "Total hits", $response->getTotalHits());
 
 /** @var ImageHit $current */
 foreach ($response->getImageHits() as $current) {
 
     echo "\n";
-    echo "Id: " . $current->getId() . "\n";
-    echo "Page URL: " . $current->getPageURL() . "\n";
-    echo "Type: " . $current->getType() . "\n";
-    echo "Tags: " . $current->getTags() . "\n";
-    echo "Preview URL: " . $current->getPreviewURL() . "\n";
-    echo "Preview width: " . $current->getPreviewWidth() . "\n";
-    echo "Preview height: " . $current->getPreviewHeight() . "\n";
-    echo "Web format URL: " . $current->getWebFormatURL() . "\n";
-    echo "Web format width: " . $current->getWebFormatWidth() . "\n";
-    echo "Web format height: " . $current->getWebFormatHeight() . "\n";
-    echo "Large image URL: " . $current->getLargeImageURL() . "\n";
-    echo "Full HD URL: " . $current->getFullHDURL() . "\n";
-    echo "Image URL: " . $current->getImageURL() . "\n";
-    echo "Image width: " . $current->getImageWidth() . "\n";
-    echo "Image height: " . $current->getImageHeight() . "\n";
-    echo "Image size: " . $current->getImageSize() . "\n";
-    echo "Views: " . $current->getViews() . "\n";
-    echo "Downloads: " . $current->getDownloads() . "\n";
-    echo "Likes: " . $current->getLikes() . "\n";
-    echo "Comments: " . $current->getComments() . "\n";
-    echo "User id: " . $current->getUserId() . "\n";
-    echo "User: " . $current->getUser() . "\n";
-    echo "User image URL: " . $current->getUserImageURL() . "\n";
+    echo sprintf($format, "Id", $current->getId());
+    echo sprintf($format, "Page URL", $current->getPageURL());
+    echo sprintf($format, "Type", $current->getType());
+    echo sprintf($format, "Tags", $current->getTags());
+    echo sprintf($format, "Preview URL", $current->getPreviewURL());
+    echo sprintf($format, "Preview width", $current->getPreviewWidth());
+    echo sprintf($format, "Preview height", $current->getPreviewHeight());
+    echo sprintf($format, "Web format URL", $current->getWebFormatURL());
+    echo sprintf($format, "Web format width", $current->getWebFormatWidth());
+    echo sprintf($format, "Web format height", $current->getWebFormatHeight());
+    echo sprintf($format, "Large image URL", $current->getLargeImageURL());
+    echo sprintf($format, "Full HD URL", $current->getFullHDURL());
+    echo sprintf($format, "Image URL", $current->getImageURL());
+    echo sprintf($format, "Image width", $current->getImageWidth());
+    echo sprintf($format, "Image height", $current->getImageHeight());
+    echo sprintf($format, "Image size", $current->getImageSize());
+    echo sprintf($format, "Views", $current->getViews());
+    echo sprintf($format, "Downloads", $current->getDownloads());
+    echo sprintf($format, "Likes", $current->getLikes());
+    echo sprintf($format, "Comments", $current->getComments());
+    echo sprintf($format, "User id", $current->getUserId());
+    echo sprintf($format, "User", $current->getUser());
+    echo sprintf($format, "User image URL", $current->getUserImageURL());
 }
