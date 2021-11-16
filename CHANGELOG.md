@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.2.0](https://github.com/webeweb/pixabay-library/tree/v2.2.0) (2021-11-16)
+
+- Improve unit tests
+- Rename API package
+
 ### [2.1.0](https://github.com/webeweb/pixabay-library/tree/v2.1.0) (2021-09-25)
 
 - Update dependencies
