@@ -73,19 +73,19 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeSeachImagesResponse(): void {
+    public function testDeserializeSearchImagesResponse(): void {
 
         // Set a JSON mock.
         $json = file_get_contents(__DIR__ . "/../Fixtures/Response/SearchImagesResponse.json");
 
-        $obj = ResponseDeserializer::deserializeSearchImagesResponse($json);
-        $this->assertInstanceOf(SearchImagesResponse::class, $obj);
+        $res = ResponseDeserializer::deserializeSearchImagesResponse($json);
+        $this->assertInstanceOf(SearchImagesResponse::class, $res);
 
-        $this->assertEquals($json, $obj->getRawResponse());
-        $this->assertEquals(4692, $obj->getTotal());
-        $this->assertEquals(500, $obj->getTotalHits());
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertEquals(4692, $res->getTotal());
+        $this->assertEquals(500, $res->getTotalHits());
 
-        $this->assertCount(1, $obj->getImageHits());
+        $this->assertCount(1, $res->getImageHits());
     }
 
     /**
@@ -93,15 +93,19 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeSeachImagesResponseWithBadRawResponse(): void {
+    public function testDeserializeSearchImagesResponseWithBadRawResponse(): void {
 
-        $obj = ResponseDeserializer::deserializeSearchImagesResponse("");
-        $this->assertInstanceOf(SearchImagesResponse::class, $obj);
+        // Set a JSON mock.
+        $json = "";
 
-        $this->assertNull($obj->getTotal());
-        $this->assertNull($obj->getTotalHits());
+        $res = ResponseDeserializer::deserializeSearchImagesResponse($json);
+        $this->assertInstanceOf(SearchImagesResponse::class, $res);
 
-        $this->assertCount(0, $obj->getImageHits());
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertNull($res->getTotal());
+        $this->assertNull($res->getTotalHits());
+
+        $this->assertCount(0, $res->getImageHits());
     }
 
     /**
@@ -109,19 +113,19 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeSeachVideosResponse(): void {
+    public function testDeserializeSearchVideosResponse(): void {
 
         // Set a JSON mock.
         $json = file_get_contents(__DIR__ . "/../Fixtures/Response/SearchVideosResponse.json");
 
-        $obj = ResponseDeserializer::deserializeSearchVideosResponse($json);
-        $this->assertInstanceOf(SearchVideosResponse::class, $obj);
+        $res = ResponseDeserializer::deserializeSearchVideosResponse($json);
+        $this->assertInstanceOf(SearchVideosResponse::class, $res);
 
-        $this->assertEquals($json, $obj->getRawResponse());
-        $this->assertEquals(42, $obj->getTotal());
-        $this->assertEquals(42, $obj->getTotalHits());
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertEquals(42, $res->getTotal());
+        $this->assertEquals(42, $res->getTotalHits());
 
-        $this->assertCount(1, $obj->getVideoHits());
+        $this->assertCount(1, $res->getVideoHits());
     }
 
     /**
@@ -129,15 +133,19 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeSeachVideosResponseWithBadRawResponse(): void {
+    public function testDeserializeSearchVideosResponseWithBadRawResponse(): void {
 
-        $obj = ResponseDeserializer::deserializeSearchVideosResponse("");
-        $this->assertInstanceOf(SearchVideosResponse::class, $obj);
+        // Set a JSON mock.
+        $json = "";
 
-        $this->assertNull($obj->getTotal());
-        $this->assertNull($obj->getTotalHits());
+        $res = ResponseDeserializer::deserializeSearchVideosResponse($json);
+        $this->assertInstanceOf(SearchVideosResponse::class, $res);
 
-        $this->assertCount(0, $obj->getVideoHits());
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertNull($res->getTotal());
+        $this->assertNull($res->getTotalHits());
+
+        $this->assertCount(0, $res->getVideoHits());
     }
 
     /**
