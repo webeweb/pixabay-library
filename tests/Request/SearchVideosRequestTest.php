@@ -13,7 +13,7 @@ namespace WBW\Library\Pixabay\Tests\Request;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Library\Pixabay\API\SearchVideosRequestInterface;
+use WBW\Library\Pixabay\Api\SearchVideosRequestInterface;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\Tests\API;
+namespace WBW\Library\Pixabay\Tests\Api;
 
-use WBW\Library\Pixabay\API\RequestInterface;
+use WBW\Library\Pixabay\Api\RequestInterface;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
  * Request interface test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\Tests\API
+ * @package WBW\Library\Pixabay\Tests\Api
  */
 class RequestInterfaceTest extends AbstractTestCase {
 

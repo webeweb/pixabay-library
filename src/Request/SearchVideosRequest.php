@@ -12,7 +12,7 @@
 namespace WBW\Library\Pixabay\Request;
 
 use InvalidArgumentException;
-use WBW\Library\Pixabay\API\SearchVideosRequestInterface;
+use WBW\Library\Pixabay\Api\SearchVideosRequestInterface;
 
 /**
  * Search videos request.

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pixabay\API;
+namespace WBW\Library\Pixabay\Api;
 
 /**
  * Request interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pixabay\API
+ * @package WBW\Library\Pixabay\Api
  */
 interface RequestInterface {
 
