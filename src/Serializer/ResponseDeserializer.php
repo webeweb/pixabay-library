@@ -32,49 +32,49 @@ class ResponseDeserializer {
      * Deserialize an hit.
      *
      * @param AbstractHit $model The hit.
-     * @param array $response The response.
+     * @param array $data The response.
      * @return void
      */
-    protected static function deserializeHit(AbstractHit $model, array $response): void {
+    protected static function deserializeHit(AbstractHit $model, array $data): void {
 
-        $model->setId(intval(ArrayHelper::get($response, "id", -1)));
-        $model->setPageURL(ArrayHelper::get($response, "pageURL"));
-        $model->setType(ArrayHelper::get($response, "type"));
-        $model->setTags(ArrayHelper::get($response, "tags"));
-        $model->setViews(intval(ArrayHelper::get($response, "views", -1)));
-        $model->setDownloads(intval(ArrayHelper::get($response, "downloads", -1)));
-        $model->setFavorites(intval(ArrayHelper::get($response, "favorites", -1)));
-        $model->setLikes(intval(ArrayHelper::get($response, "likes", -1)));
-        $model->setComments(intval(ArrayHelper::get($response, "comments", -1)));
-        $model->setUserId(intval(ArrayHelper::get($response, "user_id", -1)));
-        $model->setUser(ArrayHelper::get($response, "user"));
-        $model->setUserImageURL(ArrayHelper::get($response, "userImageURL"));
+        $model->setId(intval(ArrayHelper::get($data, "id", -1)));
+        $model->setPageURL(ArrayHelper::get($data, "pageURL"));
+        $model->setType(ArrayHelper::get($data, "type"));
+        $model->setTags(ArrayHelper::get($data, "tags"));
+        $model->setViews(intval(ArrayHelper::get($data, "views", -1)));
+        $model->setDownloads(intval(ArrayHelper::get($data, "downloads", -1)));
+        $model->setFavorites(intval(ArrayHelper::get($data, "favorites", -1)));
+        $model->setLikes(intval(ArrayHelper::get($data, "likes", -1)));
+        $model->setComments(intval(ArrayHelper::get($data, "comments", -1)));
+        $model->setUserId(intval(ArrayHelper::get($data, "user_id", -1)));
+        $model->setUser(ArrayHelper::get($data, "user"));
+        $model->setUserImageURL(ArrayHelper::get($data, "userImageURL"));
     }
 
     /**
      * Deserialize an image hit.
      *
-     * @param array $response The response.
+     * @param array $data The response.
      * @return ImageHit Returns an image hit.
      */
-    protected static function deserializeImageHit(array $response): ImageHit {
+    protected static function deserializeImageHit(array $data): ImageHit {
 
         $model = new ImageHit();
 
-        static::deserializeHit($model, $response);
+        static::deserializeHit($model, $data);
 
-        $model->setPreviewURL(ArrayHelper::get($response, "previewURL"));
-        $model->setPreviewWidth(intval(ArrayHelper::get($response, "previewWidth", -1)));
-        $model->setPreviewHeight(intval(ArrayHelper::get($response, "previewHeight", -1)));
-        $model->setWebFormatURL(ArrayHelper::get($response, "webformatURL"));
-        $model->setWebFormatWidth(intval(ArrayHelper::get($response, "webformatWidth", -1)));
-        $model->setWebFormatHeight(intval(ArrayHelper::get($response, "webformatHeight", -1)));
-        $model->setLargeImageURL(ArrayHelper::get($response, "largeImageURL"));
-        $model->setFullHDURL(ArrayHelper::get($response, "fullHDURL"));
-        $model->setImageURL(ArrayHelper::get($response, "imageURL"));
-        $model->setImageWidth(intval(ArrayHelper::get($response, "imageWidth", -1)));
-        $model->setImageHeight(intval(ArrayHelper::get($response, "imageHeight", -1)));
-        $model->setImageSize(intval(ArrayHelper::get($response, "imageSize", -1)));
+        $model->setPreviewURL(ArrayHelper::get($data, "previewURL"));
+        $model->setPreviewWidth(intval(ArrayHelper::get($data, "previewWidth", -1)));
+        $model->setPreviewHeight(intval(ArrayHelper::get($data, "previewHeight", -1)));
+        $model->setWebFormatURL(ArrayHelper::get($data, "webformatURL"));
+        $model->setWebFormatWidth(intval(ArrayHelper::get($data, "webformatWidth", -1)));
+        $model->setWebFormatHeight(intval(ArrayHelper::get($data, "webformatHeight", -1)));
+        $model->setLargeImageURL(ArrayHelper::get($data, "largeImageURL"));
+        $model->setFullHDURL(ArrayHelper::get($data, "fullHDURL"));
+        $model->setImageURL(ArrayHelper::get($data, "imageURL"));
+        $model->setImageWidth(intval(ArrayHelper::get($data, "imageWidth", -1)));
+        $model->setImageHeight(intval(ArrayHelper::get($data, "imageHeight", -1)));
+        $model->setImageSize(intval(ArrayHelper::get($data, "imageSize", -1)));
 
         return $model;
     }
@@ -83,13 +83,13 @@ class ResponseDeserializer {
      * Deserialize a response.
      *
      * @param AbstractResponse $model The response.
-     * @param array $response The response.
+     * @param array $data The response.
      * @return void
      */
-    protected static function deserializeResponse(AbstractResponse $model, array $response): void {
+    protected static function deserializeResponse(AbstractResponse $model, array $data): void {
 
-        $model->setTotal(intval(ArrayHelper::get($response, "total", -1)));
-        $model->setTotalHits(intval(ArrayHelper::get($response, "totalHits", -1)));
+        $model->setTotal(intval(ArrayHelper::get($data, "total", -1)));
+        $model->setTotalHits(intval(ArrayHelper::get($data, "totalHits", -1)));
     }
 
     /**
@@ -100,18 +100,18 @@ class ResponseDeserializer {
      */
     public static function deserializeSearchImagesResponse(string $rawResponse): SearchImagesResponse {
 
-        $decodedResponse = json_decode(trim($rawResponse), true);
+        $data = json_decode(trim($rawResponse), true);
 
         $model = new SearchImagesResponse();
         $model->setRawResponse($rawResponse);
 
-        if (null === $decodedResponse) {
+        if (null === $data) {
             return $model;
         }
 
-        static::deserializeResponse($model, $decodedResponse);
+        static::deserializeResponse($model, $data);
 
-        foreach (ArrayHelper::get($decodedResponse, "hits", []) as $current) {
+        foreach (ArrayHelper::get($data, "hits", []) as $current) {
             $model->addImageHit(static::deserializeImageHit($current));
         }
 
@@ -126,18 +126,18 @@ class ResponseDeserializer {
      */
     public static function deserializeSearchVideosResponse(string $rawResponse): SearchVideosResponse {
 
-        $decodedResponse = json_decode(trim($rawResponse), true);
+        $data = json_decode(trim($rawResponse), true);
 
         $model = new SearchVideosResponse();
         $model->setRawResponse($rawResponse);
 
-        if (null === $decodedResponse) {
+        if (null === $data) {
             return $model;
         }
 
-        static::deserializeResponse($model, $decodedResponse);
+        static::deserializeResponse($model, $data);
 
-        foreach (ArrayHelper::get($decodedResponse, "hits", []) as $current) {
+        foreach (ArrayHelper::get($data, "hits", []) as $current) {
             $model->addVideoHit(static::deserializeVideoHit($current));
         }
 
@@ -147,17 +147,17 @@ class ResponseDeserializer {
     /**
      * Deserialize a video.
      *
-     * @param array $response The response.
+     * @param array $data The response.
      * @return Video Returns a video.
      */
-    protected static function deserializeVideo(array $response): Video {
+    protected static function deserializeVideo(array $data): Video {
 
         $model = new Video();
 
-        $model->setUrl(ArrayHelper::get($response, "url"));
-        $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
-        $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
-        $model->setSize(intval(ArrayHelper::get($response, "size", -1)));
+        $model->setUrl(ArrayHelper::get($data, "url"));
+        $model->setWidth(intval(ArrayHelper::get($data, "width", -1)));
+        $model->setHeight(intval(ArrayHelper::get($data, "height", -1)));
+        $model->setSize(intval(ArrayHelper::get($data, "size", -1)));
 
         return $model;
     }
@@ -165,19 +165,19 @@ class ResponseDeserializer {
     /**
      * Deserialize a video hit.
      *
-     * @param array $response The response.
+     * @param array $data The response.
      * @return VideoHit Returns a video hit.
      */
-    protected static function deserializeVideoHit(array $response): VideoHit {
+    protected static function deserializeVideoHit(array $data): VideoHit {
 
         $model = new VideoHit();
 
-        static::deserializeHit($model, $response);
+        static::deserializeHit($model, $data);
 
-        $model->setDuration(intval(ArrayHelper::get($response, "duration", -1)));
-        $model->setPictureId(intval(ArrayHelper::get($response, "picture_id", -1)));
+        $model->setDuration(intval(ArrayHelper::get($data, "duration", -1)));
+        $model->setPictureId(intval(ArrayHelper::get($data, "picture_id", -1)));
 
-        foreach (ArrayHelper::get($response, "videos", []) as $q => $v) {
+        foreach (ArrayHelper::get($data, "videos", []) as $q => $v) {
             $model->addVideo(static::deserializeVideo($v)->setQuality($q));
         }
 
