@@ -19,7 +19,6 @@ use WBW\Library\Pixabay\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Serializer\TestResponseDeserializer;
-use WBW\Library\Pixabay\Tests\Fixtures\TestFixtures;
 
 /**
  * Response deserializer test.
@@ -36,9 +35,11 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeImageHit(): void {
 
-        $arg = json_decode(TestFixtures::SAMPLE_SEARCH_IMAGES_RESPONSE, true)["hits"][0];
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/SearchImagesResponse.json");
+        $data = json_decode($json, true);
 
-        $res = TestResponseDeserializer::deserializeImageHit($arg);
+        $res = TestResponseDeserializer::deserializeImageHit($data["hits"][0]);
         $this->assertInstanceOf(ImageHit::class, $res);
 
         $this->assertEquals(195893, $res->getId());
@@ -74,10 +75,13 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeSeachImagesResponse(): void {
 
-        $obj = ResponseDeserializer::deserializeSearchImagesResponse(TestFixtures::SAMPLE_SEARCH_IMAGES_RESPONSE);
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/SearchImagesResponse.json");
+
+        $obj = ResponseDeserializer::deserializeSearchImagesResponse($json);
         $this->assertInstanceOf(SearchImagesResponse::class, $obj);
 
-        $this->assertEquals(TestFixtures::SAMPLE_SEARCH_IMAGES_RESPONSE, $obj->getRawResponse());
+        $this->assertEquals($json, $obj->getRawResponse());
         $this->assertEquals(4692, $obj->getTotal());
         $this->assertEquals(500, $obj->getTotalHits());
 
@@ -107,10 +111,13 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeSeachVideosResponse(): void {
 
-        $obj = ResponseDeserializer::deserializeSearchVideosResponse(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE);
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/SearchVideosResponse.json");
+
+        $obj = ResponseDeserializer::deserializeSearchVideosResponse($json);
         $this->assertInstanceOf(SearchVideosResponse::class, $obj);
 
-        $this->assertEquals(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE, $obj->getRawResponse());
+        $this->assertEquals($json, $obj->getRawResponse());
         $this->assertEquals(42, $obj->getTotal());
         $this->assertEquals(42, $obj->getTotalHits());
 
@@ -140,9 +147,11 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeVideo(): void {
 
-        $arg = json_decode(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE, true)["hits"][0]["videos"]["large"];
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/SearchVideosResponse.json");
+        $data = json_decode($json, true);
 
-        $res = TestResponseDeserializer::deserializeVideo($arg);
+        $res = TestResponseDeserializer::deserializeVideo($data["hits"][0]["videos"]["large"]);
         $this->assertInstanceOf(Video::class, $res);
 
         $this->assertEquals("https://player.vimeo.com/external/135736646.hd.mp4?s=ed02d71c92dd0df7d1110045e6eb65a6&profile_id=119", $res->getUrl());
@@ -159,9 +168,11 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeVideoHit(): void {
 
-        $arg = json_decode(TestFixtures::SAMPLE_SEARCH_VIDEOS_RESPONSE, true)["hits"][0];
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/SearchVideosResponse.json");
+        $data = json_decode($json, true);
 
-        $res = TestResponseDeserializer::deserializeVideoHit($arg);
+        $res = TestResponseDeserializer::deserializeVideoHit($data["hits"][0]);
         $this->assertInstanceOf(VideoHit::class, $res);
 
         $this->assertEquals(125, $res->getId());
