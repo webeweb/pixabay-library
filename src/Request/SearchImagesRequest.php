@@ -55,6 +55,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      */
     public function __construct() {
         parent::__construct();
+
         $this->setColors([]);
         $this->setImageType(self::IMAGE_TYPE_ALL);
         $this->setOrientation(self::ORIENTATION_ALL);

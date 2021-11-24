@@ -41,6 +41,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      */
     public function __construct() {
         parent::__construct();
+
         $this->setVideoType(self::VIDEO_TYPE_ALL);
     }
 
