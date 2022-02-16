@@ -24,7 +24,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class VideoHitTest extends AbstractTestCase {
 
     /**
-     * Tests the addVideo() method.
+     * Tests addVideo()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class VideoHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDuration() method.
+     * Tests setDuration()
      *
      * @return void.
      */
@@ -54,7 +54,7 @@ class VideoHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPictureId() method.
+     * Tests setPictureId()
      *
      * @return void.
      */
@@ -67,7 +67,7 @@ class VideoHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

@@ -49,7 +49,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the beforeReturnResponse() method.
+     * Tests beforeReturnResponse()
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the searchImages() method.
+     * Tests searchImages()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -93,7 +93,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the searchImages() method.
+     * Tests searchImages()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -115,7 +115,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the searchVideos() method.
+     * Tests searchVideos()
      *
      * @throws Exception Throws an exception if an error occurs.
      */

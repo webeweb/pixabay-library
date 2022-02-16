@@ -27,7 +27,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Request\TestRequest;
 class AbstractRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the enumLang() method.
+     * Tests enumLang()
      *
      * @return void
      */
@@ -66,7 +66,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumOrder() method.
+     * Tests enumOrder()
      *
      * @return void
      */
@@ -81,7 +81,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setCategory() method.
+     * Tests setCategory()
      *
      * @return void
      */
@@ -94,7 +94,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setEditorsChoice() method.
+     * Tests setEditorsChoice()
      *
      * @return void
      */
@@ -107,7 +107,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setLang() method.
+     * Tests setLang()
      *
      * @return void
      */
@@ -120,7 +120,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setLang() method.
+     * Tests setLang()
      *
      * @return void
      */
@@ -139,7 +139,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMinHeight() method.
+     * Tests setMinHeight()
      *
      * @return void
      */
@@ -152,7 +152,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMinWidth() method.
+     * Tests setMinWidth()
      *
      * @return void
      */
@@ -165,7 +165,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOrder() method.
+     * Tests setOrder()
      *
      * @return void
      */
@@ -178,7 +178,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOrder() method.
+     * Tests setOrder()
      *
      * @return void
      */
@@ -197,7 +197,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPage() method.
+     * Tests setPage()
      *
      * @return void
      */
@@ -210,7 +210,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPage() method.
+     * Tests setPage()
      *
      * @return void
      */
@@ -229,7 +229,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPerPage() method.
+     * Tests setPerPage()
      *
      * @return void
      */
@@ -242,7 +242,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPerPage() method.
+     * Tests setPerPage()
      *
      * @return void
      */
@@ -270,7 +270,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPretty() method.
+     * Tests setPretty()
      *
      * @return void
      */
@@ -283,7 +283,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setQ() method.
+     * Tests setQ()
      *
      * @return void
      */
@@ -296,7 +296,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setSafeSearch() method.
+     * Tests setSafeSearch()
      *
      * @return void
      */
@@ -309,7 +309,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

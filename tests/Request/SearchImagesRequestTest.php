@@ -26,7 +26,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class SearchImagesRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the addColor() method.
+     * Tests addColor()
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the addColor() method.
+     * Tests addColor()
      *
      * @return void
      */
@@ -59,7 +59,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumCategory() method..
+     * Tests enumCategory().
      *
      * @return void
      */
@@ -92,7 +92,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumColor() method.
+     * Tests enumColor()
      *
      * @return void
      */
@@ -119,7 +119,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumImageType() method.
+     * Tests enumImageType()
      *
      * @return void
      */
@@ -136,7 +136,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumOrientation() method.
+     * Tests enumOrientation()
      *
      * @return void.
      */
@@ -152,7 +152,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the removeColor() method.
+     * Tests removeColor()
      *
      * @return void
      */
@@ -166,7 +166,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setImageType() method.
+     * Tests setImageType()
      *
      * @return void
      */
@@ -179,7 +179,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setImageType() method.
+     * Tests setImageType()
      *
      * @return void
      */
@@ -198,7 +198,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOrientation() method.
+     * Tests setOrientation()
      *
      * @return void
      */
@@ -211,7 +211,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOrientation() method.
+     * Tests setOrientation()
      *
      * @return void
      */
@@ -230,7 +230,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

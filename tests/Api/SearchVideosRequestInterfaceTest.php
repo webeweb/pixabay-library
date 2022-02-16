@@ -23,7 +23,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class SearchVideosRequestInterfaceTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

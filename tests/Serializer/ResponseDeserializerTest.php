@@ -29,7 +29,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Serializer\TestResponseDeserializer;
 class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests the deserializeImageHit() method.
+     * Tests deserializeImageHit()
      *
      * @return void
      */
@@ -69,7 +69,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeSearchImagesResponse() method.
+     * Tests deserializeSearchImagesResponse()
      *
      * @return void
      */
@@ -89,7 +89,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeSearchImagesResponse() method.
+     * Tests deserializeSearchImagesResponse()
      *
      * @return void
      */
@@ -109,7 +109,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeSearchVideosResponse() method.
+     * Tests deserializeSearchVideosResponse()
      *
      * @return void
      */
@@ -129,7 +129,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeSearchVideosResponse() method.
+     * Tests deserializeSearchVideosResponse()
      *
      * @return void
      */
@@ -149,7 +149,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeVideo() method.
+     * Tests deserializeVideo()
      *
      * @return void
      */
@@ -170,7 +170,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeVideoHit() method.
+     * Tests deserializeVideoHit()
      *
      * @return void
      */

@@ -25,7 +25,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestProvider;
 class AbstractProviderTest extends AbstractTestCase {
 
     /**
-     * Tests the setKey() method.
+     * Tests setKey()
      *
      * @retunr void.
      */
@@ -38,7 +38,7 @@ class AbstractProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

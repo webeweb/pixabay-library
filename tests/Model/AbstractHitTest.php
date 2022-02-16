@@ -23,7 +23,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Model\TestHit;
 class AbstractHitTest extends AbstractTestCase {
 
     /**
-     * Tests the setComments() method.
+     * Tests setComments()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDownloads() method.
+     * Tests setDownloads()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setFavorites() method.
+     * Tests setFavorites()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setLikes() method.
+     * Tests setLikes()
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPageURL() method.
+     * Tests setPageURL()
      *
      * @return void
      */
@@ -88,7 +88,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setTags() method.
+     * Tests setTags()
      *
      * @return void
      */
@@ -101,7 +101,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setUser() method.
+     * Tests setUser()
      *
      * @return void
      */
@@ -114,7 +114,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setUserId() method.
+     * Tests setUserId()
      *
      * @return void
      */
@@ -127,7 +127,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setUserImageURL() method.
+     * Tests setUserImageURL()
      *
      * @return void
      */
@@ -140,7 +140,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setViews() method.
+     * Tests setViews()
      *
      * @return void
      */
@@ -153,7 +153,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

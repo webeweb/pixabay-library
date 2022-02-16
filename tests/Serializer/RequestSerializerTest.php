@@ -25,7 +25,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests the serializeSearchImagesRequest() method.
+     * Tests serializeSearchImagesRequest()
      *
      * @return void
      */
@@ -72,7 +72,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializeSearchVideosRequest() method.
+     * Tests serializeSearchVideosRequest()
      *
      * @return void
      */

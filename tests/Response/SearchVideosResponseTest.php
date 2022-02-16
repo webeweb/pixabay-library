@@ -24,7 +24,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class SearchVideosResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the addVideoHit() method.
+     * Tests addVideoHit()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class SearchVideosResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

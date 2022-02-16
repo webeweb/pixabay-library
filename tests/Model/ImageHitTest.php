@@ -23,7 +23,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class ImageHitTest extends AbstractTestCase {
 
     /**
-     * Tests the setFullHDURL() method.
+     * Tests setFullHDURL()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setImageHeight() method.
+     * Tests setImageHeight()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setImageSize() method.
+     * Tests setImageSize()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setImageURL() method.
+     * Tests setImageURL()
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setImageWidth() method.
+     * Tests setImageWidth()
      *
      * @return void
      */
@@ -88,7 +88,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setLargeImageURL() method.
+     * Tests setLargeImageURL()
      *
      * @return void
      */
@@ -101,7 +101,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPreviewHeight() method.
+     * Tests setPreviewHeight()
      *
      * @return void
      */
@@ -114,7 +114,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPreviewURL() method.
+     * Tests setPreviewURL()
      *
      * @return void
      */
@@ -127,7 +127,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPreviewWidth() method.
+     * Tests setPreviewWidth()
      *
      * @return void
      */
@@ -140,7 +140,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setWebFormatHeight() method.
+     * Tests setWebFormatHeight()
      *
      * @return void
      */
@@ -153,7 +153,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setWebFormatURL() method.
+     * Tests setWebFormatURL()
      *
      * @return void
      */
@@ -166,7 +166,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setWebFormatWidth() method.
+     * Tests setWebFormatWidth()
      *
      * @return void
      */
@@ -179,7 +179,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

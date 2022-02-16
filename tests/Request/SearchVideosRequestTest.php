@@ -26,7 +26,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class SearchVideosRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the enumVideoType() method.
+     * Tests enumVideoType()
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setVideoType() method.
+     * Tests setVideoType()
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setVideoType() method.
+     * Tests setVideoType()
      *
      * @return void
      */
@@ -74,7 +74,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */
