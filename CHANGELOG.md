@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve PHPDoc
+
 ### [2.2.1](https://github.com/webeweb/pixabay-library/tree/v2.2.1) (2021-11-16)
 
 - Improve unit tests
