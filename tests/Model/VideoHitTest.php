@@ -18,7 +18,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 /**
  * Video hit test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Tests\Model
  */
 class VideoHitTest extends AbstractTestCase {

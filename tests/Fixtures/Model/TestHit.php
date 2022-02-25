@@ -16,7 +16,7 @@ use WBW\Library\Pixabay\Model\AbstractHit;
 /**
  * Test media.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Tests\Fixtures\Model
  */
 class TestHit extends AbstractHit {

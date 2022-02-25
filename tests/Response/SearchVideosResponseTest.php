@@ -18,7 +18,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 /**
  * Search videos response test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Tests\Response
  */
 class SearchVideosResponseTest extends AbstractTestCase {

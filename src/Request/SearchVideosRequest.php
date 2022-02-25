@@ -17,7 +17,7 @@ use WBW\Library\Pixabay\Api\SearchVideosRequestInterface;
 /**
  * Search videos request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Request
  */
 class SearchVideosRequest extends AbstractRequest implements SearchVideosRequestInterface {

@@ -14,7 +14,7 @@ namespace WBW\Library\Pixabay\Api;
 /**
  * Search videos request interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Api
  */
 interface SearchVideosRequestInterface extends RequestInterface {

@@ -16,7 +16,7 @@ use WBW\Library\Pixabay\Provider\AbstractProvider;
 /**
  * Test provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Tests\Fixtures\Provider
  */
 class TestProvider extends AbstractProvider {

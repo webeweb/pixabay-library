@@ -19,7 +19,7 @@ use WBW\Library\Traits\Strings\StringUrlTrait;
 /**
  * Video.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Model
  */
 class Video {

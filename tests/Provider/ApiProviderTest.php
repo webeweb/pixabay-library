@@ -26,7 +26,7 @@ use WBW\Library\Provider\Exception\ApiException;
 /**
  * API provider test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Tests\Provider
  */
 class ApiProviderTest extends AbstractTestCase {

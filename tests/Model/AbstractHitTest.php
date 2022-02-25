@@ -17,7 +17,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Model\TestHit;
 /**
  * Abstract hit test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Tests\Model
  */
 class AbstractHitTest extends AbstractTestCase {

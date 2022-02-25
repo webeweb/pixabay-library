@@ -17,7 +17,7 @@ use WBW\Library\Pixabay\Api\SearchImagesRequestInterface;
 /**
  * Search images request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Request
  */
 class SearchImagesRequest extends AbstractRequest implements SearchImagesRequestInterface {

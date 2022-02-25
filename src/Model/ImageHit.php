@@ -14,7 +14,7 @@ namespace WBW\Library\Pixabay\Model;
 /**
  * Image hit.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Model
  */
 class ImageHit extends AbstractHit {

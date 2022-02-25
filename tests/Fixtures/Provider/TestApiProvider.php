@@ -17,7 +17,7 @@ use WBW\Library\Pixabay\Response\AbstractResponse;
 /**
  * Test API provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Tests\Fixtures\Provider
  */
 class TestApiProvider extends ApiProvider {

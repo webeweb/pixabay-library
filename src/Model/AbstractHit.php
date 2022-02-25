@@ -17,7 +17,7 @@ use WBW\Library\Traits\Strings\StringTypeTrait;
 /**
  * Abstract hit.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Model
  * @abstract
  */

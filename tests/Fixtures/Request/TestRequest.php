@@ -16,7 +16,7 @@ use WBW\Library\Pixabay\Request\AbstractRequest;
 /**
  * Test request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Tests\Fixtures\Request
  */
 class TestRequest extends AbstractRequest {

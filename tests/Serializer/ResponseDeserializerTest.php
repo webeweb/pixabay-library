@@ -23,7 +23,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Serializer\TestResponseDeserializer;
 /**
  * Response deserializer test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Tests\Serializer
  */
 class ResponseDeserializerTest extends AbstractTestCase {

@@ -24,7 +24,7 @@ use WBW\Library\Traits\Strings\StringLangTrait;
 /**
  * Abstract request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Request
  * @abstract
  */

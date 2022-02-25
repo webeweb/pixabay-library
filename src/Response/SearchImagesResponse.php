@@ -16,7 +16,7 @@ use WBW\Library\Pixabay\Model\ImageHit;
 /**
  * Search images response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Response
  */
 class SearchImagesResponse extends AbstractResponse {

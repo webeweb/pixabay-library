@@ -16,7 +16,7 @@ use WBW\Library\Pixabay\Model\VideoHit;
 /**
  * Search videos response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Response
  */
 class SearchVideosResponse extends AbstractResponse {

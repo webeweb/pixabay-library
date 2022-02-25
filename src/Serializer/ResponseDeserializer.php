@@ -23,7 +23,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 /**
  * Response deserializer.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Serializer
  */
 class ResponseDeserializer {

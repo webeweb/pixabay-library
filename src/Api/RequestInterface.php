@@ -14,7 +14,7 @@ namespace WBW\Library\Pixabay\Api;
 /**
  * Request interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pixabay\Api
  */
 interface RequestInterface {
