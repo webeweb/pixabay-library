@@ -24,7 +24,7 @@ class ImageHit extends AbstractHit {
      *
      * @var string|null
      */
-    private $fullHDURL;
+    private $fullHdUrl;
 
     /**
      * Image height.
@@ -45,7 +45,7 @@ class ImageHit extends AbstractHit {
      *
      * @var string|null
      */
-    private $imageURL;
+    private $imageUrl;
 
     /**
      * Image width.
@@ -59,7 +59,7 @@ class ImageHit extends AbstractHit {
      *
      * @var string|null
      */
-    private $largeImageURL;
+    private $largeImageUrl;
 
     /**
      * Preview height.
@@ -73,7 +73,7 @@ class ImageHit extends AbstractHit {
      *
      * @var string|null
      */
-    private $previewURL;
+    private $previewUrl;
 
     /**
      * Preview width.
@@ -94,7 +94,7 @@ class ImageHit extends AbstractHit {
      *
      * @var string|null
      */
-    private $webFormatURL;
+    private $webFormatUrl;
 
     /**
      * Web format width.
@@ -108,8 +108,8 @@ class ImageHit extends AbstractHit {
      *
      * @return string|null Returns the full HD URL.
      */
-    public function getFullHDURL(): ?string {
-        return $this->fullHDURL;
+    public function getFullHdUrl(): ?string {
+        return $this->fullHdUrl;
     }
 
     /**
@@ -135,8 +135,8 @@ class ImageHit extends AbstractHit {
      *
      * @return string|null Returns the image URL.
      */
-    public function getImageURL(): ?string {
-        return $this->imageURL;
+    public function getImageUrl(): ?string {
+        return $this->imageUrl;
     }
 
     /**
@@ -153,8 +153,8 @@ class ImageHit extends AbstractHit {
      *
      * @return string|null Returns the large format URL.
      */
-    public function getLargeImageURL(): ?string {
-        return $this->largeImageURL;
+    public function getLargeImageUrl(): ?string {
+        return $this->largeImageUrl;
     }
 
     /**
@@ -171,8 +171,8 @@ class ImageHit extends AbstractHit {
      *
      * @return string|null Returns the preview.
      */
-    public function getPreviewURL(): ?string {
-        return $this->previewURL;
+    public function getPreviewUrl(): ?string {
+        return $this->previewUrl;
     }
 
     /**
@@ -198,8 +198,8 @@ class ImageHit extends AbstractHit {
      *
      * @return string|null Returns the web format URL.
      */
-    public function getWebFormatURL(): ?string {
-        return $this->webFormatURL;
+    public function getWebFormatUrl(): ?string {
+        return $this->webFormatUrl;
     }
 
     /**
@@ -214,11 +214,11 @@ class ImageHit extends AbstractHit {
     /**
      * Set the full HD URL.
      *
-     * @param string|null $fullHDURL The full HD URL.
+     * @param string|null $fullHdUrl The full HD URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setFullHDURL(?string $fullHDURL): ImageHit {
-        $this->fullHDURL = $fullHDURL;
+    public function setFullHdUrl(?string $fullHdUrl): ImageHit {
+        $this->fullHdUrl = $fullHdUrl;
         return $this;
     }
 
@@ -247,11 +247,11 @@ class ImageHit extends AbstractHit {
     /**
      * Set the image URL.
      *
-     * @param string|null $imageURL The image URL.
+     * @param string|null $imageUrl The image URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setImageURL(?string $imageURL): ImageHit {
-        $this->imageURL = $imageURL;
+    public function setImageUrl(?string $imageUrl): ImageHit {
+        $this->imageUrl = $imageUrl;
         return $this;
     }
 
@@ -269,11 +269,11 @@ class ImageHit extends AbstractHit {
     /**
      * Set the large image URL.
      *
-     * @param string|null $largeImageURL The large image URL.
+     * @param string|null $largeImageUrl The large image URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setLargeImageURL(?string $largeImageURL): ImageHit {
-        $this->largeImageURL = $largeImageURL;
+    public function setLargeImageUrl(?string $largeImageUrl): ImageHit {
+        $this->largeImageUrl = $largeImageUrl;
         return $this;
     }
 
@@ -291,11 +291,11 @@ class ImageHit extends AbstractHit {
     /**
      * Set the preview URL.
      *
-     * @param string|null $previewURL The preview URL.
+     * @param string|null $previewUrl The preview URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setPreviewURL(?string $previewURL): ImageHit {
-        $this->previewURL = $previewURL;
+    public function setPreviewUrl(?string $previewUrl): ImageHit {
+        $this->previewUrl = $previewUrl;
         return $this;
     }
 
@@ -324,11 +324,11 @@ class ImageHit extends AbstractHit {
     /**
      * Set the web format URL.
      *
-     * @param string|null $webFormatURL The web format URL.
+     * @param string|null $webFormatUrl The web format URL.
      * @return ImageHit Returns this image hit.
      */
-    public function setWebFormatURL(?string $webFormatURL): ImageHit {
-        $this->webFormatURL = $webFormatURL;
+    public function setWebFormatUrl(?string $webFormatUrl): ImageHit {
+        $this->webFormatUrl = $webFormatUrl;
         return $this;
     }
 

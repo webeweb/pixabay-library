@@ -31,8 +31,8 @@ class ImageHitTest extends AbstractTestCase {
 
         $obj = new ImageHit();
 
-        $obj->setFullHDURL("fullHDURL");
-        $this->assertEquals("fullHDURL", $obj->getFullHDURL());
+        $obj->setFullHdUrl("fullHDURL");
+        $this->assertEquals("fullHDURL", $obj->getFullHdUrl());
     }
 
     /**
@@ -70,8 +70,8 @@ class ImageHitTest extends AbstractTestCase {
 
         $obj = new ImageHit();
 
-        $obj->setImageURL("imageURL");
-        $this->assertEquals("imageURL", $obj->getImageURL());
+        $obj->setImageUrl("imageURL");
+        $this->assertEquals("imageURL", $obj->getImageUrl());
     }
 
     /**
@@ -96,8 +96,8 @@ class ImageHitTest extends AbstractTestCase {
 
         $obj = new ImageHit();
 
-        $obj->setLargeImageURL("largeImageURL");
-        $this->assertEquals("largeImageURL", $obj->getLargeImageURL());
+        $obj->setLargeImageUrl("largeImageURL");
+        $this->assertEquals("largeImageURL", $obj->getLargeImageUrl());
     }
 
     /**
@@ -122,8 +122,8 @@ class ImageHitTest extends AbstractTestCase {
 
         $obj = new ImageHit();
 
-        $obj->setPreviewURL("previewURL");
-        $this->assertEquals("previewURL", $obj->getPreviewURL());
+        $obj->setPreviewUrl("previewURL");
+        $this->assertEquals("previewURL", $obj->getPreviewUrl());
     }
 
     /**
@@ -161,8 +161,8 @@ class ImageHitTest extends AbstractTestCase {
 
         $obj = new ImageHit();
 
-        $obj->setWebFormatURL("webFormatURL");
-        $this->assertEquals("webFormatURL", $obj->getWebFormatURL());
+        $obj->setWebFormatUrl("webFormatURL");
+        $this->assertEquals("webFormatURL", $obj->getWebFormatUrl());
     }
 
     /**
@@ -187,17 +187,17 @@ class ImageHitTest extends AbstractTestCase {
 
         $obj = new ImageHit();
 
-        $this->assertNull($obj->getFullHDURL());
+        $this->assertNull($obj->getFullHdUrl());
         $this->assertNull($obj->getImageHeight());
         $this->assertNull($obj->getImageSize());
-        $this->assertNull($obj->getImageURL());
+        $this->assertNull($obj->getImageUrl());
         $this->assertNull($obj->getImageWidth());
-        $this->assertNull($obj->getLargeImageURL());
+        $this->assertNull($obj->getLargeImageUrl());
         $this->assertNull($obj->getPreviewHeight());
-        $this->assertNull($obj->getPreviewURL());
+        $this->assertNull($obj->getPreviewUrl());
         $this->assertNull($obj->getPreviewWidth());
         $this->assertNull($obj->getWebFormatHeight());
-        $this->assertNull($obj->getWebFormatURL());
+        $this->assertNull($obj->getWebFormatUrl());
         $this->assertNull($obj->getWebFormatWidth());
     }
 }

@@ -63,15 +63,15 @@ class ResponseDeserializer {
 
         static::deserializeHit($model, $data);
 
-        $model->setPreviewURL(ArrayHelper::get($data, "previewURL"));
+        $model->setPreviewUrl(ArrayHelper::get($data, "previewURL"));
         $model->setPreviewWidth(intval(ArrayHelper::get($data, "previewWidth", -1)));
         $model->setPreviewHeight(intval(ArrayHelper::get($data, "previewHeight", -1)));
-        $model->setWebFormatURL(ArrayHelper::get($data, "webformatURL"));
+        $model->setWebFormatUrl(ArrayHelper::get($data, "webformatURL"));
         $model->setWebFormatWidth(intval(ArrayHelper::get($data, "webformatWidth", -1)));
         $model->setWebFormatHeight(intval(ArrayHelper::get($data, "webformatHeight", -1)));
-        $model->setLargeImageURL(ArrayHelper::get($data, "largeImageURL"));
-        $model->setFullHDURL(ArrayHelper::get($data, "fullHDURL"));
-        $model->setImageURL(ArrayHelper::get($data, "imageURL"));
+        $model->setLargeImageUrl(ArrayHelper::get($data, "largeImageURL"));
+        $model->setFullHdUrl(ArrayHelper::get($data, "fullHDURL"));
+        $model->setImageUrl(ArrayHelper::get($data, "imageURL"));
         $model->setImageWidth(intval(ArrayHelper::get($data, "imageWidth", -1)));
         $model->setImageHeight(intval(ArrayHelper::get($data, "imageHeight", -1)));
         $model->setImageSize(intval(ArrayHelper::get($data, "imageSize", -1)));
