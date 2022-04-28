@@ -1,8 +1,10 @@
 CHANGELOG
 =========
 
-### master
+### [2.3.0](https://github.com/webeweb/pixabay-library/tree/v2.3.0) (2022-04-28)
 
+- Add a simple method to test package with an API key
+- Improve code quality
 - Improve PHPDoc
 
 ### [2.2.1](https://github.com/webeweb/pixabay-library/tree/v2.2.1) (2021-11-16)
