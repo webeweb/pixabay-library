@@ -15,9 +15,10 @@ use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
 use WBW\Library\Pixabay\Provider\ApiProvider;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
+use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 // Create the API provider.
-$provider = new ApiProvider("YOUR_API_KEY");
+$provider = new ApiProvider(AbstractTestCase::getToken());
 
 // Create a Search images request.
 $request = new SearchVideosRequest();

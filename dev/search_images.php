@@ -14,9 +14,10 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use WBW\Library\Pixabay\Model\ImageHit;
 use WBW\Library\Pixabay\Provider\ApiProvider;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
+use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 // Create the API provider.
-$provider = new ApiProvider("YOUR_API_KEY");
+$provider = new ApiProvider(AbstractTestCase::getToken());
 
 // Create a Search images request.
 $request = new SearchImagesRequest();
