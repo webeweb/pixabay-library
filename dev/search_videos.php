@@ -29,7 +29,7 @@ $request->setQ("paysage");
 $response = $provider->searchVideos($request);
 
 // Handle the response.
-$format = "%20s: %s\n";
+$format = "%-20s: %s\n";
 
 echo sprintf($format, "Total", $response->getTotal());
 echo sprintf($format, "Total hits", $response->getTotalHits());
