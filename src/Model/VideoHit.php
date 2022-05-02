@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pixabay\Model;
 
+use WBW\Library\Traits\Strings\StringRawDataTrait;
+
 /**
  * Video hit.
  *
@@ -18,6 +20,8 @@ namespace WBW\Library\Pixabay\Model;
  * @package WBW\Library\Pixabay\Model
  */
 class VideoHit extends AbstractHit {
+
+    use StringRawDataTrait;
 
     /**
      * Duration.

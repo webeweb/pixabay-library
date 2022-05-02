@@ -14,6 +14,7 @@ namespace WBW\Library\Pixabay\Model;
 use WBW\Library\Traits\Integers\IntegerHeightTrait;
 use WBW\Library\Traits\Integers\IntegerSizeTrait;
 use WBW\Library\Traits\Integers\IntegerWidthTrait;
+use WBW\Library\Traits\Strings\StringRawDataTrait;
 use WBW\Library\Traits\Strings\StringUrlTrait;
 
 /**
@@ -27,6 +28,7 @@ class Video {
     use IntegerHeightTrait;
     use IntegerSizeTrait;
     use IntegerWidthTrait;
+    use StringRawDataTrait;
     use StringUrlTrait;
 
     /**

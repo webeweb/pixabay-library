@@ -77,6 +77,7 @@ class VideoHitTest extends AbstractTestCase {
 
         $this->assertNull($obj->getDuration());
         $this->assertNull($obj->getPictureId());
+        $this->assertNull($obj->getRawData());
         $this->assertCount(0, $obj->getVideos());
     }
 }

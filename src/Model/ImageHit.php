@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pixabay\Model;
 
+use WBW\Library\Traits\Strings\StringRawDataTrait;
+
 /**
  * Image hit.
  *
@@ -18,6 +20,8 @@ namespace WBW\Library\Pixabay\Model;
  * @package WBW\Library\Pixabay\Model
  */
 class ImageHit extends AbstractHit {
+
+    use StringRawDataTrait;
 
     /**
      * Full HD URL.

@@ -161,6 +161,7 @@ class AbstractHitTest extends AbstractTestCase {
 
         $obj = new TestHit();
 
+        $this->assertNull($obj->getId());
         $this->assertNull($obj->getComments());
         $this->assertNull($obj->getDownloads());
         $this->assertNull($obj->getFavorites());

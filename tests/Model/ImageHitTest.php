@@ -196,6 +196,7 @@ class ImageHitTest extends AbstractTestCase {
         $this->assertNull($obj->getPreviewHeight());
         $this->assertNull($obj->getPreviewUrl());
         $this->assertNull($obj->getPreviewWidth());
+        $this->assertNull($obj->getRawData());
         $this->assertNull($obj->getWebFormatHeight());
         $this->assertNull($obj->getWebFormatUrl());
         $this->assertNull($obj->getWebFormatWidth());
