@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.4.0](https://github.com/webeweb/pixabay-library/tree/v2.4.0) (2022-05-02)
+
+- Add a raw data attribute into each model
+
 ### [2.3.0](https://github.com/webeweb/pixabay-library/tree/v2.3.0) (2022-04-28)
 
 - Add a simple method to test package with an API key
