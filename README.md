@@ -5,7 +5,6 @@ pixabay-library
 [![Coverage Status](https://img.shields.io/coveralls/github/webeweb/pixabay-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/pixabay-library?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/pixabay-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/pixabay-library/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/pixabay-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pixabay-library)
-[![Latest Unstable Version](https://img.shields.io/packagist/vpre/webeweb/pixabay-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pixabay-library)
 [![License](https://img.shields.io/packagist/l/webeweb/pixabay-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pixabay-library)
 [![composer.lock](https://img.shields.io/badge/.lock-uncommited-important.svg?style=flat-square)](https://packagist.org/packages/webeweb/pixabay-library)
 
