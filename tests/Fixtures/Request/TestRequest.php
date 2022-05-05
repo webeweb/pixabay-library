@@ -22,7 +22,7 @@ use WBW\Library\Pixabay\Request\AbstractRequest;
 class TestRequest extends AbstractRequest {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return "";

@@ -25,21 +25,21 @@ use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
 class TestResponseDeserializer extends ResponseDeserializer {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function deserializeImageHit(array $response): ImageHit {
         return parent::deserializeImageHit($response);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function deserializeVideo(array $response): Video {
         return parent::deserializeVideo($response);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function deserializeVideoHit(array $response): VideoHit {
         return parent::deserializeVideoHit($response);

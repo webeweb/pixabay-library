@@ -185,7 +185,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::SEARCH_IMAGES_RESOURCE_PATH;

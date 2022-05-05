@@ -23,14 +23,14 @@ use WBW\Library\Pixabay\Response\AbstractResponse;
 class TestResponse extends AbstractResponse {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addHit(AbstractHit $hit): AbstractResponse {
         return parent::addHit($hit);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHits(): array {
         return parent::getHits();
