@@ -26,7 +26,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class JsonDeserializer {
 
     /**
-     * Deserialize a hit.
+     * Deserializes a hit.
      *
      * @param AbstractHit $model The hit.
      * @param array $data The data.
@@ -49,7 +49,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize an image hit.
+     * Deserializes an image hit.
      *
      * @param array $data The data.
      * @return ImageHit Returns an image hit.
@@ -57,7 +57,7 @@ class JsonDeserializer {
     public static function deserializeImageHit(array $data): ImageHit {
 
         $model = new ImageHit();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
 
         static::deserializeHit($model, $data);
 
@@ -78,7 +78,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize a video.
+     * Deserializes a video.
      *
      * @param array $data The data.
      * @return Video Returns a video.
@@ -86,7 +86,7 @@ class JsonDeserializer {
     public static function deserializeVideo(array $data): Video {
 
         $model = new Video();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
 
         $model->setUrl(ArrayHelper::get($data, "url"));
         $model->setWidth(intval(ArrayHelper::get($data, "width", -1)));
@@ -97,7 +97,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize a video hit.
+     * Deserializes a video hit.
      *
      * @param array $data The data.
      * @return VideoHit Returns a video hit.
@@ -105,7 +105,7 @@ class JsonDeserializer {
     public static function deserializeVideoHit(array $data): VideoHit {
 
         $model = new VideoHit();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
 
         static::deserializeHit($model, $data);
 
