@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.6.0](https://github.com/webeweb/pixabay-library/tree/v2.6.0) (2022-05-13)
+
+- Improve requests constants
+
 ### [2.5.0](https://github.com/webeweb/pixabay-library/tree/v2.5.0) (2022-05-09)
 
 - Fix raw data during JSON deserialization
