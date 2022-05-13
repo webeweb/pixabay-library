@@ -19,24 +19,4 @@ namespace WBW\Library\Pixabay\Api;
  */
 interface SearchVideosRequestInterface extends RequestInterface {
 
-    /**
-     * Video type "all".
-     *
-     * @var string
-     */
-    const VIDEO_TYPE_ALL = "all";
-
-    /**
-     * Video type "animation".
-     *
-     * @var string
-     */
-    const VIDEO_TYPE_ANIMATION = "animation";
-
-    /**
-     * Video type "film".
-     *
-     * @var string
-     */
-    const VIDEO_TYPE_FILM = "film";
 }
