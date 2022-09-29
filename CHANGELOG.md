@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.7.0](https://github.com/webeweb/pixabay-library/tree/v2.7.0) (2022-09-29)
+
+- Improve code quality
+
 ### [2.6.0](https://github.com/webeweb/pixabay-library/tree/v2.6.0) (2022-05-13)
 
 - Improve requests constants
