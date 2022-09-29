@@ -82,6 +82,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      * @return string[] Returns the category enumeration.
      */
     public static function enumCategory(): array {
+
         return [
             self::CATEGORY_ANIMALS,
             self::CATEGORY_BACKGROUNDS,
@@ -112,6 +113,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      * @return string[] Returns the color enumeration.
      */
     public static function enumColor(): array {
+
         return [
             self::COLOR_BLACK,
             self::COLOR_BLUE,
@@ -136,6 +138,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      * @return string[] Returns the image type enumeration.
      */
     public static function enumImageType(): array {
+
         return [
             self::IMAGE_TYPE_ALL,
             self::IMAGE_TYPE_ILLUSTRATION,
@@ -150,6 +153,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      * @return string[] Returns the orientation enumeration.
      */
     public static function enumOrientation(): array {
+
         return [
             self::ORIENTATION_ALL,
             self::ORIENTATION_HORIZONTAL,

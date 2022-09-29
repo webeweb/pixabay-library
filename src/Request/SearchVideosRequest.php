@@ -51,6 +51,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      * @return string[] Returns the video type enumeration.
      */
     public static function enumVideoType(): array {
+
         return [
             self::VIDEO_TYPE_ALL,
             self::VIDEO_TYPE_ANIMATION,

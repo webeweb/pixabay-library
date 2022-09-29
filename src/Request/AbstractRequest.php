@@ -118,6 +118,7 @@ abstract class AbstractRequest implements RequestInterface {
      * @return string[] Returns the lang enumeration.
      */
     public static function enumLang(): array {
+
         return [
             self::LANG_BG,
             self::LANG_CS,
@@ -154,6 +155,7 @@ abstract class AbstractRequest implements RequestInterface {
      * @return string[] Returns the order enumeration.
      */
     public static function enumOrder(): array {
+
         return [
             self::ORDER_LATEST,
             self::ORDER_POPULAR,
