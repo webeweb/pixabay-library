@@ -11,11 +11,11 @@
 
 namespace WBW\Library\Pixabay\Provider;
 
-use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Throwable;
 use WBW\Library\Pixabay\Request\AbstractRequest;
 use WBW\Library\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Provider\Exception\ApiException;
@@ -112,7 +112,7 @@ abstract class AbstractProvider extends BaseProvider {
             //$this->setReset(new DateTime("@" . $response->getHeaderLine("X-Ratelimit-Reset")));
 
             return $response->getBody()->getContents();
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             throw new ApiException("Call Pixabay API failed", 500, $ex);
         }

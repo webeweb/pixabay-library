@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pixabay\Tests\Request;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Library\Pixabay\Api\RequestInterface;
 use WBW\Library\Pixabay\Request\AbstractRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -131,7 +131,7 @@ class AbstractRequestTest extends AbstractTestCase {
         try {
 
             $obj->setLang("lang");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The lang "lang" is invalid', $ex->getMessage());
@@ -189,7 +189,7 @@ class AbstractRequestTest extends AbstractTestCase {
         try {
 
             $obj->setOrder("order");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The order "order" is invalid', $ex->getMessage());
@@ -221,7 +221,7 @@ class AbstractRequestTest extends AbstractTestCase {
         try {
 
             $obj->setPage(0);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The page must be greater than 0", $ex->getMessage());
@@ -253,7 +253,7 @@ class AbstractRequestTest extends AbstractTestCase {
         try {
 
             $obj->setPerPage(2);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The per page must be between 3 and 200", $ex->getMessage());
@@ -262,7 +262,7 @@ class AbstractRequestTest extends AbstractTestCase {
         try {
 
             $obj->setPerPage(201);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The per page must be between 3 and 200", $ex->getMessage());

@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pixabay\Tests\Request;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Library\Pixabay\Api\SearchVideosRequestInterface;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -66,7 +66,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
         try {
 
             $obj->setVideoType("videoType");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The video type "videoType" is invalid', $ex->getMessage());

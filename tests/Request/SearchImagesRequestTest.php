@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pixabay\Tests\Request;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Library\Pixabay\Api\SearchImagesRequestInterface;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -51,7 +51,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
         try {
 
             $obj->addColor("color");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The color "color" is invalid', $ex->getMessage());
@@ -190,7 +190,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
         try {
 
             $obj->setImageType("imageType");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The image type "imageType" is invalid', $ex->getMessage());
@@ -222,7 +222,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
         try {
 
             $obj->setOrientation("orientation");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The orientation "orientation" is invalid', $ex->getMessage());

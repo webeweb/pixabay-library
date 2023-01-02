@@ -11,9 +11,9 @@
 
 namespace WBW\Library\Pixabay\Tests\Provider;
 
-use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Throwable;
 use WBW\Library\Pixabay\Provider\ApiProvider;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
@@ -69,7 +69,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests searchImages()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSearchImages(): void {
 
@@ -86,7 +86,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->searchImages($searchImagesRequest);
 
             $this->assertInstanceOf(SearchImagesResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
         }
@@ -95,7 +95,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests searchImages()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSearchImagesWithInvalidArgumentException(): void {
 
@@ -107,7 +107,7 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $obj->searchImages($searchImagesRequest);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "key" is missing', $ex->getMessage());
@@ -117,7 +117,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests searchVideos()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSearchVideos(): void {
 
@@ -131,7 +131,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->searchVideos($searchVideosRequest);
 
             $this->assertInstanceOf(SearchVideosResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
         }
