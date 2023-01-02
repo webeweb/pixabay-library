@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [2.9.0](https://github.com/webeweb/pixabay-library/tree/v2.9.0) (2023-01-02)
+
+- Improve code quality
+- Improve PHPDoc
+- Update LICENSE
+
 ### [2.8.0](https://github.com/webeweb/pixabay-library/tree/v2.8.0) (2022-12-20)
 
 - Add PHP 8.2 support
