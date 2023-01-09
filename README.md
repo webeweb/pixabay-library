@@ -1,7 +1,7 @@
 pixabay-library
 ===============
 
-[![Build Status](https://img.shields.io/github/workflow/status/webeweb/pixabay-library/build?style=flat-square)](https://github.com/webeweb/pixabay-library/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/webeweb/pixabay-library/build.yml?style=flat-square)](https://github.com/webeweb/pixabay-library/actions)
 [![Coverage Status](https://img.shields.io/coveralls/github/webeweb/pixabay-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/pixabay-library?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/pixabay-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/pixabay-library/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/pixabay-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pixabay-library)
