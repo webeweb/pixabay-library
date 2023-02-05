@@ -14,6 +14,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use WBW\Library\Pixabay\Model\ImageHit;
 use WBW\Library\Pixabay\Provider\ApiProvider;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
+use WBW\Library\Pixabay\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 // Create the API provider.
@@ -24,8 +25,8 @@ $request = new SearchImagesRequest();
 $request->setQ("paysage");
 // ...
 
-// Call the API and get the response.
-$response = $provider->searchImages($request);
+/** @var SearchImagesResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $format = "%-20s: %s\n";

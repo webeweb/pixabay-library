@@ -15,6 +15,7 @@ use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
 use WBW\Library\Pixabay\Provider\ApiProvider;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
+use WBW\Library\Pixabay\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 // Create the API provider.
@@ -25,8 +26,8 @@ $request = new SearchVideosRequest();
 $request->setQ("paysage");
 // ...
 
-// Call the API and get the response.
-$response = $provider->searchVideos($request);
+/** @var SearchVideosResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $format = "%-20s: %s\n";
