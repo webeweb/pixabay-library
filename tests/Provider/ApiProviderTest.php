@@ -49,18 +49,18 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests beforeReturnResponse()
+     * Tests populateResponse()
      *
      * @return void
      */
-    public function testBeforeReturnResponse(): void {
+    public function testPopulateResponse(): void {
 
         // Set a Search images response mock.
         $searchImageResponse = new SearchImagesResponse();
 
         $obj = new TestApiProvider();
 
-        $obj->beforeReturnResponse($searchImageResponse);
+        $obj->populateResponse($searchImageResponse);
         $this->assertSame($obj->getLimit(), $searchImageResponse->getLimit());
         $this->assertSame($obj->getRemaining(), $searchImageResponse->getRemaining());
         $this->assertSame($obj->getReset(), $searchImageResponse->getReset());
@@ -83,7 +83,7 @@ class ApiProviderTest extends AbstractTestCase {
 
         try {
 
-            $res = $obj->searchImages($searchImagesRequest);
+            $res = $obj->sendRequest($searchImagesRequest);
 
             $this->assertInstanceOf(SearchImagesResponse::class, $res);
         } catch (Throwable $ex) {
@@ -106,7 +106,7 @@ class ApiProviderTest extends AbstractTestCase {
 
         try {
 
-            $obj->searchImages($searchImagesRequest);
+            $obj->sendRequest($searchImagesRequest);
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -128,7 +128,7 @@ class ApiProviderTest extends AbstractTestCase {
 
         try {
 
-            $res = $obj->searchVideos($searchVideosRequest);
+            $res = $obj->sendRequest($searchVideosRequest);
 
             $this->assertInstanceOf(SearchVideosResponse::class, $res);
         } catch (Throwable $ex) {

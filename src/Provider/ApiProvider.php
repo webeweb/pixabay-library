@@ -13,13 +13,8 @@ namespace WBW\Library\Pixabay\Provider;
 
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
-use WBW\Library\Pixabay\Request\SearchImagesRequest;
-use WBW\Library\Pixabay\Request\SearchVideosRequest;
+use WBW\Library\Pixabay\Request\AbstractRequest;
 use WBW\Library\Pixabay\Response\AbstractResponse;
-use WBW\Library\Pixabay\Response\SearchImagesResponse;
-use WBW\Library\Pixabay\Response\SearchVideosResponse;
-use WBW\Library\Pixabay\Serializer\RequestSerializer;
-use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
 use WBW\Library\Provider\Exception\ApiException;
 
 /**
@@ -31,12 +26,12 @@ use WBW\Library\Provider\Exception\ApiException;
 class ApiProvider extends AbstractProvider {
 
     /**
-     * Before return a response.
+     * Populates a response.
      *
      * @param AbstractResponse $response The response.
      * @return AbstractResponse Returns the response.
      */
-    protected function beforeReturnResponse(AbstractResponse $response): AbstractResponse {
+    protected function populateResponse(AbstractResponse $response): AbstractResponse {
 
         $response->setLimit($this->getLimit());
         $response->setRemaining($this->getRemaining());
@@ -46,38 +41,19 @@ class ApiProvider extends AbstractProvider {
     }
 
     /**
-     * Search images.
+     * Sends a request.
      *
-     * @param SearchImagesRequest $request The search images request.
-     * @return SearchImagesResponse Returns the search images response.
+     * @param AbstractRequest $request The request.
+     * @return AbstractResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function searchImages(SearchImagesRequest $request): SearchImagesResponse {
+    public function sendRequest(AbstractRequest $request): AbstractResponse {
 
-        $queryData = RequestSerializer::serializeSearchImagesRequest($request);
-
+        $queryData   = $request->serializeRequest();
         $rawResponse = $this->callApi($request, $queryData);
 
-        return $this->beforeReturnResponse(ResponseDeserializer::deserializeSearchImagesResponse($rawResponse));
-    }
-
-    /**
-     * Search videos.
-     *
-     * @param SearchVideosRequest $request The search videos request.
-     * @return SearchVideosResponse Returns the search videos response.
-     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
-     * @throws ApiException Throws an API exception if an error occurs.
-     */
-    public function searchVideos(SearchVideosRequest $request): SearchVideosResponse {
-
-        $queryData = RequestSerializer::serializeSearchVideosRequest($request);
-
-        $rawResponse = $this->callApi($request, $queryData);
-
-        return $this->beforeReturnResponse(ResponseDeserializer::deserializeSearchVideosResponse($rawResponse));
+        return $this->populateResponse($request->deserializeResponse($rawResponse));
     }
 }
