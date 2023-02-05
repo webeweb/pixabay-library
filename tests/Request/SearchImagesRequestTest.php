@@ -14,8 +14,8 @@ namespace WBW\Library\Pixabay\Tests\Request;
 use InvalidArgumentException;
 use Throwable;
 use WBW\Library\Pixabay\Api\RequestInterface;
-use WBW\Library\Pixabay\Api\SearchImagesRequestInterface;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
+use WBW\Library\Pixabay\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
 /**
@@ -25,6 +25,216 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
  * @package WBW\Library\Pixabay\Tests\Request
  */
 class SearchImagesRequestTest extends AbstractTestCase {
+
+    /**
+     * Tests addColor()
+     *
+     * @return void
+     */
+    public function testAddColor(): void {
+
+        $obj = new SearchImagesRequest();
+
+        $obj->addColor(SearchImagesRequest::COLOR_BLACK);
+        $this->assertCount(1, $obj->getColors());
+        $this->assertEquals(SearchImagesRequest::COLOR_BLACK, $obj->getColors()[0]);
+    }
+
+    /**
+     * Tests addColor()
+     *
+     * @return void
+     */
+    public function testAddColorWithInvalidArgumentException(): void {
+
+        $obj = new SearchImagesRequest();
+
+        try {
+
+            $obj->addColor("color");
+        } catch (Throwable $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals('The color "color" is invalid', $ex->getMessage());
+        }
+    }
+
+    /**
+     * Tests deserializeResponse()
+     *
+     * @return void
+     */
+    public function testDeserializeResponse(): void {
+
+        // Set a raw response mock.
+        $rawResponse = file_get_contents(__DIR__ . "/SearchImagesRequestTest.testDeserializeResponse.json");
+
+        $obj = new SearchImagesRequest();
+
+        $res = $obj->deserializeResponse($rawResponse);
+        $this->assertInstanceOf(SearchImagesResponse::class, $res);
+
+        $this->assertEquals($rawResponse, $res->getRawResponse());
+        $this->assertEquals(4692, $res->getTotal());
+        $this->assertEquals(500, $res->getTotalHits());
+
+        $this->assertCount(1, $res->getImageHits());
+
+        $this->assertNotNull($res->getImageHits()[0]->getRawData());
+        $this->assertEquals(195893, $res->getImageHits()[0]->getId());
+        $this->assertEquals("https://pixabay.com/en/blossom-bloom-flower-195893/", $res->getImageHits()[0]->getPageURL());
+        $this->assertEquals("photo", $res->getImageHits()[0]->getType());
+        $this->assertEquals("blossom, bloom, flower", $res->getImageHits()[0]->getTags());
+        $this->assErtEquals("https://cdn.pixabay.com/photo/2013/10/15/09/12/flower-195893_150.jpg", $res->getImageHits()[0]->getPreviewUrl());
+        $this->assertEquals(150, $res->getImageHits()[0]->getPreviewWidth());
+        $this->assertEquals(84, $res->getImageHits()[0]->getPreviewHeight());
+        $this->assertEquals("https://pixabay.com/get/35bbf209e13e39d2_640.jpg", $res->getImageHits()[0]->getWebFormatUrl());
+        $this->assertEquals(640, $res->getImageHits()[0]->getWebformatWidth());
+        $this->assertEquals(360, $res->getImageHits()[0]->getWebformatHeight());
+        $this->assertEquals("https://pixabay.com/get/ed6a99fd0a76647_1280.jpg", $res->getImageHits()[0]->getLargeImageUrl());
+        $this->assertEquals("https://pixabay.com/get/ed6a9369fd0a76647_1920.jpg", $res->getImageHits()[0]->getFullHdUrl());
+        $this->assertequals("https://pixabay.com/get/ed6a9364a9fd0a76647.jpg", $res->getImageHits()[0]->getImageUrl());
+        $this->assertEquals(4000, $res->getImageHits()[0]->getImageWidth());
+        $this->assertEquals(2250, $res->getImageHits()[0]->getImageHeight());
+        $this->assertEquals(4731420, $res->getImageHits()[0]->getImageSize());
+        $this->assertEquals(7671, $res->getImageHits()[0]->getViews());
+        $this->assertEquals(6439, $res->getImageHits()[0]->getDownloads());
+        $this->assertEquals(1, $res->getImageHits()[0]->getFavorites());
+        $this->assertEquals(5, $res->getImageHits()[0]->getLikes());
+        $this->assertEquals(2, $res->getImageHits()[0]->getComments());
+        $this->assertEquals(48777, $res->getImageHits()[0]->getUserId());
+        $this->assertEquals("Josch13", $res->getImageHits()[0]->getUser());
+        $this->assertEquals("https://cdn.pixabay.com/user/2013/11/05/02-10-23-764_250x250.jpg", $res->getImageHits()[0]->getUserImageURL());
+    }
+
+    /**
+     * Tests deserializeResponse()
+     *
+     * @return void
+     */
+    public function testDeserializeResponseWithBadRawResponse(): void {
+
+        // Set a raw response mock.
+        $rawResponse = "";
+
+        $obj = new SearchImagesRequest();
+
+        $res = $obj->deserializeResponse($rawResponse);
+        $this->assertInstanceOf(SearchImagesResponse::class, $res);
+
+        $this->assertEquals($rawResponse, $res->getRawResponse());
+        $this->assertNull($res->getTotal());
+        $this->assertNull($res->getTotalHits());
+
+        $this->assertCount(0, $res->getImageHits());
+    }
+
+    /**
+     * Tests enumCategory().
+     *
+     * @return void
+     */
+    public function testEnumCategory(): void {
+
+        $res = [
+            RequestInterface::CATEGORY_ANIMALS,
+            RequestInterface::CATEGORY_BACKGROUNDS,
+            RequestInterface::CATEGORY_BUILDINGS,
+            RequestInterface::CATEGORY_BUSINESS,
+            RequestInterface::CATEGORY_COMPUTER,
+            RequestInterface::CATEGORY_EDUCATION,
+            RequestInterface::CATEGORY_FASHION,
+            RequestInterface::CATEGORY_FEELINGS,
+            RequestInterface::CATEGORY_FOOD,
+            RequestInterface::CATEGORY_HEALTH,
+            RequestInterface::CATEGORY_INDUSTRY,
+            RequestInterface::CATEGORY_MUSIC,
+            RequestInterface::CATEGORY_NATURE,
+            RequestInterface::CATEGORY_PEOPLE,
+            RequestInterface::CATEGORY_PLACES,
+            RequestInterface::CATEGORY_RELIGION,
+            RequestInterface::CATEGORY_SCIENCE,
+            RequestInterface::CATEGORY_SPORTS,
+            RequestInterface::CATEGORY_TRANSPORTATION,
+            RequestInterface::CATEGORY_TRAVEL,
+        ];
+
+        $this->assertEquals($res, SearchImagesRequest::enumCategory());
+    }
+
+    /**
+     * Tests enumColor()
+     *
+     * @return void
+     */
+    public function testEnumColor(): void {
+
+        $res = [
+            RequestInterface::COLOR_BLACK,
+            RequestInterface::COLOR_BLUE,
+            RequestInterface::COLOR_BROWN,
+            RequestInterface::COLOR_GRAY,
+            RequestInterface::COLOR_GRAYSCALE,
+            RequestInterface::COLOR_GREEN,
+            RequestInterface::COLOR_LILAC,
+            RequestInterface::COLOR_ORANGE,
+            RequestInterface::COLOR_PINK,
+            RequestInterface::COLOR_RED,
+            RequestInterface::COLOR_TRANSPARENT,
+            RequestInterface::COLOR_TURQUOISE,
+            RequestInterface::COLOR_YELLOW,
+            RequestInterface::COLOR_WHITE,
+        ];
+
+        $this->assertEquals($res, SearchImagesRequest::enumColor());
+    }
+
+    /**
+     * Tests enumImageType()
+     *
+     * @return void
+     */
+    public function testEnumImageType(): void {
+
+        $res = [
+            RequestInterface::IMAGE_TYPE_ALL,
+            RequestInterface::IMAGE_TYPE_ILLUSTRATION,
+            RequestInterface::IMAGE_TYPE_PHOTO,
+            RequestInterface::IMAGE_TYPE_VECTOR,
+        ];
+
+        $this->assertEquals($res, SearchImagesRequest::enumImageType());
+    }
+
+    /**
+     * Tests enumOrientation()
+     *
+     * @return void.
+     */
+    public function testEnumOrientation(): void {
+
+        $res = [
+            RequestInterface::ORIENTATION_ALL,
+            RequestInterface::ORIENTATION_HORIZONTAL,
+            RequestInterface::ORIENTATION_VERTICAL,
+        ];
+
+        $this->assertEquals($res, SearchImagesRequest::enumOrientation());
+    }
+
+    /**
+     * Tests removeColor()
+     *
+     * @return void
+     */
+    public function testRemoveColor(): void {
+
+        $obj = new SearchImagesRequest();
+
+        $obj->addColor(RequestInterface::COLOR_BLACK);
+        $obj->removeColor(RequestInterface::COLOR_BLACK);
+        $this->assertCount(0, $obj->getColors());
+    }
 
     /**
      * Tests serializeRequest()
@@ -73,146 +283,6 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests addColor()
-     *
-     * @return void
-     */
-    public function testAddColor(): void {
-
-        $obj = new SearchImagesRequest();
-
-        $obj->addColor(SearchImagesRequest::COLOR_BLACK);
-        $this->assertCount(1, $obj->getColors());
-        $this->assertEquals(SearchImagesRequest::COLOR_BLACK, $obj->getColors()[0]);
-    }
-
-    /**
-     * Tests addColor()
-     *
-     * @return void
-     */
-    public function testAddColorWithInvalidArgumentException(): void {
-
-        $obj = new SearchImagesRequest();
-
-        try {
-
-            $obj->addColor("color");
-        } catch (Throwable $ex) {
-
-            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals('The color "color" is invalid', $ex->getMessage());
-        }
-    }
-
-    /**
-     * Tests enumCategory().
-     *
-     * @return void
-     */
-    public function testEnumCategory(): void {
-
-        $res = [
-            SearchImagesRequestInterface::CATEGORY_ANIMALS,
-            SearchImagesRequestInterface::CATEGORY_BACKGROUNDS,
-            SearchImagesRequestInterface::CATEGORY_BUILDINGS,
-            SearchImagesRequestInterface::CATEGORY_BUSINESS,
-            SearchImagesRequestInterface::CATEGORY_COMPUTER,
-            SearchImagesRequestInterface::CATEGORY_EDUCATION,
-            SearchImagesRequestInterface::CATEGORY_FASHION,
-            SearchImagesRequestInterface::CATEGORY_FEELINGS,
-            SearchImagesRequestInterface::CATEGORY_FOOD,
-            SearchImagesRequestInterface::CATEGORY_HEALTH,
-            SearchImagesRequestInterface::CATEGORY_INDUSTRY,
-            SearchImagesRequestInterface::CATEGORY_MUSIC,
-            SearchImagesRequestInterface::CATEGORY_NATURE,
-            SearchImagesRequestInterface::CATEGORY_PEOPLE,
-            SearchImagesRequestInterface::CATEGORY_PLACES,
-            SearchImagesRequestInterface::CATEGORY_RELIGION,
-            SearchImagesRequestInterface::CATEGORY_SCIENCE,
-            SearchImagesRequestInterface::CATEGORY_SPORTS,
-            SearchImagesRequestInterface::CATEGORY_TRANSPORTATION,
-            SearchImagesRequestInterface::CATEGORY_TRAVEL,
-        ];
-
-        $this->assertEquals($res, SearchImagesRequest::enumCategory());
-    }
-
-    /**
-     * Tests enumColor()
-     *
-     * @return void
-     */
-    public function testEnumColor(): void {
-
-        $res = [
-            SearchImagesRequestInterface::COLOR_BLACK,
-            SearchImagesRequestInterface::COLOR_BLUE,
-            SearchImagesRequestInterface::COLOR_BROWN,
-            SearchImagesRequestInterface::COLOR_GRAY,
-            SearchImagesRequestInterface::COLOR_GRAYSCALE,
-            SearchImagesRequestInterface::COLOR_GREEN,
-            SearchImagesRequestInterface::COLOR_LILAC,
-            SearchImagesRequestInterface::COLOR_ORANGE,
-            SearchImagesRequestInterface::COLOR_PINK,
-            SearchImagesRequestInterface::COLOR_RED,
-            SearchImagesRequestInterface::COLOR_TRANSPARENT,
-            SearchImagesRequestInterface::COLOR_TURQUOISE,
-            SearchImagesRequestInterface::COLOR_YELLOW,
-            SearchImagesRequestInterface::COLOR_WHITE,
-        ];
-
-        $this->assertEquals($res, SearchImagesRequest::enumColor());
-    }
-
-    /**
-     * Tests enumImageType()
-     *
-     * @return void
-     */
-    public function testEnumImageType(): void {
-
-        $res = [
-            SearchImagesRequestInterface::IMAGE_TYPE_ALL,
-            SearchImagesRequestInterface::IMAGE_TYPE_ILLUSTRATION,
-            SearchImagesRequestInterface::IMAGE_TYPE_PHOTO,
-            SearchImagesRequestInterface::IMAGE_TYPE_VECTOR,
-        ];
-
-        $this->assertEquals($res, SearchImagesRequest::enumImageType());
-    }
-
-    /**
-     * Tests enumOrientation()
-     *
-     * @return void.
-     */
-    public function testEnumOrientation(): void {
-
-        $res = [
-            SearchImagesRequestInterface::ORIENTATION_ALL,
-            SearchImagesRequestInterface::ORIENTATION_HORIZONTAL,
-            SearchImagesRequestInterface::ORIENTATION_VERTICAL,
-        ];
-
-        $this->assertEquals($res, SearchImagesRequest::enumOrientation());
-    }
-
-    /**
-     * Tests removeColor()
-     *
-     * @return void
-     */
-    public function testRemoveColor(): void {
-
-        $obj = new SearchImagesRequest();
-
-        $obj->addColor(SearchImagesRequest::COLOR_BLACK);
-        $obj->removeColor(SearchImagesRequest::COLOR_BLACK);
-        $this->assertCount(0, $obj->getColors());
-    }
-
-    /**
      * Tests setImageType()
      *
      * @return void
@@ -221,8 +291,8 @@ class SearchImagesRequestTest extends AbstractTestCase {
 
         $obj = new SearchImagesRequest();
 
-        $obj->setImageType(SearchImagesRequest::IMAGE_TYPE_PHOTO);
-        $this->assertEquals(SearchImagesRequest::IMAGE_TYPE_PHOTO, $obj->getImageType());
+        $obj->setImageType(RequestInterface::IMAGE_TYPE_PHOTO);
+        $this->assertEquals(RequestInterface::IMAGE_TYPE_PHOTO, $obj->getImageType());
     }
 
     /**
@@ -253,8 +323,8 @@ class SearchImagesRequestTest extends AbstractTestCase {
 
         $obj = new SearchImagesRequest();
 
-        $obj->setOrientation(SearchImagesRequest::ORIENTATION_ALL);
-        $this->assertEquals(SearchImagesRequest::ORIENTATION_ALL, $obj->getOrientation());
+        $obj->setOrientation(RequestInterface::ORIENTATION_ALL);
+        $this->assertEquals(RequestInterface::ORIENTATION_ALL, $obj->getOrientation());
     }
 
     /**
@@ -288,8 +358,8 @@ class SearchImagesRequestTest extends AbstractTestCase {
         $obj = new SearchImagesRequest();
 
         $this->assertCount(0, $obj->getColors());
-        $this->assertEquals(SearchImagesRequest::IMAGE_TYPE_ALL, $obj->getImageType());
-        $this->assertEquals(SearchImagesRequest::ORIENTATION_ALL, $obj->getOrientation());
+        $this->assertEquals(RequestInterface::IMAGE_TYPE_ALL, $obj->getImageType());
+        $this->assertEquals(RequestInterface::ORIENTATION_ALL, $obj->getOrientation());
         $this->assertEquals(SearchImagesRequest::SEARCH_IMAGES_RESOURCE_PATH, $obj->getResourcePath());
     }
 }
