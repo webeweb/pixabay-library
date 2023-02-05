@@ -13,6 +13,7 @@ namespace WBW\Library\Pixabay\Request;
 
 use InvalidArgumentException;
 use WBW\Library\Pixabay\Api\SearchImagesRequestInterface;
+use WBW\Library\Pixabay\Serializer\RequestSerializer;
 
 /**
  * Search images request.
@@ -207,6 +208,13 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
             unset($this->colors[$pos]);
         }
         return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeSearchImagesRequest($this);
     }
 
     /**

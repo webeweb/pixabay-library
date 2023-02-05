@@ -13,6 +13,7 @@ namespace WBW\Library\Pixabay\Tests\Request;
 
 use InvalidArgumentException;
 use Throwable;
+use WBW\Library\Pixabay\Api\RequestInterface;
 use WBW\Library\Pixabay\Api\SearchImagesRequestInterface;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -24,6 +25,52 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
  * @package WBW\Library\Pixabay\Tests\Request
  */
 class SearchImagesRequestTest extends AbstractTestCase {
+
+    /**
+     * Tests serializeRequest()
+     *
+     * @return void
+     */
+    public function testSerializeRequest(): void {
+
+        $obj = new SearchImagesRequest();
+        $obj->setCategory("category");
+        $obj->setEditorsChoice(true);
+        $obj->setId(1234);
+        $obj->setLang("fr");
+        $obj->setMinHeight(720);
+        $obj->setMinWidth(1280);
+        $obj->setOrder(RequestInterface::ORDER_LATEST);
+        $obj->setPage(2);
+        $obj->setPerPage(15);
+        $obj->setPretty(true);
+        $obj->setQ("github");
+        $obj->setSafeSearch(true);
+
+        $obj->addColor(RequestInterface::COLOR_BLACK);
+        $obj->setImageType(RequestInterface::IMAGE_TYPE_PHOTO);
+        $obj->setOrientation(RequestInterface::ORIENTATION_HORIZONTAL);
+
+        $res = $obj->serializeRequest();
+        $this->assertCount(15, $res);
+
+        $this->assertEquals("category", $res["category"]);
+        $this->assertEquals("true", $res["editors_choice"]);
+        $this->assertEquals(1234, $res["id"]);
+        $this->assertEquals("fr", $res["lang"]);
+        $this->assertEquals(720, $res["min_height"]);
+        $this->assertEquals(1280, $res["min_width"]);
+        $this->assertEquals(RequestInterface::ORDER_LATEST, $res["order"]);
+        $this->assertEquals(2, $res["page"]);
+        $this->assertEquals(15, $res["per_page"]);
+        $this->assertEquals("true", $res["pretty"]);
+        $this->assertEquals("github", $res["q"]);
+        $this->assertEquals("true", $res["safesearch"]);
+
+        $this->assertEquals(RequestInterface::COLOR_BLACK, $res["colors"]);
+        $this->assertEquals(RequestInterface::IMAGE_TYPE_PHOTO, $res["image_type"]);
+        $this->assertEquals(RequestInterface::ORIENTATION_HORIZONTAL, $res["orientation"]);
+    }
 
     /**
      * Tests addColor()
