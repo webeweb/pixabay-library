@@ -17,6 +17,7 @@ namespace WBW\Library\Pixabay\Request;
 
 use InvalidArgumentException;
 use WBW\Library\Pixabay\Api\RequestInterface;
+use WBW\Library\Pixabay\Response\AbstractResponse;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Strings\StringIdTrait;
 use WBW\Library\Traits\Strings\StringLangTrait;
@@ -111,6 +112,14 @@ abstract class AbstractRequest implements RequestInterface {
         $this->setPretty(false);
         $this->setSafeSearch(false);
     }
+
+    /**
+     * Deserializes a response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return AbstractResponse Returns the response.
+     */
+    abstract public function deserializeResponse(string $rawResponse): AbstractResponse;
 
     /**
      * Enumerates the lang.
@@ -249,6 +258,13 @@ abstract class AbstractRequest implements RequestInterface {
     public function getSafeSearch(): ?bool {
         return $this->safeSearch;
     }
+
+    /**
+     * Serializes the request.
+     *
+     * @return array Returns this serialized request.
+     */
+    abstract public function serializeRequest(): array;
 
     /**
      * Set the category.

@@ -11,7 +11,9 @@
 
 namespace WBW\Library\Pixabay\Tests\Fixtures\Request;
 
+use RuntimeException;
 use WBW\Library\Pixabay\Request\AbstractRequest;
+use WBW\Library\Pixabay\Response\AbstractResponse;
 
 /**
  * Test request.
@@ -24,7 +26,21 @@ class TestRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        throw new RuntimeException();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getResourcePath(): string {
         return "";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return [];
     }
 }
