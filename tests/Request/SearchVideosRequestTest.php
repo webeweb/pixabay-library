@@ -13,6 +13,7 @@ namespace WBW\Library\Pixabay\Tests\Request;
 
 use InvalidArgumentException;
 use Throwable;
+use WBW\Library\Pixabay\Api\RequestInterface;
 use WBW\Library\Pixabay\Api\SearchVideosRequestInterface;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
@@ -39,6 +40,48 @@ class SearchVideosRequestTest extends AbstractTestCase {
         ];
 
         $this->assertEquals($res, SearchVideosRequest::enumVideoType());
+    }
+
+    /**
+     * Tests serializeRequest()
+     *
+     * @return void
+     */
+    public function testSerializeRequest(): void {
+
+        $obj = new SearchVideosRequest();
+        $obj->setCategory("category");
+        $obj->setEditorsChoice(true);
+        $obj->setId(1234);
+        $obj->setLang("fr");
+        $obj->setMinHeight(720);
+        $obj->setMinWidth(1280);
+        $obj->setOrder(RequestInterface::ORDER_LATEST);
+        $obj->setPage(2);
+        $obj->setPerPage(15);
+        $obj->setPretty(true);
+        $obj->setQ("github");
+        $obj->setSafeSearch(true);
+
+        $obj->setVideoType(RequestInterface::VIDEO_TYPE_FILM);
+
+        $res = $obj->serializeRequest();
+        $this->assertCount(13, $res);
+
+        $this->assertEquals("category", $res["category"]);
+        $this->assertEquals("true", $res["editors_choice"]);
+        $this->assertEquals(1234, $res["id"]);
+        $this->assertEquals("fr", $res["lang"]);
+        $this->assertEquals(720, $res["min_height"]);
+        $this->assertEquals(1280, $res["min_width"]);
+        $this->assertEquals(RequestInterface::ORDER_LATEST, $res["order"]);
+        $this->assertEquals(2, $res["page"]);
+        $this->assertEquals(15, $res["per_page"]);
+        $this->assertEquals("true", $res["pretty"]);
+        $this->assertEquals("github", $res["q"]);
+        $this->assertEquals("true", $res["safesearch"]);
+
+        $this->assertEquals(RequestInterface::VIDEO_TYPE_FILM, $res["video_type"]);
     }
 
     /**

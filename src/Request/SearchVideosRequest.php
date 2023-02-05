@@ -13,6 +13,7 @@ namespace WBW\Library\Pixabay\Request;
 
 use InvalidArgumentException;
 use WBW\Library\Pixabay\Api\SearchVideosRequestInterface;
+use WBW\Library\Pixabay\Serializer\RequestSerializer;
 
 /**
  * Search videos request.
@@ -73,6 +74,13 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      */
     public function getVideoType(): ?string {
         return $this->videoType;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeSearchVideosRequest($this);
     }
 
     /**
