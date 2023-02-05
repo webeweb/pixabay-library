@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### master
+
+- Replace each request method by sendRequest()
+- Update dependencies
+- Update documentation
+
 ### [2.9.0](https://github.com/webeweb/pixabay-library/tree/v2.9.0) (2023-01-02)
 
 - Improve code quality
