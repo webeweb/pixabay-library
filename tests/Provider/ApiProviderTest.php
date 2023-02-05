@@ -55,15 +55,15 @@ class ApiProviderTest extends AbstractTestCase {
      */
     public function testPopulateResponse(): void {
 
-        // Set a Search images response mock.
-        $searchImageResponse = new SearchImagesResponse();
+        // Set a response mock.
+        $response = new SearchImagesResponse();
 
         $obj = new TestApiProvider();
 
-        $obj->populateResponse($searchImageResponse);
-        $this->assertSame($obj->getLimit(), $searchImageResponse->getLimit());
-        $this->assertSame($obj->getRemaining(), $searchImageResponse->getRemaining());
-        $this->assertSame($obj->getReset(), $searchImageResponse->getReset());
+        $obj->populateResponse($response);
+        $this->assertSame($obj->getLimit(), $response->getLimit());
+        $this->assertSame($obj->getRemaining(), $response->getRemaining());
+        $this->assertSame($obj->getReset(), $response->getReset());
     }
 
     /**
