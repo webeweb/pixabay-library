@@ -13,7 +13,9 @@ namespace WBW\Library\Pixabay\Request;
 
 use InvalidArgumentException;
 use WBW\Library\Pixabay\Api\SearchVideosRequestInterface;
+use WBW\Library\Pixabay\Response\AbstractResponse;
 use WBW\Library\Pixabay\Serializer\RequestSerializer;
+use WBW\Library\Pixabay\Serializer\ResponseDeserializer;
 
 /**
  * Search videos request.
@@ -44,6 +46,13 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
         parent::__construct();
 
         $this->setVideoType(self::VIDEO_TYPE_ALL);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeSearchVideosResponse($rawResponse);
     }
 
     /**
