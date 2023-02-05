@@ -24,6 +24,7 @@ Search images
 use WBW\Library\Pixabay\Model\ImageHit;
 use WBW\Library\Pixabay\Provider\ApiProvider;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
+use WBW\Library\Pixabay\Response\SearchImagesResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -32,8 +33,8 @@ $provider = new ApiProvider("YOUR_API_KEY");
 $request = new SearchImagesRequest();
 // ...
 
-// Call the API and get the response.
-$response = $provider->searchImages($request);
+/** @var SearchImagesResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $response->getTotal();
@@ -75,6 +76,7 @@ use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
 use WBW\Library\Pixabay\Provider\ApiProvider;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
+use WBW\Library\Pixabay\Response\SearchVideosResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -83,8 +85,8 @@ $provider = new ApiProvider("YOUR_API_KEY");
 $request = new SearchVideosRequest();
 // ...
 
-// Call the API and get the response.
-$response = $provider->searchVideos($request);
+/** @var SearchVideosResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $response->getTotal();
