@@ -245,9 +245,11 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      * @throws InvalidArgumentException Throws an invalid argument exception if the image type is invalid.
      */
     public function setImageType(?string $imageType): SearchImagesRequest {
+
         if (false === in_array($imageType, static::enumImageType())) {
             throw new InvalidArgumentException(sprintf('The image type "%s" is invalid', $imageType));
         }
+
         $this->imageType = $imageType;
         return $this;
     }
@@ -260,9 +262,11 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      * @throws InvalidArgumentException Throws an invalid argument exception if the orientation is invalid.
      */
     public function setOrientation(?string $orientation): SearchImagesRequest {
+
         if (false === in_array($orientation, static::enumOrientation())) {
             throw new InvalidArgumentException(sprintf('The orientation "%s" is invalid', $orientation));
         }
+
         $this->orientation = $orientation;
         return $this;
     }

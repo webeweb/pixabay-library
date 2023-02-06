@@ -100,9 +100,11 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      * @throws InvalidArgumentException Throws an invalid argument exception if the video type is invalid.
      */
     public function setVideoType(?string $videoType): SearchVideosRequest {
+
         if (false === in_array($videoType, static::enumVideoType())) {
             throw new InvalidArgumentException(sprintf('The video type "%s" is invalid', $videoType));
         }
+
         $this->videoType = $videoType;
         return $this;
     }
