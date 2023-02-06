@@ -21,6 +21,7 @@ use WBW\Library\Pixabay\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 use WBW\Library\Pixabay\Tests\Fixtures\Provider\TestApiProvider;
+use WBW\Library\Pixabay\Tests\Fixtures\Response\TestResponse;
 use WBW\Library\Provider\Exception\ApiException;
 
 /**
@@ -56,7 +57,7 @@ class ApiProviderTest extends AbstractTestCase {
     public function testPopulateResponse(): void {
 
         // Set a response mock.
-        $response = new SearchImagesResponse();
+        $response = new TestResponse();
 
         $obj = new TestApiProvider();
 
