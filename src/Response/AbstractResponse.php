@@ -55,7 +55,7 @@ abstract class AbstractResponse extends BaseResponse {
     }
 
     /**
-     * Add an hit.
+     * Add a hit.
      *
      * @param AbstractHit $hit The hit.
      * @return AbstractResponse Returns this response.

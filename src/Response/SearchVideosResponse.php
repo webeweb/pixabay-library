@@ -22,7 +22,7 @@ use WBW\Library\Pixabay\Model\VideoHit;
 class SearchVideosResponse extends AbstractResponse {
 
     /**
-     * Add an video hit.
+     * Add a video hit.
      *
      * @param VideoHit $videoHit The video hit.
      * @return SearchVideosResponse Returns this search video response.

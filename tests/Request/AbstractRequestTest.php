@@ -115,8 +115,8 @@ class AbstractRequestTest extends AbstractTestCase {
 
         $obj = new TestRequest();
 
-        $obj->setLang(TestRequest::LANG_EN);
-        $this->assertEquals(TestRequest::LANG_EN, $obj->getLang());
+        $obj->setLang(RequestInterface::LANG_EN);
+        $this->assertEquals(RequestInterface::LANG_EN, $obj->getLang());
     }
 
     /**
@@ -173,8 +173,8 @@ class AbstractRequestTest extends AbstractTestCase {
 
         $obj = new TestRequest();
 
-        $obj->setOrder(TestRequest::ORDER_POPULAR);
-        $this->assertEquals(TestRequest::ORDER_POPULAR, $obj->getOrder());
+        $obj->setOrder(RequestInterface::ORDER_POPULAR);
+        $this->assertEquals(RequestInterface::ORDER_POPULAR, $obj->getOrder());
     }
 
     /**
@@ -320,12 +320,12 @@ class AbstractRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getCategory());
         $this->assertFalse($obj->getEditorsChoice());
         $this->assertNull($obj->getId());
-        $this->assertEquals(AbstractRequest::LANG_EN, $obj->getLang());
+        $this->assertEquals(RequestInterface::LANG_EN, $obj->getLang());
         $this->assertEquals(0, $obj->getMinHeight());
         $this->assertEquals(0, $obj->getMinWidth());
-        $this->assertEquals(AbstractRequest::ORDER_POPULAR, $obj->getOrder());
+        $this->assertEquals(RequestInterface::ORDER_POPULAR, $obj->getOrder());
         $this->assertEquals(1, $obj->getPage());
-        $this->assertEquals(AbstractRequest::PER_PAGE_DEFAULT, $obj->getPerPage());
+        $this->assertEquals(RequestInterface::PER_PAGE_DEFAULT, $obj->getPerPage());
         $this->assertFalse($obj->getPretty());
         $this->assertNull($obj->getQ());
         $this->assertFalse($obj->getSafeSearch());
