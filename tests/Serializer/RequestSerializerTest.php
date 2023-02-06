@@ -33,25 +33,25 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchImagesRequest(): void {
 
         // Set a Search images request mock.
-        $request = new SearchImagesRequest();
-        $request->setCategory("category");
-        $request->setEditorsChoice(true);
-        $request->setId(1234);
-        $request->setLang("fr");
-        $request->setMinHeight(720);
-        $request->setMinWidth(1280);
-        $request->setOrder(RequestInterface::ORDER_LATEST);
-        $request->setPage(2);
-        $request->setPerPage(15);
-        $request->setPretty(true);
-        $request->setQ("github");
-        $request->setSafeSearch(true);
+        $arg = new SearchImagesRequest();
+        $arg->setCategory("category");
+        $arg->setEditorsChoice(true);
+        $arg->setId(1234);
+        $arg->setLang("fr");
+        $arg->setMinHeight(720);
+        $arg->setMinWidth(1280);
+        $arg->setOrder(RequestInterface::ORDER_LATEST);
+        $arg->setPage(2);
+        $arg->setPerPage(15);
+        $arg->setPretty(true);
+        $arg->setQ("github");
+        $arg->setSafeSearch(true);
 
-        $request->addColor(RequestInterface::COLOR_BLACK);
-        $request->setImageType(RequestInterface::IMAGE_TYPE_PHOTO);
-        $request->setOrientation(RequestInterface::ORIENTATION_HORIZONTAL);
+        $arg->addColor(RequestInterface::COLOR_BLACK);
+        $arg->setImageType(RequestInterface::IMAGE_TYPE_PHOTO);
+        $arg->setOrientation(RequestInterface::ORIENTATION_HORIZONTAL);
 
-        $obj = RequestSerializer::serializeSearchImagesRequest($request);
+        $obj = RequestSerializer::serializeSearchImagesRequest($arg);
         $this->assertCount(15, $obj);
 
         $this->assertEquals("category", $obj["category"]);
@@ -80,23 +80,23 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchVideosRequest(): void {
 
         // Set a Search videos request mock.
-        $request = new SearchVideosRequest();
-        $request->setCategory("category");
-        $request->setEditorsChoice(true);
-        $request->setId(1234);
-        $request->setLang("fr");
-        $request->setMinHeight(720);
-        $request->setMinWidth(1280);
-        $request->setOrder(RequestInterface::ORDER_LATEST);
-        $request->setPage(2);
-        $request->setPerPage(15);
-        $request->setPretty(true);
-        $request->setQ("github");
-        $request->setSafeSearch(true);
+        $arg = new SearchVideosRequest();
+        $arg->setCategory("category");
+        $arg->setEditorsChoice(true);
+        $arg->setId(1234);
+        $arg->setLang("fr");
+        $arg->setMinHeight(720);
+        $arg->setMinWidth(1280);
+        $arg->setOrder(RequestInterface::ORDER_LATEST);
+        $arg->setPage(2);
+        $arg->setPerPage(15);
+        $arg->setPretty(true);
+        $arg->setQ("github");
+        $arg->setSafeSearch(true);
 
-        $request->setVideoType(RequestInterface::VIDEO_TYPE_FILM);
+        $arg->setVideoType(RequestInterface::VIDEO_TYPE_FILM);
 
-        $res = RequestSerializer::serializeSearchVideosRequest($request);
+        $res = RequestSerializer::serializeSearchVideosRequest($arg);
         $this->assertCount(13, $res);
 
         $this->assertEquals("category", $res["category"]);
