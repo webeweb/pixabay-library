@@ -7,6 +7,7 @@ CHANGELOG
 > - searchImages()
 > - searchVideos()
 
+- Improve code quality
 - Update dependencies
 - Update documentation
 
