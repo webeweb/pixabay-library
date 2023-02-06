@@ -12,6 +12,7 @@
 namespace WBW\Library\Pixabay\Tests\Response;
 
 use WBW\Library\Pixabay\Model\VideoHit;
+use WBW\Library\Pixabay\Response\AbstractResponse;
 use WBW\Library\Pixabay\Response\SearchVideosResponse;
 use WBW\Library\Pixabay\Tests\AbstractTestCase;
 
@@ -48,6 +49,8 @@ class SearchVideosResponseTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new SearchVideosResponse();
+
+        $this->assertInstanceOf(AbstractResponse::class, $obj);
 
         $this->assertCount(0, $obj->getVideoHits());
     }
