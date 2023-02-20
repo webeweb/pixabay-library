@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve code quality
+
 ### [3.0.0](https://github.com/webeweb/pixabay-library/tree/v3.0.0) (2023-02-06)
 
 > IMPORTANT NOTICE: The API provider has a unique method sendRequest() who replaced:
