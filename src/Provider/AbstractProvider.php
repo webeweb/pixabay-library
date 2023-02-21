@@ -88,7 +88,7 @@ abstract class AbstractProvider extends BaseProvider {
     protected function callApi(AbstractRequest $request, array $queryData): string {
 
         if (null === $this->getKey()) {
-            throw new InvalidArgumentException('The mandatory parameter "key" is missing');
+            throw $this->newMandatoryParameterException("key");
         }
 
         try {
