@@ -58,7 +58,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Builds a configuration.
+     * Builds the configuration.
      *
      * @return array Returns the configuration.
      */
