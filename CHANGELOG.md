@@ -1,9 +1,10 @@
 CHANGELOG
 =========
 
-### master
+### [3.1.0](https://github.com/webeweb/pixabay-library/tree/v3.1.0) (2023-02-21)
 
 - Improve code quality
+- Update dependencies
 
 ### [3.0.0](https://github.com/webeweb/pixabay-library/tree/v3.0.0) (2023-02-06)
 
