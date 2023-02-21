@@ -58,7 +58,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Build the configuration.
+     * Builds a configuration.
      *
      * @return array Returns the configuration.
      */
@@ -76,7 +76,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Call the API.
+     * Calls the API.
      *
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
@@ -94,13 +94,12 @@ abstract class AbstractProvider extends BaseProvider {
         try {
 
             $config = $this->buildConfiguration();
-
             $client = new Client($config);
 
             $method  = "GET";
-            $uri     = substr($request->getResourcePath(), 1);
+            $uri     = substr($this->buildResourcePath($request), 1);
             $options = [
-                "query" => array_merge(["key" => $this->getKey()], $queryData),
+                "query" => array_merge($queryData, ["key" => $this->getKey()]),
             ];
 
             $this->logInfo(sprintf("Call Pixabay API %s %s", $method, $uri), ["config" => $config, "options" => $options]);
