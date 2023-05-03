@@ -25,7 +25,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeSearchImagesResponse()
+     * Test deserializeSearchImagesResponse()
      *
      * @return void
      */
@@ -71,7 +71,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeSearchImagesResponse()
+     * Test deserializeSearchImagesResponse()
      *
      * @return void
      */
@@ -91,7 +91,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeSearchVideosResponse()
+     * Test deserializeSearchVideosResponse()
      *
      * @return void
      */
@@ -139,7 +139,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeSearchVideosResponse()
+     * Test deserializeSearchVideosResponse()
      *
      * @return void
      */

@@ -27,7 +27,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class SearchImagesRequestTest extends AbstractTestCase {
 
     /**
-     * Tests addColor()
+     * Test addColor()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests addColor()
+     * Test addColor()
      *
      * @return void
      */
@@ -60,7 +60,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeResponse()
+     * Test deserializeResponse()
      *
      * @return void
      */
@@ -73,7 +73,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumCategory().
+     * Test enumCategory().
      *
      * @return void
      */
@@ -106,7 +106,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumColor()
+     * Test enumColor()
      *
      * @return void
      */
@@ -133,7 +133,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumImageType()
+     * Test enumImageType()
      *
      * @return void
      */
@@ -150,7 +150,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumOrientation()
+     * Test enumOrientation()
      *
      * @return void.
      */
@@ -166,7 +166,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests removeColor()
+     * Test removeColor()
      *
      * @return void
      */
@@ -180,7 +180,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeRequest()
+     * Test serializeRequest()
      *
      * @return void
      */
@@ -196,7 +196,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setImageType()
+     * Test setImageType()
      *
      * @return void
      */
@@ -209,7 +209,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setImageType()
+     * Test setImageType()
      *
      * @return void
      */
@@ -228,7 +228,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOrientation()
+     * Test setOrientation()
      *
      * @return void
      */
@@ -241,7 +241,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOrientation()
+     * Test setOrientation()
      *
      * @return void
      */
@@ -260,7 +260,7 @@ class SearchImagesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

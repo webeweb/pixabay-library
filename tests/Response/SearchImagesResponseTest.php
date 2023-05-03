@@ -25,7 +25,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class SearchImagesResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addImageHit()
+     * Test addImageHit()
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class SearchImagesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

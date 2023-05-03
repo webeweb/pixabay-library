@@ -23,7 +23,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class ImageHitTest extends AbstractTestCase {
 
     /**
-     * Tests setFullHDURL()
+     * Test setFullHDURL()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setImageHeight()
+     * Test setImageHeight()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setImageSize()
+     * Test setImageSize()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setImageURL()
+     * Test setImageURL()
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setImageWidth()
+     * Test setImageWidth()
      *
      * @return void
      */
@@ -88,7 +88,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setLargeImageURL()
+     * Test setLargeImageURL()
      *
      * @return void
      */
@@ -101,7 +101,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPreviewHeight()
+     * Test setPreviewHeight()
      *
      * @return void
      */
@@ -114,7 +114,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPreviewURL()
+     * Test setPreviewURL()
      *
      * @return void
      */
@@ -127,7 +127,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPreviewWidth()
+     * Test setPreviewWidth()
      *
      * @return void
      */
@@ -140,7 +140,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setWebFormatHeight()
+     * Test setWebFormatHeight()
      *
      * @return void
      */
@@ -153,7 +153,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setWebFormatURL()
+     * Test setWebFormatURL()
      *
      * @return void
      */
@@ -166,7 +166,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setWebFormatWidth()
+     * Test setWebFormatWidth()
      *
      * @return void
      */
@@ -179,7 +179,7 @@ class ImageHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

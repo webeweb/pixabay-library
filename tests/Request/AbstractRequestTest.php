@@ -27,7 +27,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Request\TestRequest;
 class AbstractRequestTest extends AbstractTestCase {
 
     /**
-     * Tests enumLang()
+     * Test enumLang()
      *
      * @return void
      */
@@ -66,7 +66,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumOrder()
+     * Test enumOrder()
      *
      * @return void
      */
@@ -81,7 +81,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setCategory()
+     * Test setCategory()
      *
      * @return void
      */
@@ -94,7 +94,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setEditorsChoice()
+     * Test setEditorsChoice()
      *
      * @return void
      */
@@ -107,7 +107,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setLang()
+     * Test setLang()
      *
      * @return void
      */
@@ -120,7 +120,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setLang()
+     * Test setLang()
      *
      * @return void
      */
@@ -139,7 +139,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setMinHeight()
+     * Test setMinHeight()
      *
      * @return void
      */
@@ -152,7 +152,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setMinWidth()
+     * Test setMinWidth()
      *
      * @return void
      */
@@ -165,7 +165,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOrder()
+     * Test setOrder()
      *
      * @return void
      */
@@ -178,7 +178,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOrder()
+     * Test setOrder()
      *
      * @return void
      */
@@ -197,7 +197,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPage()
+     * Test setPage()
      *
      * @return void
      */
@@ -210,7 +210,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPage()
+     * Test setPage()
      *
      * @return void
      */
@@ -229,7 +229,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPerPage()
+     * Test setPerPage()
      *
      * @return void
      */
@@ -242,7 +242,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPerPage()
+     * Test setPerPage()
      *
      * @return void
      */
@@ -270,7 +270,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPretty()
+     * Test setPretty()
      *
      * @return void
      */
@@ -283,7 +283,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setQ()
+     * Test setQ()
      *
      * @return void
      */
@@ -296,7 +296,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setSafeSearch()
+     * Test setSafeSearch()
      *
      * @return void
      */
@@ -309,7 +309,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

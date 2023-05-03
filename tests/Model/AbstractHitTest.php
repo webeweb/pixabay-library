@@ -23,7 +23,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Model\TestHit;
 class AbstractHitTest extends AbstractTestCase {
 
     /**
-     * Tests setComments()
+     * Test setComments()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setDownloads()
+     * Test setDownloads()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setFavorites()
+     * Test setFavorites()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setLikes()
+     * Test setLikes()
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPageURL()
+     * Test setPageURL()
      *
      * @return void
      */
@@ -88,7 +88,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setTags()
+     * Test setTags()
      *
      * @return void
      */
@@ -101,7 +101,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setUser()
+     * Test setUser()
      *
      * @return void
      */
@@ -114,7 +114,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setUserId()
+     * Test setUserId()
      *
      * @return void
      */
@@ -127,7 +127,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setUserImageURL()
+     * Test setUserImageURL()
      *
      * @return void
      */
@@ -140,7 +140,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setViews()
+     * Test setViews()
      *
      * @return void
      */
@@ -153,7 +153,7 @@ class AbstractHitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

@@ -26,7 +26,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class JsonDeserializer {
 
     /**
-     * Deserializes a hit.
+     * Deserialize a hit.
      *
      * @param AbstractHit $model The hit.
      * @param array $data The data.
@@ -49,7 +49,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes an image hit.
+     * Deserialize an image hit.
      *
      * @param array $data The data.
      * @return ImageHit Returns an image hit.
@@ -78,7 +78,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a video.
+     * Deserialize a video.
      *
      * @param array $data The data.
      * @return Video Returns a video.
@@ -97,7 +97,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a video hit.
+     * Deserialize a video hit.
      *
      * @param array $data The data.
      * @return VideoHit Returns a video hit.

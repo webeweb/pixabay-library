@@ -23,7 +23,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class VideoTest extends AbstractTestCase {
 
     /**
-     * Tests setHeight()
+     * Test setHeight()
      *
      * @return void.
      */
@@ -36,7 +36,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setQuality()
+     * Test setQuality()
      *
      * @return void.
      */
@@ -49,7 +49,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setSize()
+     * Test setSize()
      *
      * @return void.
      */
@@ -62,7 +62,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setUrl()
+     * Test setUrl()
      *
      * @return void.
      */
@@ -75,7 +75,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setWidth()
+     * Test setWidth()
      *
      * @return void.
      */
@@ -88,7 +88,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void.
      */

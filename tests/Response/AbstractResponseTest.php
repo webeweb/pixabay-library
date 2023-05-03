@@ -24,7 +24,7 @@ use WBW\Library\Pixabay\Tests\Fixtures\Response\TestResponse;
 class AbstractResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addHit()
+     * Test addHit()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class AbstractResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setRawResponse()
+     * Test setRawResponse()
      *
      * @return void
      */
@@ -54,7 +54,7 @@ class AbstractResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setTotal()
+     * Test setTotal()
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class AbstractResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setTotalHits()
+     * Test setTotalHits()
      *
      * @return void
      */
@@ -80,7 +80,7 @@ class AbstractResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

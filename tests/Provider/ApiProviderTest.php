@@ -50,7 +50,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests populateResponse()
+     * Test populateResponse()
      *
      * @return void
      */
@@ -68,7 +68,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests searchImages()
+     * Test searchImages()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -94,7 +94,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests searchImages()
+     * Test searchImages()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -116,7 +116,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests searchVideos()
+     * Test searchVideos()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */

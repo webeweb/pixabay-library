@@ -114,7 +114,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * Deserializes a response.
+     * Deserialize a response.
      *
      * @param string $rawResponse The raw response.
      * @return AbstractResponse Returns the response.
@@ -122,7 +122,7 @@ abstract class AbstractRequest implements RequestInterface {
     abstract public function deserializeResponse(string $rawResponse): AbstractResponse;
 
     /**
-     * Enumerates the lang.
+     * Enumerate the lang.
      *
      * @return string[] Returns the lang enumeration.
      */
@@ -159,7 +159,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * Enumerates the order.
+     * Enumerate the order.
      *
      * @return string[] Returns the order enumeration.
      */
@@ -260,7 +260,7 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * Serializes the request.
+     * Serialize the request.
      *
      * @return array Returns this serialized request.
      */

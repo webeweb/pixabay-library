@@ -27,7 +27,7 @@ use WBW\Library\Types\Helper\StringHelper;
 class RequestSerializer {
 
     /**
-     * Serializes a request.
+     * Serialize a request.
      *
      * @param AbstractRequest $request The request.
      * @return array Returns the serialized request.
@@ -53,7 +53,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serializes a search images request.
+     * Serialize a search images request.
      *
      * @param SearchImagesRequest $request The search images request.
      * @return array Returns the serialized search images request.
@@ -70,7 +70,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serializes a search videos request.
+     * Serialize a search videos request.
      *
      * @param SearchVideosRequest $request The search videos request.
      * @return array Returns the serialized search videos request.

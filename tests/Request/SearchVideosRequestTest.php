@@ -27,7 +27,7 @@ use WBW\Library\Pixabay\Tests\AbstractTestCase;
 class SearchVideosRequestTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeResponse()
+     * Test deserializeResponse()
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumVideoType()
+     * Test enumVideoType()
      *
      * @return void
      */
@@ -56,7 +56,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeRequest()
+     * Test serializeRequest()
      *
      * @return void
      */
@@ -72,7 +72,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setVideoType()
+     * Test setVideoType()
      *
      * @return void
      */
@@ -85,7 +85,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setVideoType()
+     * Test setVideoType()
      *
      * @return void
      */
@@ -104,7 +104,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

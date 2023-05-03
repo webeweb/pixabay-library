@@ -25,7 +25,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class ResponseDeserializer {
 
     /**
-     * Deserializes a response.
+     * Deserialize a response.
      *
      * @param AbstractResponse $model The response.
      * @param array $data The response.
@@ -38,7 +38,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a search images response.
+     * Deserialize a search images response.
      *
      * @param string $rawResponse The raw response.
      * @return SearchImagesResponse Returns the search images response.
@@ -64,7 +64,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a search videos response.
+     * Deserialize a search videos response.
      *
      * @param string $rawResponse The raw response.
      * @return SearchVideosResponse Returns the search videos response.
