@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.2.0](https://github.com/webeweb/pixabay-library/tree/v3.2.0) (2023-06-03)
+
+- Improve PHPDoc
+- Update dependencies
+
 ### [3.1.0](https://github.com/webeweb/pixabay-library/tree/v3.1.0) (2023-02-21)
 
 - Improve code quality
