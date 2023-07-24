@@ -80,7 +80,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deserializeResponse(string $rawResponse): AbstractResponse {
         return ResponseDeserializer::deserializeSearchImagesResponse($rawResponse);
@@ -199,7 +199,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::SEARCH_IMAGES_RESOURCE_PATH;
@@ -220,7 +220,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function serializeRequest(): array {
         return RequestSerializer::serializeSearchImagesRequest($this);

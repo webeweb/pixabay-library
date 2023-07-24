@@ -49,7 +49,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deserializeResponse(string $rawResponse): AbstractResponse {
         return ResponseDeserializer::deserializeSearchVideosResponse($rawResponse);
@@ -70,7 +70,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::SEARCH_VIDEOS_RESOURCE_PATH;
@@ -86,7 +86,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function serializeRequest(): array {
         return RequestSerializer::serializeSearchVideosRequest($this);
