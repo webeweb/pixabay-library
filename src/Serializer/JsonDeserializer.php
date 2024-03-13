@@ -29,7 +29,7 @@ class JsonDeserializer {
      * Deserialize a hit.
      *
      * @param AbstractHit $model The hit.
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return void
      */
     protected static function deserializeHit(AbstractHit $model, array $data): void {
@@ -51,7 +51,7 @@ class JsonDeserializer {
     /**
      * Deserialize an image hit.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return ImageHit Returns an image hit.
      */
     public static function deserializeImageHit(array $data): ImageHit {
@@ -80,7 +80,7 @@ class JsonDeserializer {
     /**
      * Deserialize a video.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return Video Returns a video.
      */
     public static function deserializeVideo(array $data): Video {
@@ -99,7 +99,7 @@ class JsonDeserializer {
     /**
      * Deserialize a video hit.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return VideoHit Returns a video hit.
      */
     public static function deserializeVideoHit(array $data): VideoHit {
@@ -110,7 +110,7 @@ class JsonDeserializer {
         static::deserializeHit($model, $data);
 
         $model->setDuration(intval(ArrayHelper::get($data, "duration", -1)));
-        $model->setPictureId(intval(ArrayHelper::get($data, "picture_id", -1)));
+        $model->setPictureId(ArrayHelper::get($data, "picture_id"));
 
         foreach (ArrayHelper::get($data, "videos", []) as $q => $v) {
             $model->addVideo(static::deserializeVideo($v)->setQuality($q));
