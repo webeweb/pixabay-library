@@ -36,7 +36,7 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg = new SearchImagesRequest();
         $arg->setCategory("category");
         $arg->setEditorsChoice(true);
-        $arg->setId(1234);
+        $arg->setId("1234");
         $arg->setLang("fr");
         $arg->setMinHeight(720);
         $arg->setMinWidth(1280);
@@ -56,7 +56,7 @@ class RequestSerializerTest extends AbstractTestCase {
 
         $this->assertEquals("category", $obj["category"]);
         $this->assertEquals("true", $obj["editors_choice"]);
-        $this->assertEquals(1234, $obj["id"]);
+        $this->assertEquals("1234", $obj["id"]);
         $this->assertEquals("fr", $obj["lang"]);
         $this->assertEquals(720, $obj["min_height"]);
         $this->assertEquals(1280, $obj["min_width"]);
@@ -83,7 +83,7 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg = new SearchVideosRequest();
         $arg->setCategory("category");
         $arg->setEditorsChoice(true);
-        $arg->setId(1234);
+        $arg->setId("1234");
         $arg->setLang("fr");
         $arg->setMinHeight(720);
         $arg->setMinWidth(1280);
@@ -101,7 +101,7 @@ class RequestSerializerTest extends AbstractTestCase {
 
         $this->assertEquals("category", $res["category"]);
         $this->assertEquals("true", $res["editors_choice"]);
-        $this->assertEquals(1234, $res["id"]);
+        $this->assertEquals("1234", $res["id"]);
         $this->assertEquals("fr", $res["lang"]);
         $this->assertEquals(720, $res["min_height"]);
         $this->assertEquals(1280, $res["min_width"]);
