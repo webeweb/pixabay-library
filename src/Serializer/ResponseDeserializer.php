@@ -28,7 +28,7 @@ class ResponseDeserializer {
      * Deserialize a response.
      *
      * @param AbstractResponse $model The response.
-     * @param array $data The response.
+     * @param array<string,mixed> $data The response.
      * @return void
      */
     protected static function deserializeResponse(AbstractResponse $model, array $data): void {
