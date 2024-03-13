@@ -37,6 +37,10 @@ class SearchImagesResponse extends AbstractResponse {
      * @return ImageHit[] Returns the image hits.
      */
     public function getImageHits(): array {
-        return $this->getHits();
+
+        /** @var ImageHit[] $hits */
+        $hits = $this->getHits();
+
+        return $hits;
     }
 }
