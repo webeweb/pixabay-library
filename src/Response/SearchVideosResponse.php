@@ -37,6 +37,10 @@ class SearchVideosResponse extends AbstractResponse {
      * @return VideoHit[] Returns the video hits.
      */
     public function getVideoHits(): array {
-        return $this->getHits();
+
+        /** @var VideoHit[] $hits */
+        $hits = $this->getHits();
+
+        return $hits;
     }
 }
