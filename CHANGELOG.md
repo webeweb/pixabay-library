@@ -3,7 +3,10 @@ CHANGELOG
 
 ### master
 
+- Add PHP 8.3 support
+- Improve code quality
 - Improve PHPDoc
+- Update dependencies
 
 ### [3.2.0](https://github.com/webeweb/pixabay-library/tree/v3.2.0) (2023-06-03)
 
