@@ -18,6 +18,7 @@ namespace WBW\Library\Pixabay\Request;
 use InvalidArgumentException;
 use WBW\Library\Pixabay\Api\RequestInterface;
 use WBW\Library\Pixabay\Response\AbstractResponse;
+use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Strings\StringIdTrait;
 use WBW\Library\Traits\Strings\StringLangTrait;
@@ -29,7 +30,7 @@ use WBW\Library\Traits\Strings\StringLangTrait;
  * @package WBW\Library\Pixabay\Request
  * @abstract
  */
-abstract class AbstractRequest implements RequestInterface {
+abstract class AbstractRequest extends BaseRequest implements RequestInterface {
 
     use IntegerPageTrait;
     use StringIdTrait;
@@ -244,13 +245,6 @@ abstract class AbstractRequest implements RequestInterface {
     }
 
     /**
-     * Get the resource path.
-     *
-     * @return string Returns the resource path.
-     */
-    abstract public function getResourcePath(): string;
-
-    /**
      * Get the safe search.
      *
      * @return bool|null Returns the safe search.
@@ -262,7 +256,7 @@ abstract class AbstractRequest implements RequestInterface {
     /**
      * Serialize the request.
      *
-     * @return array Returns this serialized request.
+     * @return array<string,mixed> Returns this serialized request.
      */
     abstract public function serializeRequest(): array;
 
