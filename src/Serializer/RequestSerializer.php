@@ -30,7 +30,7 @@ class RequestSerializer {
      * Serialize a request.
      *
      * @param AbstractRequest $request The request.
-     * @return array Returns the serialized request.
+     * @return array<string,mixed> Returns the serialized request.
      */
     protected static function serializeRequest(AbstractRequest $request): array {
 
@@ -56,7 +56,7 @@ class RequestSerializer {
      * Serialize a search images request.
      *
      * @param SearchImagesRequest $request The search images request.
-     * @return array Returns the serialized search images request.
+     * @return array<string,mixed> Returns the serialized search images request.
      */
     public static function serializeSearchImagesRequest(SearchImagesRequest $request): array {
 
@@ -73,7 +73,7 @@ class RequestSerializer {
      * Serialize a search videos request.
      *
      * @param SearchVideosRequest $request The search videos request.
-     * @return array Returns the serialized search videos request.
+     * @return array<string,mixed> Returns the serialized search videos request.
      */
     public static function serializeSearchVideosRequest(SearchVideosRequest $request): array {
 
