@@ -58,7 +58,7 @@ abstract class AbstractResponse extends BaseResponse {
      * Add a hit.
      *
      * @param AbstractHit $hit The hit.
-     * @return AbstractResponse Returns this response.
+     * @return $this Returns this response.
      */
     protected function addHit(AbstractHit $hit): AbstractResponse {
         $this->hits[] = $hit;
