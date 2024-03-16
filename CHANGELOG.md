@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.4.0](https://github.com/webeweb/pixabay-library/tree/v3.4.0) (2024-03-16)
+
+- Add declare(strict_types = 1)
+
 ### [3.3.0](https://github.com/webeweb/pixabay-library/tree/v3.3.0) (2024-03-13)
 
 - Add PHP 8.3 support
