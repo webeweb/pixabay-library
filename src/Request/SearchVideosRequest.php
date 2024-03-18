@@ -32,7 +32,7 @@ class SearchVideosRequest extends AbstractRequest implements SearchVideosRequest
      *
      * @var string
      */
-    const SEARCH_VIDEOS_RESOURCE_PATH = "/videos/";
+    public const SEARCH_VIDEOS_RESOURCE_PATH = "/videos/";
 
     /**
      * Video type.

@@ -32,7 +32,7 @@ class SearchImagesRequest extends AbstractRequest implements SearchImagesRequest
      *
      * @var string
      */
-    const SEARCH_IMAGES_RESOURCE_PATH = "/";
+    public const SEARCH_IMAGES_RESOURCE_PATH = "/";
 
     /**
      * Colors.
