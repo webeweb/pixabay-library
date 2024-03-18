@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.5.0](https://github.com/webeweb/pixabay-library/tree/v3.5.0) (2024-03-18)
+
+- Improve constants visibility
+
 ### [3.4.1](https://github.com/webeweb/pixabay-library/tree/v3.4.1) (2024-03-16)
 
 - Improve PHPDoc
