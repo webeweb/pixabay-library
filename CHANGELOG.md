@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.6.0](https://github.com/webeweb/pixabay-library/tree/v3.6.0) (2024-04-29)
+
+- Improve constants visibility
+
 ### [3.5.0](https://github.com/webeweb/pixabay-library/tree/v3.5.0) (2024-03-18)
 
 - Improve constants visibility
