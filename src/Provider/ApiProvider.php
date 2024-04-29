@@ -14,9 +14,9 @@ declare(strict_types = 1);
 namespace WBW\Library\Pixabay\Provider;
 
 use InvalidArgumentException;
+use WBW\Library\Common\Provider\ProviderException;
 use WBW\Library\Pixabay\Request\AbstractRequest;
 use WBW\Library\Pixabay\Response\AbstractResponse;
-use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API provider.
@@ -47,7 +47,7 @@ class ApiProvider extends AbstractProvider {
      * @param AbstractRequest $request The request.
      * @return AbstractResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ApiException Throws an API exception if an error occurs.
+     * @throws ProviderException Throws a provider exception if an error occurs.
      */
     public function sendRequest(AbstractRequest $request): AbstractResponse {
 

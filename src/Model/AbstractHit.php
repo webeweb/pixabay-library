@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pixabay\Model;
 
-use WBW\Library\Traits\Integers\IntegerIdTrait;
-use WBW\Library\Traits\Strings\StringTypeTrait;
+use WBW\Library\Common\Traits\Integers\IntegerIdTrait;
+use WBW\Library\Common\Traits\Strings\StringTypeTrait;
 
 /**
  * Abstract hit.

@@ -13,12 +13,12 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pixabay\Serializer;
 
+use WBW\Library\Common\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\StringHelper;
 use WBW\Library\Pixabay\Api\RequestInterface;
 use WBW\Library\Pixabay\Request\AbstractRequest;
 use WBW\Library\Pixabay\Request\SearchImagesRequest;
 use WBW\Library\Pixabay\Request\SearchVideosRequest;
-use WBW\Library\Types\Helper\ArrayHelper;
-use WBW\Library\Types\Helper\StringHelper;
 
 /**
  * Request serializer.

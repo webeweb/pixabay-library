@@ -17,10 +17,10 @@ use GuzzleHttp\Client;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Throwable;
+use WBW\Library\Common\Provider\AbstractProvider as BaseProvider;
+use WBW\Library\Common\Provider\ProviderException;
+use WBW\Library\Common\Traits\Compounds\CompoundRateLimitTrait;
 use WBW\Library\Pixabay\Request\AbstractRequest;
-use WBW\Library\Provider\AbstractProvider as BaseProvider;
-use WBW\Library\Provider\Exception\ApiException;
-use WBW\Library\Traits\Compounds\CompoundRateLimitTrait;
 
 /**
  * Abstract provider.
@@ -83,7 +83,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param array<string,mixed> $queryData The query data.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ApiException Throws an API exception if an error occurs.
+     * @throws ProviderException Throws a provider exception if an error occurs.
      */
     protected function callApi(AbstractRequest $request, array $queryData): string {
 
@@ -113,7 +113,7 @@ abstract class AbstractProvider extends BaseProvider {
             return $response->getBody()->getContents();
         } catch (Throwable $ex) {
 
-            throw new ApiException("Call Pixabay API failed", 500, $ex);
+            throw new ProviderException("Call Pixabay API failed", 500, $ex);
         }
     }
 

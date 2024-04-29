@@ -13,10 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pixabay\Serializer;
 
+use WBW\Library\Common\Helper\ArrayHelper;
 use WBW\Library\Pixabay\Response\AbstractResponse;
 use WBW\Library\Pixabay\Response\SearchImagesResponse;
 use WBW\Library\Pixabay\Response\SearchVideosResponse;
-use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Response deserializer.

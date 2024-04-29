@@ -13,11 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pixabay\Serializer;
 
+use WBW\Library\Common\Helper\ArrayHelper;
 use WBW\Library\Pixabay\Model\AbstractHit;
 use WBW\Library\Pixabay\Model\ImageHit;
 use WBW\Library\Pixabay\Model\Video;
 use WBW\Library\Pixabay\Model\VideoHit;
-use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * JSON deserializer.

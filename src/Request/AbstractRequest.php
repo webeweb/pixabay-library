@@ -18,12 +18,12 @@ declare(strict_types = 1);
 namespace WBW\Library\Pixabay\Request;
 
 use InvalidArgumentException;
+use WBW\Library\Common\Provider\AbstractRequest as BaseRequest;
+use WBW\Library\Common\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Common\Traits\Strings\StringIdTrait;
+use WBW\Library\Common\Traits\Strings\StringLangTrait;
 use WBW\Library\Pixabay\Api\RequestInterface;
 use WBW\Library\Pixabay\Response\AbstractResponse;
-use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
-use WBW\Library\Traits\Integers\IntegerPageTrait;
-use WBW\Library\Traits\Strings\StringIdTrait;
-use WBW\Library\Traits\Strings\StringLangTrait;
 
 /**
  * Abstract request.

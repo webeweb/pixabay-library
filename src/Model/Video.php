@@ -13,11 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pixabay\Model;
 
-use WBW\Library\Traits\Integers\IntegerHeightTrait;
-use WBW\Library\Traits\Integers\IntegerSizeTrait;
-use WBW\Library\Traits\Integers\IntegerWidthTrait;
-use WBW\Library\Traits\Strings\StringRawDataTrait;
-use WBW\Library\Traits\Strings\StringUrlTrait;
+use WBW\Library\Common\Traits\Integers\IntegerHeightTrait;
+use WBW\Library\Common\Traits\Integers\IntegerSizeTrait;
+use WBW\Library\Common\Traits\Integers\IntegerWidthTrait;
+use WBW\Library\Common\Traits\Strings\StringRawDataTrait;
+use WBW\Library\Common\Traits\Strings\StringUrlTrait;
 
 /**
  * Video.
