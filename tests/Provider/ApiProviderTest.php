@@ -90,7 +90,6 @@ class ApiProviderTest extends AbstractTestCase {
 
             $this->assertInstanceOf(SearchImagesResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -134,7 +133,6 @@ class ApiProviderTest extends AbstractTestCase {
 
             $this->assertInstanceOf(SearchVideosResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
