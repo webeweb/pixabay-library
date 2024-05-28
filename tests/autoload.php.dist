@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /*
  * This file is part of the pixabay-library package.
  *
@@ -11,14 +9,16 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
         
-        // Symfony autoloader.
-        $symfonyAutoloader = __DIR__ . "/../../../../app/autoload.php";
-        
-        // Composer autoloader.
-        $composerAutoloader = __DIR__ . "/../vendor/autoload.php";
-        
-        // Check if the bundle is in a Symfony project.
-        if (true === is_file($symfonyAutoloader)) {
+declare(strict_types = 1);
+
+// Symfony autoloader.
+$symfonyAutoloader = __DIR__ . "/../../../../app/autoload.php";
+
+// Composer autoloader.
+$composerAutoloader = __DIR__ . "/../vendor/autoload.php";
+
+// Check if the bundle is in a Symfony project.
+if (true === is_file($symfonyAutoloader)) {
         include $symfonyAutoloader;
 } else if (true === is_file($composerAutoloader)) {
         include $composerAutoloader;
