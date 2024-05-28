@@ -96,7 +96,6 @@ class SearchVideosRequestTest extends AbstractTestCase {
         $obj = new SearchVideosRequest();
 
         try {
-
             $obj->setVideoType("videoType");
         } catch (Throwable $ex) {
 

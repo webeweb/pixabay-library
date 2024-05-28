@@ -108,7 +108,6 @@ class ApiProviderTest extends AbstractTestCase {
         $obj = new ApiProvider();
 
         try {
-
             $obj->sendRequest($searchImagesRequest);
         } catch (Throwable $ex) {
 

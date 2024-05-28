@@ -131,7 +131,6 @@ class AbstractRequestTest extends AbstractTestCase {
         $obj = new TestRequest();
 
         try {
-
             $obj->setLang("lang");
         } catch (Throwable $ex) {
 
@@ -189,7 +188,6 @@ class AbstractRequestTest extends AbstractTestCase {
         $obj = new TestRequest();
 
         try {
-
             $obj->setOrder("order");
         } catch (Throwable $ex) {
 
@@ -221,7 +219,6 @@ class AbstractRequestTest extends AbstractTestCase {
         $obj = new TestRequest();
 
         try {
-
             $obj->setPage(0);
         } catch (Throwable $ex) {
 
@@ -253,7 +250,6 @@ class AbstractRequestTest extends AbstractTestCase {
         $obj = new TestRequest();
 
         try {
-
             $obj->setPerPage(2);
         } catch (Throwable $ex) {
 
@@ -262,7 +258,6 @@ class AbstractRequestTest extends AbstractTestCase {
         }
 
         try {
-
             $obj->setPerPage(201);
         } catch (Throwable $ex) {
 

@@ -52,7 +52,6 @@ class SearchImagesRequestTest extends AbstractTestCase {
         $obj = new SearchImagesRequest();
 
         try {
-
             $obj->addColor("color");
         } catch (Throwable $ex) {
 
@@ -220,7 +219,6 @@ class SearchImagesRequestTest extends AbstractTestCase {
         $obj = new SearchImagesRequest();
 
         try {
-
             $obj->setImageType("imageType");
         } catch (Throwable $ex) {
 
@@ -252,7 +250,6 @@ class SearchImagesRequestTest extends AbstractTestCase {
         $obj = new SearchImagesRequest();
 
         try {
-
             $obj->setOrientation("orientation");
         } catch (Throwable $ex) {
 
