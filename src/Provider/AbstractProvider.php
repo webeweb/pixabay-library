@@ -52,7 +52,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param string|null $key The key.
      * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct(string $key = null, LoggerInterface $logger = null) {
+    public function __construct(?string $key = null, ?LoggerInterface $logger = null) {
         parent::__construct($logger);
 
         $this->setKey($key);
